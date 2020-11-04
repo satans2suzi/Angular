@@ -1,0 +1,13 @@
+<div class="col-6" *ngIf="movie">
+  <div style="text-align:center">
+    <label>Name:
+      <input [(ngModel)]="movie.name" placeholder="Enter movies name">
+    </label>
+  </div>
+  <div style="text-align:center">
+    <label>Year:
+      <input [(ngModel)]="movie.releaseYear" placeholder="Enter movies name">
+    </label>
+  </div>
+  <h3> You selected {{ movie.name }}</h3>
+</div>

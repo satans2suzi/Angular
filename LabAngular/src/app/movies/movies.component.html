@@ -1,31 +1,25 @@
 <div style="text-align:center">
   <h2 class="text-primary">My movies</h2>
 </div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let fakemovie of fakeMovies">
-      <th scope="row">{{fakemovie.id}}</th>
-      <td>{{fakemovie.name}}</td>
-      <td>{{fakemovie.releaseYear}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div style="text-align:center">
-  <label>Name:
-    <input [ngModel]="movie.name" placeholder="Enter movies name">
-  </label>
-</div>
-<div style="text-align:center">
-  <label>Name:
-    <input [(ngModel)]="movie.releaseYear" placeholder="Enter movies name">
-  </label>
+<div class="row">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fakemovie of movies" [class.selected]="fakemovie === selectedMovie"
+          (click)="onSelect(fakemovie)">
+          <th scope="row">{{fakemovie.id}}</th>
+          <td>{{fakemovie.name}}</td>
+          <td>{{fakemovie.releaseYear}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
 </div>

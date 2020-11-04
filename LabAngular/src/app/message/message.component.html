@@ -1,0 +1,7 @@
+<div *ngIf="messageService.messages.length" style="text-align: center;">
+  <h4>Message</h4>
+  <button class="btn btn-danger" (click)="messageService.deleteAllMessages()"> Delete all messenge</button>
+  <div *ngFor="let message of messageService.messages">
+    {{message}}
+  </div>
+</div>
