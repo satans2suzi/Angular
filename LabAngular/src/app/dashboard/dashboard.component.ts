@@ -11,8 +11,10 @@ export class DashboardComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.getMovies()
   }
   getMovies(): void{
     this.movieService.getMovies().subscribe(movies => this.movies = this.movies.slice(1,5))
+    console.log(this.movies)
   }
 }
