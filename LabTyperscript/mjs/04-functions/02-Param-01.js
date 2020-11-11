@@ -1,4 +1,4 @@
-function userInfo01(name, age) {
+function userNewInfo01(name, age) {
     if (age == null && name == null) {
         return `Khong co gi`;
     }
@@ -9,4 +9,4 @@ function userInfo01(name, age) {
         return `Ten: ${name}, tuoi: ${age}`;
     }
 }
-console.log(userInfo01());
+console.log(userNewInfo01());
