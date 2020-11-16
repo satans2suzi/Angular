@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  imageSrc = "https://picsum.photos/200";
+  backgroudColor = "red";
 }
