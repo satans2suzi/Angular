@@ -9,7 +9,9 @@ export class AppComponent {
   title = 'ProjectWork';
   imageUrl : string;
   word ="";
-  status : boolean = true
+  status : boolean = true;
+  red = "red";
+  yellow = "yellow";
   redirect(){
     this.status = !this.status;
     if (this.status == true){
