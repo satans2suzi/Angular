@@ -1,17 +1,28 @@
-<div class="container">
-    <!-- <div>
+<!-- <div class="container">
+    <div>
         <img [src]="imageUrl" width="250" height="250">
     </div>
     <div>
         <button type="button" class="btn btn-success" (click)="redirect()">{{status}}</button>
-    </div> -->
+    </div>
     <form>
         <div class="form-group">
             <input type="email" class="form-control" [(ngModel)]="word">
             <small id="emailHelp " class="form-text text-muted ">We'll never share your email with anyone else.</small>
             <h3 [style.color]="word.length % 2 === 0 ? 'red' : 'yellow'"> Xin chao {{ word }}!</h3>
-            <!-- <code> {{ txtUsername.value | json }}!</code> -->
+            <code> {{ txtUsername.value | json }}!</code>
         </div>
     </form>
-    <!-- <app-demo></app-demo> -->
-</div>
+    <app-demo></app-demo>
+</div> -->
+<app-navigation></app-navigation>
+<!-- Main Sidebar Container -->
+<app-slide-bar></app-slide-bar>
+<!-- Content Wrapper. Contains page content -->
+<app-content></app-content>
+<!-- /.content-wrapper -->
+<app-footer></app-footer>
+!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
