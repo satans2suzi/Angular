@@ -1,0 +1,25 @@
+<!-- Nav tabs -->
+.
+<ul class="nav justify-content-center">
+    <li class="nav-item" [class.active]="viewMode == 'map'">
+        <a class="nav-link active" (click)="viewMode ='map'">Active link</a>
+    </li>
+    <li class="nav-item" [class.active]="viewMode == 'list'">
+        <a class="nav-link active" (click)="viewMode ='list'">Link</a>
+    </li>
+</ul>
+<!-- <ul class="nav nav-pills">
+    <li>
+        <a (click)="viewMode ='map'">Map View</a>
+    </li>
+    <li [class.active]="viewMode == 'list'">
+        <a (click)="viewMode ='list'">List View</a>
+    </li>
+</ul> -->
+
+<!-- Tab panes -->
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">ád</div>
+    <div *ngSwitchCase="'list'">ádas</div>
+    <div *ngSwitchDefault> OtherWise</div>
+</div>
