@@ -11,7 +11,8 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  log(x) {
-    console.log(x.value);
+  log(x, y) {
+    console.log(x.__proto__);
+    console.log(y);
   }
 }

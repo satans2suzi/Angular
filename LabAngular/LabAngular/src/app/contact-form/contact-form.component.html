@@ -1,11 +1,22 @@
 <form>
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id='firstName' type="text" class="form-control">
+        <input required minlength="3" maxlength="20" pattern="banana" ngModel name="firstName" #firstName="ngModel" id='firstName' type="text" class="form-control">
+        <div class="alert alert-danger form-control" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">
+                First Name is valid
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+                First Name should be minimum 3 characters
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+                First Name should be minimum 3 characters
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="comment">Comment: </label>
-        <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+        <textarea ngModel #comment="ngModel" name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
     </div>
-    <button class="btn btn-primary">Submit</button>
+    <button (click)="log(firstName,comment)" class="btn btn-primary">Submit</button>
 </form>
