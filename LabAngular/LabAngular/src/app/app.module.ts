@@ -1,4 +1,6 @@
+
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -12,7 +14,8 @@ import { InputFormatDirective } from './input-format.directive';
 import { CustomDrictiveComponent } from './custom-drictive/custom-drictive.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SingupFormComponent } from './singup-form/singup-form.component';
-import { NewCourseFormComponent } from './new-course-form/new-course-form.component'
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { PostComponent } from './post/post.component'
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     CustomDrictiveComponent,
     ContactFormComponent,
     SingupFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
