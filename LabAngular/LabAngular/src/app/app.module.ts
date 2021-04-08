@@ -16,6 +16,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SingupFormComponent } from './singup-form/singup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PostComponent } from './post/post.component'
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { PostComponent } from './post/post.component'
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
