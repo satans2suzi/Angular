@@ -42,7 +42,11 @@ export class PostComponent implements OnInit {
       let index = this.posts.indexOf(post);
       this.posts.splice(index, 1);
     }, (error: Response) => {
-
+      if (error.status === 404) {
+        alert("has been delete")
+      } else {
+        console.log(error);
+      }
     });
   }
 }
