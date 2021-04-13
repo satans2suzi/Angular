@@ -17,6 +17,12 @@ import { SingupFormComponent } from './singup-form/singup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PostComponent } from './post/post.component'
 import { PostService } from './services/post.service';
+import { RouterModule } from '@angular/router'
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +38,24 @@ import { PostService } from './services/post.service';
     ContactFormComponent,
     SingupFormComponent,
     NewCourseFormComponent,
-    PostComponent
+    PostComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'followers', component: GithubFollowersComponent },
+      { path: 'followers/:username', component: GithubProfileComponent },
+      { path: 'posts', component: PostComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [
     PostService
