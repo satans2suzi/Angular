@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "webGSANM"
+  "defaultProject": "webGSANM",
+  "cli": {
+    "analytics": "ea7d76d4-f3fd-455e-8103-3811e7a29237"
+  }
 }
