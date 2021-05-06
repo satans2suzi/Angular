@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { BaoCaoComponent } from './bao-cao/bao-cao.component';
 import { CongViecComponent } from './cong-viec/cong-viec.component';
 import { DuLieuComponent } from './du-lieu/du-lieu.component';
@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlidebarComponent } from './slidebar/slidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { TaiSanComponent } from './tai-san/tai-san.component';
+import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { HomeComponentComponent } from './home-component/home-component.componen
     NavbarComponent,
     SlidebarComponent,
     FooterComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    TaiSanComponent,
+    NhanVienComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([])
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
