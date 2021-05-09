@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { TaiSanComponent } from './tai-san/tai-san.component';
 import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
+import { SignupComponent } from './signup/signup.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
     FooterComponent,
     HomeComponentComponent,
     TaiSanComponent,
-    NhanVienComponent
+    NhanVienComponent,
+    SignupComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
