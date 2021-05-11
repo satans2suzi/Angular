@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BaoCaoComponent } from './bao-cao/bao-cao.component';
 import { CongViecComponent } from './cong-viec/cong-viec.component';
@@ -36,7 +37,9 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
