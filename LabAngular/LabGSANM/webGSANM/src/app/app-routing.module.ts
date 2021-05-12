@@ -6,6 +6,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { DuLieuComponent } from './du-lieu/du-lieu.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
+import { RegisterComponent } from './register/register.component';
 import { SignupComponent } from './signup/signup.component';
 import { TaiSanComponent } from './tai-san/tai-san.component';
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'dulieu', component: DuLieuComponent },
   { path: 'taisan', component: TaiSanComponent },
   { path: 'nhanvien', component: NhanVienComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: '', component: SignupComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactFormComponent }
 ];
 

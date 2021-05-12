@@ -17,6 +17,7 @@ import { TaiSanComponent } from './tai-san/tai-san.component';
 import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
 import { SignupComponent } from './signup/signup.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     TaiSanComponent,
     NhanVienComponent,
     SignupComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
