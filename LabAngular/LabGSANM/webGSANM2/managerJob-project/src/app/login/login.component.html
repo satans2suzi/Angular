@@ -8,7 +8,10 @@
       <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>
         <form [formGroup]="rfLogin"
-              method="post">
+              method="post" #f='ngForm' (ngSubmit)="signIn(f.value)" )>
+          <div *ngIf="invalidLogin" class="alert alert-danger">
+            Invalid username and/or password
+          </div>
           <div class="input-group mb-3">
             <input required
                    formControlName='username'
@@ -22,11 +25,11 @@
               </div>
             </div>
           </div>
-          <div *ngIf="username.touched && username.invalid"
-               class="alert alert-danger">
-            <span *ngIf="username.errors.required"> Username is required</span>
-            <span *ngIf="username.errors.minlength">Username should be minimun 8 character</span>
-          </div>
+<!--          <div *ngIf="username.touched && username.invalid"-->
+<!--               class="alert alert-danger">-->
+<!--            <span *ngIf="username.errors.required"> Username is required</span>-->
+<!--            <span *ngIf="username.errors.minlength">Username should be minimun 8 character</span>-->
+<!--          </div>-->
           <div class="input-group mb-3">
             <input type="password"
                    class="form-control"
