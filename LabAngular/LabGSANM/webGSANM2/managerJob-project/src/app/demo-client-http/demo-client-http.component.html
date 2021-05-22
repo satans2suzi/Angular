@@ -1,0 +1,49 @@
+<div class="container">
+  <div>
+    <input type="text"
+           class="form-control"
+           placeholder="text">
+  </div>
+  <!--  <div>-->
+  <!--    <ul class="list-group">-->
+  <!--      <li class="list-group-item"-->
+  <!--          *ngFor="let post of posts">-->
+
+  <!--          <button class="btn btn-primary"-->
+  <!--                  (click)="onSelected(post)">Select</button>-->
+  <!--          <button class="btn btn-danger">Delete</button>-->
+  <!--        {{ post.id}} - {{ post.title}}-->
+  <!--      </li>-->
+
+  <!--    </ul>-->
+  <!--  </div>-->
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">UserID</th>
+        <th scope="col">ID</th>
+        <th scope="col">Tittle</th>
+        <th scope="col">completed</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{ user.userId}}</th>
+        <td>{{ user.id}}</td>
+        <td>{{ user.title}}</td>
+        <td>{{ user.completed}} </td>
+        <td>
+          <button class="btn btn-primary"
+                  (click)="onSelected(user)">Select
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

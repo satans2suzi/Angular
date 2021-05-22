@@ -16,6 +16,8 @@ import {AuthService} from "./services/auth.service";
 import {OrderService} from "./services/order.service";
 import {fakeBackendProvider} from "./helpers/fake-backend";
 import {MockBackend} from "@angular/http/testing";
+import { DemoClientHttpComponent } from './demo-client-http/demo-client-http.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {MockBackend} from "@angular/http/testing";
     PostComponent,
     AdminComponent,
     NoAccessComponent,
-    HomeComponent
+    HomeComponent,
+    DemoClientHttpComponent
 
   ],
   imports: [
@@ -34,7 +37,8 @@ import {MockBackend} from "@angular/http/testing";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
     PostService,

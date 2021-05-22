@@ -6,9 +6,10 @@ import { PostComponent } from './post/post.component';
 import {HomeComponent} from "./home/home.component";
 import {AdminComponent} from "./admin/admin.component";
 import {NoAccessComponent} from "./no-access/no-access.component";
+import {DemoClientHttpComponent} from "./demo-client-http/demo-client-http.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: DemoClientHttpComponent},
   { path: 'admin', component: AdminComponent} ,
   { path: 'login', component: LoginComponent },
   { path: 'no-access', component: NoAccessComponent},
