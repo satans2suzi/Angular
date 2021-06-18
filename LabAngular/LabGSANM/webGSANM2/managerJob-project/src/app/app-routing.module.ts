@@ -9,7 +9,7 @@ import {NoAccessComponent} from "./no-access/no-access.component";
 import {DemoClientHttpComponent} from "./demo-client-http/demo-client-http.component";
 
 const routes: Routes = [
-  { path: '', component: DemoClientHttpComponent},
+  { path: ' ', component: DemoClientHttpComponent},
   { path: 'admin', component: AdminComponent} ,
   { path: 'login', component: LoginComponent },
   { path: 'no-access', component: NoAccessComponent},

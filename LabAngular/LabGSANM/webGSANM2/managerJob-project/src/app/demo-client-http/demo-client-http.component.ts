@@ -14,7 +14,6 @@ export class DemoClientHttpComponent implements OnInit {
   constructor( private servicesDemo: DemoHttpService) { }
 
   ngOnInit(): void {
-
       this.servicesDemo.getUser()
         .subscribe(response => {
           this.users = response;

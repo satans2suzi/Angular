@@ -10,7 +10,7 @@ import {catchError, map, tap} from "rxjs/operators";
   providedIn: 'root'
 })
 export class DemoHttpService {
-  private userUrl = "https://jsonplaceholder.typicode.com/users";
+  private userUrl = "https://jsonplaceholder.typicode.com/todos";
   constructor(private http: HttpClient) {
 
   }
