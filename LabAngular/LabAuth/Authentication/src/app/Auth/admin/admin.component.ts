@@ -6,10 +6,13 @@ import {OrderService} from '../../../services/order.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor() { }
+  orders: any;
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.orderService.getOrders()
+      .subscribe(orders => this.orders = orders);
+
   }
 
 }
