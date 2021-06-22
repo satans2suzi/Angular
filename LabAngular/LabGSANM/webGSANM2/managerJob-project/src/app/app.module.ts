@@ -18,6 +18,10 @@ import {fakeBackendProvider} from "./helpers/fake-backend";
 import {MockBackend} from "@angular/http/testing";
 import { DemoClientHttpComponent } from './demo-client-http/demo-client-http.component';
 import {HttpClientModule} from "@angular/common/http";
+import { HomeDemoComponent } from './login-demo/home-demo/home-demo.component';
+import { AdminDemoComponent } from './login-demo/admin-demo/admin-demo.component';
+import { LoginDemoComponent } from './login-demo/login-demo/login-demo.component';
+import { NoAccessDemoComponent } from './login-demo/no-access-demo/no-access-demo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {HttpClientModule} from "@angular/common/http";
     AdminComponent,
     NoAccessComponent,
     HomeComponent,
-    DemoClientHttpComponent
+    DemoClientHttpComponent,
+    HomeDemoComponent,
+    AdminDemoComponent,
+    LoginDemoComponent,
+    NoAccessDemoComponent
 
   ],
   imports: [

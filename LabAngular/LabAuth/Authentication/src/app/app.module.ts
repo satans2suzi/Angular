@@ -38,7 +38,7 @@ import { fakeBackendProvider } from './Auth/helpers/helpers.component';
   providers: [
     OrderService,
     AuthService,
-    { provide: ErrorHandler, useFactory: AppErrorHandler},
+    // { provide: ErrorHandler, useFactory: AppErrorHandler},
     //For Createing a mockbackend
     fakeBackendProvider,
     MockBackend,
