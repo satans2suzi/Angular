@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   signIn(credentials) {
     this.authService.login(credentials)
       .subscribe(result => {
-        if (result)
+        if (result !== null)
           this.router.navigate(['/']);
         else
           this.invalidLogin = true;

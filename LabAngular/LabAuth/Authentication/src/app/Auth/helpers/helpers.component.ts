@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
-import {MockBackend , MockConnection } from '@angular/http/testing'
+import { MockBackend, MockConnection } from '@angular/http/testing'
 // @Component({
 //   selector: 'app-helpers',
 //   templateUrl: './helpers.component.html',
@@ -14,8 +14,8 @@ import {MockBackend , MockConnection } from '@angular/http/testing'
 //   }
 
 // }
-export function fakeBackendFactory( backend: MockBackend,
-                                    options: BaseRequestOptions){
+export function fakeBackendFactory(backend: MockBackend,
+  options: BaseRequestOptions) {
   let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA';
   backend.connections
   backend.connections.subscribe((connection: MockConnection) => {
@@ -34,7 +34,7 @@ export function fakeBackendFactory( backend: MockBackend,
             new ResponseOptions({
               status: 200,
               body: { token: token }
-           })));
+            })));
         } else {
           connection.mockRespond(new Response(
             new ResponseOptions({ status: 200 })
@@ -44,21 +44,21 @@ export function fakeBackendFactory( backend: MockBackend,
 
 
 
-       //
-       // Fake implementation of /api/orders
-       //
-       if (connection.request.url.endsWith('/api/orders') &&
-           connection.request.method === RequestMethod.Get) {
-         if (connection.request.headers.get('Authorization') === 'Bearer ' + token) {
-            connection.mockRespond(new Response(
-              new ResponseOptions({ status: 200, body: [1, 2, 3] })
-         ));
-       } else {
-           connection.mockRespond(new Response(
-             new ResponseOptions({ status: 401 })
-           ));
-       }
-    }
+      //
+      // Fake implementation of /api/orders
+      //
+      if (connection.request.url.endsWith('/api/orders') &&
+        connection.request.method === RequestMethod.Get) {
+        if (connection.request.headers.get('Authorization') === 'Bearer ' + token) {
+          connection.mockRespond(new Response(
+            new ResponseOptions({ status: 200, body: [1, 2, 3] })
+          ));
+        } else {
+          connection.mockRespond(new Response(
+            new ResponseOptions({ status: 401 })
+          ));
+        }
+      }
 
 
 
