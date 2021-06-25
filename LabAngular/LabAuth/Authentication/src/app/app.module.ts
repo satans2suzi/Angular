@@ -8,7 +8,7 @@ import { AdminComponent } from './Auth/admin/admin.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { NoAccessComponent } from './Auth/no-access/no-access.component';
 import {FormsModule} from '@angular/forms';
-import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 // import { HelpersComponent } from './Auth/helpers/helpers.component';
 import { NotFoundComponent } from './Auth/not-found/not-found.component';
@@ -33,13 +33,14 @@ import { fakeBackendProvider } from './Auth/helpers/helpers.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     AppRoutingModule
   ],
   providers: [
     OrderService,
     AuthService,
     // { provide: ErrorHandler, useFactory: AppErrorHandler},
-    //For Createing a mockbackend
+    // For Createing a mockbackend
     fakeBackendProvider,
     MockBackend,
     BaseRequestOptions

@@ -9,17 +9,18 @@ import { AuthService } from 'src/services/auth.service';
 export class LoginComponent implements OnInit {
   invalidLogin: boolean;
   constructor(private router: Router,
-    private authService: AuthService) { }
+              private authService: AuthService) { }
 
   ngOnInit(): void {
   }
-  signIn(credentials) {
+  signIn(credentials): void {
     this.authService.login(credentials)
       .subscribe(result => {
-        if (result !== null)
+        if (result !== undefined){
           this.router.navigate(['/']);
-        else
+        }else{
           this.invalidLogin = true;
+        }
       });
   }
 }
