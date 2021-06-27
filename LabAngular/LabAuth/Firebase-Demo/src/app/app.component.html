@@ -1,0 +1,16 @@
+<!--<h1> {{ title }}</h1>-->
+<!--<button (click)="ngOnDestroy()"> Go Offline</button>-->
+<input type="text" (keyup.enter)="add(course)" #course>
+<ul>
+  <li *ngFor="let course of courses$ | async">
+      {{ course.$value }}
+  </li>
+</ul>
+<ul *ngIf="course$ | async as courseDetail">
+  <li> {{ courseDetail.author }}</li>
+  <li>{{ courseDetail.price }}</li>
+  <li>{{ courseDetail.title }}</li>
+</ul>
+<p>
+  {{ course$ | async | json }}
+</p>

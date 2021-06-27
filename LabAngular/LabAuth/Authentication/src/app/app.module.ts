@@ -17,6 +17,8 @@ import { OrderService } from 'src/services/order.service';
 import { AuthService } from 'src/services/auth.service';
 import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './Auth/helpers/helpers.component';
+import {AuthGuardService} from '../services/auth-guard.service';
+import {AdminAuthGuardService} from '../services/admin-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { fakeBackendProvider } from './Auth/helpers/helpers.component';
     // For Createing a mockbackend
     fakeBackendProvider,
     MockBackend,
-    BaseRequestOptions
+    BaseRequestOptions,
+    AuthGuardService,
+    AdminAuthGuardService
   ],
   bootstrap: [AppComponent]
 })
