@@ -11,4 +11,8 @@ export class AppComponent {
   indeterminate = false;
   labelPosition: 'before' | 'after' = 'after';
   disabled = false;
+
+  onChange($event): any{
+    console.log($event);
+  }
 }
