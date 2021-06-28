@@ -9,5 +9,60 @@
     [disabled]="disabled">
     I'm a checkbox
   </mat-checkbox>
-  <div *ngIf="showDetail.checked"> Bla bla bla</div>125.212.243.120 10.86.197.18
+  <div *ngIf="showDetail.checked"> Bla bla bla</div>
 </section>
+
+
+<div> Radio Button</div>
+<mat-radio-group  aria-label="Select an option">
+  <mat-radio-button color="primary" (change)="onChange($event)" value="1">Option 1</mat-radio-button>
+  <mat-radio-button  (change)="onChange($event)" value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<p>You selected: {{selected}}</p>
+
+<h4>Basic native select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Cars</mat-label>
+  <select matNativeControl required>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</mat-form-field>
+
+
+<!-- INPUT-->
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>password</mat-label>
+    <input type="password" matInput placeholder="Ex. Pizza" value="password">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+
+</form>
+<mat-icon aria-hidden="false" aria-label="Example home icon">add_home</mat-icon>
+
+
+
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
