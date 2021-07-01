@@ -25,57 +25,52 @@ export class ReportComponent implements OnInit {
               {id: 15, nameDomain: "Văn phòng Chính phủ"},
               {id: 16, nameDomain: "Văn phòng Quốc hội"}
   ];
-  formReport = new FormGroup({
-    date: new FormControl(),
-    domainName: new FormGroup({
-      TCATTT: new FormControl(),
-      BCY: new FormControl(),
-      BKHCN: new FormControl(),
-      BACNINH: new FormControl(),
-      BNG: new FormControl(),
-      BTP: new FormControl(),
-      CA: new FormControl()
-    }),
-    offenseName: new FormGroup({
-       access: new FormControl(),
-       application: new FormControl(),
-       authentication: new FormControl(),
-       dos: new FormControl(),
-       Exploit: new FormControl(),
-       Malware: new FormControl(),
-       policy: new FormControl(),
-       potentialExploit: new FormControl(),
-       recon: new FormControl(),
-       risk: new FormControl(),
-       suspiciousActivity: new FormControl(),
-       system: new FormControl()
-    })
-  });
-  fromReport1;
+  formReport1;
   constructor(private formBuilder: FormBuilder) {
-  }
-
-  ngOnInit(): void {
-    this.fromReport1 = this.formBuilder.group({
-      date: this.formBuilder.control([]),
-      domainName: this.formBuilder.array([this.formBuilder.control('')]),
+    this.formReport1 = this.formBuilder.group({
+      date: this.formBuilder.control(''),
+      domainName: this.formBuilder.group({
+        TCATTT: this.formBuilder.control(false),
+        BCY: this.formBuilder.control(false),
+        BKHCN: this.formBuilder.control(false),
+        BACNINH: this.formBuilder.control(false),
+        BNG: this.formBuilder.control(false),
+        BTP: this.formBuilder.control(false),
+        CA: this.formBuilder.control(false),
+        CYBNG: this.formBuilder.control(false),
+        DANANG: this.formBuilder.control(false),
+        HANOI: this.formBuilder.control(false),
+        HCM: this.formBuilder.control(false),
+        GSANM: this.formBuilder.control(false),
+        QUANGNAM: this.formBuilder.control(false),
+        THAIBINH: this.formBuilder.control(false),
+        VPCP: this.formBuilder.control(false),
+        VPQH: this.formBuilder.control(false)
+      }),
       offenseName: this.formBuilder.group({
-        access: this.formBuilder.control([]),
-        application: this.formBuilder.control([]),
-        authentication: this.formBuilder.control([]),
-        dos: this.formBuilder.control([]),
-        Exploit: this.formBuilder.control([]),
-        Malware: this.formBuilder.control([]),
-        policy: this.formBuilder.control([]),
-        potentialExploit: this.formBuilder.control([]),
-        recon: this.formBuilder.control([]),
-        risk: this.formBuilder.control([]),
-        suspiciousActivity: this.formBuilder.control([]),
-        system: this.formBuilder.control([]),
+        access: this.formBuilder.control(0),
+        application: this.formBuilder.control(0),
+        authentication: this.formBuilder.control(0),
+        dos: this.formBuilder.control(0),
+        Exploit: this.formBuilder.control(0),
+        Malware: this.formBuilder.control(0),
+        policy: this.formBuilder.control(0),
+        potentialExploit: this.formBuilder.control(0),
+        recon: this.formBuilder.control(0),
+        risk: this.formBuilder.control(0),
+        suspiciousActivity: this.formBuilder.control(0),
+        system: this.formBuilder.control(0),
       })
     });
   }
+
+  ngOnInit(): void {
+
+  }
+  get getDate(): any{
+    return this.formReport1.get('date');
+  }
   get getDomainName(): FormArray {
-    return this.fromReport1.get('domainName') as FormArray;
+    return this.formReport1.get('domainName') as FormArray;
   }
 }

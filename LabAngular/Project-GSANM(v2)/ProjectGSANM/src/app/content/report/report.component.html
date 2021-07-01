@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <form [formGroup]="this.fromReport1">
+          <form [formGroup]="formReport1">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Nhập dữ liệu báo cáo</h3>
@@ -29,21 +29,27 @@
                     <div class="col-3">
                       <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Thời gian</mat-label>
-                        <input formControlName="" matInput [matDatepicker]="picker">
+                        <input formControlName="date" matInput [matDatepicker]="picker">
                         <mat-datepicker-toggle matSuffix [for]="picker">
                           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                         </mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                       </mat-form-field>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3" formGroupName="domainName">
+
+                        <h4>Select your toppings:</h4>
+                        <p><mat-checkbox formControlName="">Pepperoni</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="">Extra Cheese</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="">Mushroom</mat-checkbox></p>
 
                     </div>
                 </div>
               </div>
             </div>
+            <pre>value form: {{ formReport1.value | json }}</pre>
+            <pre>status form: {{ formReport1.status | json }}</pre>
           </form>
-          <pre>Selected range: {{ this.fromReport1.value | json}}</pre>
         </div>
       </div>
     </div>
