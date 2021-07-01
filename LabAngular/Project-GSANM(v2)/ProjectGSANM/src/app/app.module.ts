@@ -13,9 +13,11 @@ import { SlidebarComponent } from './main/slidebar/slidebar.component';
 import { ReportComponent } from './content/report/report.component';
 import { SeachReportComponent } from './content/seach-report/seach-report.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import {MatInputModule} from "@angular/material/input";
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatCheckboxModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
