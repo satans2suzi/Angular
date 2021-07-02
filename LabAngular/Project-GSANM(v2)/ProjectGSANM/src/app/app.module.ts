@@ -18,6 +18,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,10 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatOptionModule,
     MatCheckboxModule
   ],
-  providers: [MatDatepickerModule],
+  providers: [
+    MatDatepickerModule,
+    { provide: LocationStrategy, useClass: PathLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

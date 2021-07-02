@@ -19,4 +19,5 @@ export class Report{
 export class NameDomain{
   id: number;
   nameDomain: string;
+  status: boolean;
 }

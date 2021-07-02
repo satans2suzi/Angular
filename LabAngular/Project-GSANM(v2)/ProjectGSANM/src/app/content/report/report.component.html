@@ -26,7 +26,7 @@
               </div>
               <div class="card-body">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-6">
                       <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Thời gian</mat-label>
                         <input formControlName="date" matInput [matDatepicker]="picker">
@@ -36,13 +36,15 @@
                         <mat-datepicker #picker></mat-datepicker>
                       </mat-form-field>
                     </div>
-                    <div class="col-3" formGroupName="domainName">
-
-                        <h4>Select your toppings:</h4>
-                        <p><mat-checkbox formControlName="">Pepperoni</mat-checkbox></p>
-                        <p><mat-checkbox formControlName="">Extra Cheese</mat-checkbox></p>
-                        <p><mat-checkbox formControlName="">Mushroom</mat-checkbox></p>
-
+                    <div class="col-6" formGroupName="dataReport">
+                      <label> Frameworks </label>
+                      <div id="domainName">
+                        <div class="custom-checkbox">
+                          <label class="custom-checkbox">
+                            <input type="checkbox"> aaaaa
+                          </label>
+                        </div>
+                      </div>
                     </div>
                 </div>
               </div>
