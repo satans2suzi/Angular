@@ -1,0 +1,185 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Dashboard v3</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v3</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card card-info">
+            <div class="card-header">
+              <label class="card-title">Nhập dữ liệu báo cáo</label>
+            </div>
+            <div class="card-body">
+              <form class="">
+                <div class="row">
+                  <button class="form-control btn-default btn-sm">Submit</button>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <div class="row">
+                      <div class="col-12">
+                        <label class="col-form-label form-control-sm">Thời gian:</label>
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <input type="date" class="form-control form-control-sm form-control-border"
+                                     placeholder="Enter ...">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <label class="col-form-label form-control-sm">Mạng giám sát:</label>
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <select class="custom-select form-control form-control-border form-control-sm">
+                              <option *ngFor="let domain of listDomain"
+                                      [value]="domain.id">{{ domain.nameDomain }}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <div class="row">
+                      <div class="col-12">
+                        <label class="col-form-label form-control-sm">Số liệu cảnh báo hàng ngày</label>
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-4">
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Access:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Application:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Authentication:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Dos:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-4">
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Exploit:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Malware:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Policy:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Potential Exploit:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-4">
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Recon:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Risk:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">Suspicious Activity:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                  <div class="col-9">
+                                    <label class="col-form-label form-control-sm">System:</label>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control form-control-sm">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <pre>value form: {{ formReport1.value | json }}</pre>
+          <pre>status form: {{ formReport1.status | json }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

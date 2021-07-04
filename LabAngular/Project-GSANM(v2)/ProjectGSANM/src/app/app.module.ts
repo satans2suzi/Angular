@@ -19,6 +19,14 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@angular/common";
+import { NavDemoComponent } from './demo/nav-demo/nav-demo.component';
+import { SlideBarDemoComponent } from './demo/slide-bar-demo/slide-bar-demo.component';
+import { ContentTableDemoComponent } from './demo/content-table-demo/content-table-demo.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
+import { SendReportDemoComponent } from './demo/send-report-demo/send-report-demo.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,7 +36,11 @@ import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@ang
     NavbarComponent,
     SlidebarComponent,
     ReportComponent,
-    SeachReportComponent
+    SeachReportComponent,
+    NavDemoComponent,
+    SlideBarDemoComponent,
+    ContentTableDemoComponent,
+    SendReportDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +55,11 @@ import {HashLocationStrategy, LocationStrategy, PathLocationStrategy} from "@ang
     MatInputModule,
     MatSelectModule,
     MatOptionModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [
     MatDatepickerModule,

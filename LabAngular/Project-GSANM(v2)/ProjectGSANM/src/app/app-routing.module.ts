@@ -5,6 +5,8 @@ import {LoginComponent} from './authentication/login/login.component';
 import {RegisterComponent} from './authentication/register/register.component';
 import {ReportComponent} from './content/report/report.component';
 import {SeachReportComponent} from './content/seach-report/seach-report.component';
+import {ContentTableDemoComponent} from "./demo/content-table-demo/content-table-demo.component";
+import {SendReportDemoComponent} from "./demo/send-report-demo/send-report-demo.component";
 
 const routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -19,8 +21,21 @@ const routes: Routes = [
       {
         path: "searchReport",
         component: SeachReportComponent
-      }      ]
-  }];
+      }]
+  },
+  { path: 'demo',
+    children: [
+      {
+        path: "demo-table",
+        component: ContentTableDemoComponent
+      },
+      {
+        path: "demo-sendReport",
+        component: SendReportDemoComponent
+      }]
+  },
+
+];
 
 @NgModule({
   declarations: [],

@@ -1,20 +1,17 @@
-export class Report{
-  public date: number;
-  public access: number;
-  public application: number;
-  public authentication: number;
-  public dos: number;
-  public Exploit: number;
-  public Malware: number;
-  public policy: number;
-  public potentialExploit: number;
-  public recon: number;
-  public risk: number;
-  public suspiciousActivity: number;
-  public system: number;
-
-  constructor() {
-  }
+export interface Report{
+  date: number;
+  access: number;
+  application: number;
+  authentication: number;
+  dos: number;
+  Exploit: number;
+  Malware: number;
+  policy: number;
+  potentialExploit: number;
+  recon: number;
+  risk: number;
+  suspiciousActivity: number;
+  system: number;
 }
 export class NameDomain{
   id: number;
