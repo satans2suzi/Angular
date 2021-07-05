@@ -49,8 +49,8 @@
               "node_modules/admin-lte/plugins/datatables-buttons/js/buttons.html5.min.js",
               "node_modules/admin-lte/plugins/datatables-buttons/js/buttons.print.min.js",
               "node_modules/admin-lte/plugins/datatables-buttons/js/buttons.colVis.min.js",
-              "src/app/demo/send-report-demo/demo-table.js",
-              "node_modules/admin-lte/dist/js/demo.js"
+              "src/app/demo/send-report-demo/demo-table.js"
+
             ],
             "vendorChunk": true,
             "extractLicenses": false,

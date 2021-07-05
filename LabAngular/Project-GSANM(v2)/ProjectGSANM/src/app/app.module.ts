@@ -27,6 +27,11 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatCardModule} from "@angular/material/card";
 import { SendReportDemoComponent } from './demo/send-report-demo/send-report-demo.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { Table2DemoComponent } from './demo/table2-demo/table2-demo.component';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -40,27 +45,32 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     NavDemoComponent,
     SlideBarDemoComponent,
     ContentTableDemoComponent,
-    SendReportDemoComponent
+    SendReportDemoComponent,
+    Table2DemoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatInputModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatCheckboxModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatCardModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatInputModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatCheckboxModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatCardModule,
+        HttpClientModule,
+        MatTableModule,
+        MatSortModule,
+        MatPaginatorModule,
+        MatButtonModule
+    ],
   providers: [
     MatDatepickerModule,
     { provide: LocationStrategy, useClass: PathLocationStrategy}

@@ -26,20 +26,7 @@ export class ContentTableDemoComponent implements OnInit {
     {id: 15, nameDomain: "Văn phòng Chính phủ", status: false},
     {id: 16, nameDomain: "Văn phòng Quốc hội", status: false}
   ];
-  listNameOffenses = [
-        'Access',
-        'Application',
-        'Authentication',
-        'Dos',
-        'Exploit',
-        'Malware',
-        'Policy',
-        'PotentialExploit',
-        'Recon',
-        'Risk',
-        'SuspiciousActivity',
-        'System',
-  ];
+
   constructor(private fb: FormBuilder) { }
   formReport1;
   formReport2;

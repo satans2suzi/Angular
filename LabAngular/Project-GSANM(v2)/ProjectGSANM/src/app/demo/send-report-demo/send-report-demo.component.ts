@@ -1,9 +1,31 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormBuilder} from "@angular/forms";
 import {NameDomain} from "../../../model/report.model";
 import {ReportModel} from "../../../model/model-demo/demo.model";
 import {ApiDemoService} from "../../../services/service-demo/api-demo.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+
+// Demo-Table-Material
+export interface UserData {
+  id: string;
+  name: string;
+  progress: string;
+  fruit: string;
+}
+
+/** Constants used to fill up our data base. */
+const FRUITS: string[] = [
+  'blueberry', 'lychee', 'kiwi', 'mango', 'peach', 'lime', 'pomegranate', 'pineapple'
+];
+const NAMES: string[] = [
+  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
+  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
+];
+
+// End-Demo
 
 
 @Component({
@@ -12,13 +34,34 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
   styleUrls: ['./send-report-demo.component.css']
 })
 export class SendReportDemoComponent implements OnInit {
+  reportData !: any;
+  // Demo-Table
+  // displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  // displayedColumns: string[] = ['Thời gian', 'Mạng Giám Sát', 'Loại Cảnh Báo', 'Địa Chỉ Nguồn', 'Địa Chỉ Đích', 'Nội Dung', 'Hành Động'];
+  // dataSource: MatTableDataSource<UserData>;
+  // dataSource: MatTableDataSource<ReportModel>;
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatSort) sort: MatSort;
+
+  // End Demo
+
   reportModelObj: ReportModel = new ReportModel();
-  reoortData !: any;
+
   formReport;
-
-  constructor(private fb: FormBuilder, private api: ApiDemoService) {
-  }
-
+  listNameOffenses = [
+    { id: 1, name: 'Access'},
+    { id: 2, name: 'Application'},
+    { id: 3, name: 'Authentication'},
+    { id: 4, name: 'Dos'},
+    { id: 5, name: 'Exploit'},
+    { id: 6, name: 'Malware'},
+    { id: 7, name: 'Policy'},
+    { id: 8, name: 'PotentialExploit'},
+    { id: 9, name: 'Recon'},
+    { id: 10, name: 'Risk'},
+    { id: 11, name: 'SuspiciousActivity'},
+    { id: 12, name: 'System'},
+  ];
 
   listDomain: NameDomain[] = [
     {id: 1, nameDomain: 'Tạp chí An Toàn Thông Tin', status: false},
@@ -40,6 +83,17 @@ export class SendReportDemoComponent implements OnInit {
   ];
 
 
+  constructor(private fb: FormBuilder, private api: ApiDemoService) {
+    // Demo-Table
+    // Create 100 users
+    // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+
+    // Assign the data to the data source for the table to render
+    // this.dataSource1 = new MatTableDataSource(users);
+
+    // End Demo-Table
+  }
+
   ngOnInit(): void {
     this.formReport = this.fb.group({
       date: [],
@@ -56,6 +110,20 @@ export class SendReportDemoComponent implements OnInit {
     });
     this.getAllReport();
   }
+  // Demo-Table
+  // ngAfterViewInit(): any {
+  //   this.dataSource.paginator = this.paginator;
+  //   this.dataSource.sort = this.sort;
+  // }
+  // applyFilter(event: Event): any {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  //
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
+  // End-Demo
 
   postReportDetails(): any {
     this.reportModelObj.date = this.formReport.value.date;
@@ -72,7 +140,7 @@ export class SendReportDemoComponent implements OnInit {
       .subscribe(res => {
           console.log(res);
           alert("Report added");
-          let ref = document.getElementById('cancel');
+          const ref = document.getElementById('cancel');
           ref?.click();
           this.formReport.reset();
           this.getAllReport();
@@ -86,7 +154,7 @@ export class SendReportDemoComponent implements OnInit {
   getAllReport(): any {
     this.api.getReport()
       .subscribe(res => {
-        this.reoortData = res;
+        this.reportData = res;
       });
   }
 
@@ -141,10 +209,21 @@ export class SendReportDemoComponent implements OnInit {
     this.api.updateReport(this.reportModelObj, this.reportModelObj.id)
       .subscribe(res => {
         alert("Updated");
-        let ref = document.getElementById('cancel');
+        const ref = document.getElementById('cancel');
         ref?.click();
         this.formReport.reset();
         this.getAllReport();
       });
   }
 }
+// function createNewUser(id: number): UserData {
+//   const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+//     NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+//
+//   return {
+//     id: id.toString(),
+//     name: name,
+//     progress: Math.round(Math.random() * 100).toString(),
+//     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))]
+//   };
+// }
