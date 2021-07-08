@@ -1,16 +1,6 @@
 {
   "posts": [
     {
-      "date": "2021-07-30",
-      "domainName": "Bộ Khoa học Công nghệ",
-      "sourceIP": "123rrrr",
-      "destinationIP": "rrrr",
-      "typeOffense": "Exploit",
-      "content": "rrr",
-      "note": "rrr",
-      "id": 20
-    },
-    {
       "date": "2021-07-13",
       "domainName": "Bắc Ninh",
       "sourceIP": "192.168.10.10",

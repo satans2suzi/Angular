@@ -1,109 +1,133 @@
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Dashboard v3</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard v3</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-          <mat-form-field floatLabel="never" appearance="standard">
-            <input matInput [(ngModel)]="searchkey" autocomplete="off" (keyup)="applyFilter()" placeholder="Ex. Mia" #input>
-            <mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchkey" (click)="onSearchClear()" >
-              <mat-icon>close</mat-icon>
-            </mat-button>
-          </mat-form-field>
+<mat-toolbar>
 
-          <div class="mat-elevation-z8">
-            <mat-table mat-table [dataSource]="dataSource" matSort>
-              <!-- ID Column -->
-              <ng-container matColumnDef="Thời gian">
-                <mat-header-cell class="col-sm-1" *matHeaderCellDef mat-sort-header> Thời gian</mat-header-cell>
-                <mat-cell class="col-sm-1" *matCellDef="let row"> {{row.date}} </mat-cell>
-              </ng-container>
+  Responsive side navigation
+</mat-toolbar>
 
-              <!-- Progress Column -->
-              <ng-container matColumnDef="Mạng giám sát">
-                <mat-header-cell class="col-sm-2" *matHeaderCellDef mat-sort-header> Mạng giám sát</mat-header-cell>
-                <mat-cell class="col-sm-2" *matCellDef="let row"> {{row.domainName}} </mat-cell>
-              </ng-container>
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8">
+    ...
+  </mat-sidenav>
 
-              <!-- Name Column -->
-              <ng-container matColumnDef="Địa chỉ nguồn">
-                <mat-header-cell class="col-sm-1" *matHeaderCellDef mat-sort-header> Địa chỉ nguồn</mat-header-cell>
-                <mat-cell class="col-sm-1" *matCellDef="let row"> {{row.sourceIP}} </mat-cell>
-              </ng-container>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      Main content here!
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-form-field floatLabel="never"
+          appearance="standard">
+          <input matInput
+            [(ngModel)]="searchkey"
+            autocomplete="off"
+            (keyup)="applyFilter()"
+            placeholder="Search"
+            #input>
+          <mat-button matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            *ngIf="searchkey"
+            (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+          </mat-button>
+        </mat-form-field>
+        <div class="mat-elevation-z8">
+          <mat-table mat-table
+            [dataSource]="dataSource"
+            matSort>
+            <ng-container matColumnDef="Thời gian">
+              <mat-header-cell class="col-sm-1"
+                *matHeaderCellDef
+                mat-sort-header> Thời gian</mat-header-cell>
+              <mat-cell class="col-sm-1"
+                *matCellDef="let row"> {{row.date}} </mat-cell>
+            </ng-container>
 
-              <!-- Name Column -->
-              <ng-container matColumnDef="Địa chỉ đích">
-                <mat-header-cell class="col-sm-1" *matHeaderCellDef mat-sort-header> Địa chỉ đích</mat-header-cell>
-                <mat-cell class="col-sm-1" *matCellDef="let row"> {{row.destinationIP}} </mat-cell>
-              </ng-container>
 
-              <!-- Name Column -->
-              <ng-container matColumnDef="Loại cảnh báo">
-                <mat-header-cell class="col-sm-2" *matHeaderCellDef mat-sort-header> Loại cảnh báo</mat-header-cell>
-                <mat-cell class="col-sm-2" *matCellDef="let row"> {{row.typeOffense}} </mat-cell>
-              </ng-container>
+            <ng-container matColumnDef="Mạng giám sát">
+              <mat-header-cell class="col-sm-2"
+                *matHeaderCellDef
+                mat-sort-header> Mạng giám sát</mat-header-cell>
+              <mat-cell class="col-sm-2"
+                *matCellDef="let row"> {{row.domainName}} </mat-cell>
+            </ng-container>
 
-              <!-- Name Column -->
-              <ng-container matColumnDef="Nội dung">
-                <mat-header-cell class="col-sm-4" *matHeaderCellDef mat-sort-header> Nội dung</mat-header-cell>
-                <mat-cell class="col-sm-4" *matCellDef="let row"> {{row.content}} </mat-cell>
-              </ng-container>
 
-              <ng-container matColumnDef="Hành động">
-                <mat-header-cell class="col-sm-1" *matHeaderCellDef> Hành động</mat-header-cell>
-                <mat-cel class="col-sm-1" mat-cell *matCellDef="let row">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
-                      </div>
+            <ng-container matColumnDef="Địa chỉ nguồn">
+              <mat-header-cell class="col-sm-1"
+                *matHeaderCellDef
+                mat-sort-header> Địa chỉ nguồn</mat-header-cell>
+              <mat-cell class="col-sm-1"
+                *matCellDef="let row"> {{row.sourceIP}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Địa chỉ đích">
+              <mat-header-cell class="col-sm-1"
+                *matHeaderCellDef
+                mat-sort-header> Địa chỉ đích</mat-header-cell>
+              <mat-cell class="col-sm-1"
+                *matCellDef="let row"> {{row.destinationIP}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Loại cảnh báo">
+              <mat-header-cell class="col-sm-2"
+                *matHeaderCellDef
+                mat-sort-header> Loại cảnh báo</mat-header-cell>
+              <mat-cell class="col-sm-2"
+                *matCellDef="let row"> {{row.typeOffense}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Nội dung">
+              <mat-header-cell class="col-sm-4"
+                *matHeaderCellDef
+                mat-sort-header> Nội dung</mat-header-cell>
+              <mat-cell class="col-sm-4"
+                *matCellDef="let row"> {{row.content}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Hành động">
+              <mat-header-cell class="col-sm-1"
+                *matHeaderCellDef> Hành động</mat-header-cell>
+              <mat-cel class="col-sm-1"
+                mat-cell
+                *matCellDef="let row">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
                     </div>
                   </div>
-                </mat-cel>
-              </ng-container>
-              <!--              <ng-container matColumnDef="loading">-->
-              <!--                <mat-footer-cell *matFooterCellDef colspan="6">-->
-              <!--                  Loadding-->
-              <!--                </mat-footer-cell>-->
-              <!--              </ng-container>-->
-              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-              <!--              <mat-footer-row *matFooterRowDef="['loading']"></mat-footer-row>-->
-              <!-- Row shown when there is no matching data. -->
-              <mat-header-cell class="mat-row" *matNoDataRow>
-                <mat-cel class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</mat-cel>
-              </mat-header-cell>
-            </mat-table>
-            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-          </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
+                    </div>
+                  </div>
+                </div>
+              </mat-cel>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-header-cell class="mat-row"
+              *matNoDataRow>
+              <mat-cel class="mat-cell"
+                colspan="4">No data matching the filter "{{input.value}}"</mat-cel>
+            </mat-header-cell>
+          </mat-table>
+          <mat-paginator [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
         </div>
       </div>
     </div>
   </div>
-</div>
-
+</div> -->
