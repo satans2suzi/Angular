@@ -1,36 +1,35 @@
+
 mat-toolbar {
-    background: #004a9f;
-    color: white;
+  background: #2b568d;
+  color: white;
 
 }
 
 mat-sidenav {
-    margin: 16px;
-    width: 250px;
-    border-right: none;
-    background: #94b2d4;
-    color: white;
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
+  margin: 16px;
+  width: 250px;
+  border-right: none;
+  background: #94b2d4;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
 }
 
 .content {
-    height: calc(100vh - 98px);
-    border-radius: 10px;
-    margin: 16px;
-    margin-left: 32px;
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
 
-    font-size: 2rem;
-    color: lightgray;
+  font-size: 2rem;
+  color: lightgray;
 }
 
 mat-sidenav-container {
-    height: calc(100vh - 65px);
+  height: calc(100vh - 65px);
 }
 
 .example-container {
@@ -43,3 +42,67 @@ mat-sidenav-container {
   right: 0;
 }
 
+/*.example-is-mobile .example-toolbar {*/
+/*  position: fixed;*/
+/*  !* Make sure the toolbar will stay on top of the content as it scrolls past. *!*/
+/*  z-index: 2;*/
+/*}*/
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  border-color: #2b568d ;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+
+
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.example-accordion {
+  display: block;
+  max-width: 500px;
+}
+
+.example-accordion-item {
+  display: block;
+  border: solid 1px #ccc;
+}
