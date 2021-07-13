@@ -1,116 +1,297 @@
-<div class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <mat-form-field floatLabel="never"
-                        appearance="standard">
-          <input matInput
-                 [(ngModel)]="searchkey"
-                 autocomplete="off"
-                 (keyup)="applyFilter()"
-                 placeholder="Search"
-                 #input>
-          <mat-button matSuffix
-                      mat-icon-button
-                      aria-label="Clear"
-                      *ngIf="searchkey"
-                      (click)="onSearchClear()">
-            <mat-icon>close</mat-icon>
-          </mat-button>
-        </mat-form-field>
-        <div class="mat-elevation-z8">
-          <mat-table mat-table
-                     [dataSource]="dataSource"
-                     matSort>
-            <ng-container matColumnDef="Thời gian">
-              <mat-header-cell class="col-sm-1"
-                               *matHeaderCellDef
-                               mat-sort-header> Thời gian</mat-header-cell>
-              <mat-cell class="col-sm-1"
-                        *matCellDef="let row"> {{row.date}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="Mạng giám sát">
-              <mat-header-cell class="col-sm-2"
-                               *matHeaderCellDef
-                               mat-sort-header> Mạng giám sát</mat-header-cell>
-              <mat-cell class="col-sm-2"
-                        *matCellDef="let row"> {{row.domainName}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="Địa chỉ nguồn">
-              <mat-header-cell class="col-sm-1"
-                               *matHeaderCellDef
-                               mat-sort-header> Địa chỉ nguồn</mat-header-cell>
-              <mat-cell class="col-sm-1"
-                        *matCellDef="let row"> {{row.sourceIP}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="Địa chỉ đích">
-              <mat-header-cell class="col-sm-1"
-                               *matHeaderCellDef
-                               mat-sort-header> Địa chỉ đích</mat-header-cell>
-              <mat-cell class="col-sm-1"
-                        *matCellDef="let row"> {{row.destinationIP}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="Loại cảnh báo">
-              <mat-header-cell class="col-sm-2"
-                               *matHeaderCellDef
-                               mat-sort-header> Loại cảnh báo</mat-header-cell>
-              <mat-cell class="col-sm-2"
-                        *matCellDef="let row"> {{row.typeOffense}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="Nội dung">
-              <mat-header-cell class="col-sm-4"
-                               *matHeaderCellDef
-                               mat-sort-header> Nội dung</mat-header-cell>
-              <mat-cell class="col-sm-4"
-                        *matCellDef="let row"> {{row.content}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="Hành động">
-              <mat-header-cell class="col-sm-1"
-                               *matHeaderCellDef> Hành động</mat-header-cell>
-              <mat-cell class="col-sm-1"
-                       mat-cell
-                       *matCellDef="let row">
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Dashboard v3</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v3</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <div class="content text-sm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="formSendReport">
                 <div class="row">
-                  <div class="col-sm-3">
+                  <div class="col-sm-2">
+                    <!-- text input -->
                     <div class="form-group">
-                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
+                      <label class="col-form-label form-control-sm">Thời gian</label>
+                      <input formControlName="date" type="date" class="form-control form-control-sm form-control-border"
+                             placeholder="Enter ...">
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                      <label class="col-form-label form-control-sm">Mạng giám sát:</label>
+                      <select formControlName="domainName" class="form-control form-control-sm form-control-border ">
+                        <option *ngFor="let domain of listDomain"
+                                [value]="domain.nameDomain">{{ domain.nameDomain }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="form-group">
+                      <label class="col-form-label form-control-sm">Loại cảnh báo</label>
+                      <select formControlName="typeOffense" class="form-control form-control-sm form-control-border ">
+                        <option *ngFor="let typeoffense of listNameOffenses"
+                                [value]="typeoffense.nameOffense">{{ typeoffense.nameOffense }}</option>
+                      </select>
                     </div>
                   </div>
                   <div class="col-sm-3">
+                    <!-- text input -->
                     <div class="form-group">
-                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
+                      <label class="col-form-label form-control-sm">Địa chỉ nguồn:</label>
+                      <input formControlName="sourceIP" type="text" id="sourceIpInput"
+                             class="form-control form-control-sm" placeholder="Enter ...">
                     </div>
                   </div>
                   <div class="col-sm-3">
+                    <!-- text input -->
                     <div class="form-group">
-                      <mat-icon class="custom-mat-icon">open_in_new</mat-icon>
+                      <label class="col-form-label form-control-sm">Địa chỉ đích:</label>
+                      <input formControlName="destinationIP" type="text" id="destinationIpInput"
+                             class="form-control form-control-sm" placeholder="Enter ...">
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- textarea -->
+                    <div class="form-group">
+                      <label class="col-form-label form-control-sm">Nội dung cảnh báo</label>
+                      <textarea formControlName="content" class="form-control form-control-sm" rows="3"
+                                placeholder="Enter ..."></textarea>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="col-form-label form-control-sm"><i class="fas fa-check"></i>Ghi chú</label>
+                      <textarea formControlName="note" class="form-control form-control-sm" rows="3"
+                                placeholder="Enter ..."></textarea>
                     </div>
                   </div>
                 </div>
-              </mat-cell>
-            </ng-container>
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            <mat-header-cell class="mat-row"
-                             *matNoDataRow>
-              <mat-cell class="mat-cell"
-                       colspan="4">No data matching the filter "{{input.value}}"</mat-cell>
-            </mat-header-cell>
-          </mat-table>
-          <mat-paginator [pageSize]="5"
-                         [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- checkbox -->
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label class="col-form-label form-control-sm">Trạng thái cảnh báo:</label>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <input formControlName="oldReport" class="form-check-input" type="checkbox">
+                                  <label class="form-check-label">Cảnh báo lại</label>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <input formControlName="newReport" class="form-check-input" type="checkbox">
+                                  <label class="form-check-label">Cảnh báo mới</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-1">
+                    <div class="form-group-sm">
+                      <button (click)="postDataSendReportObj()" class="form-control btn-primary btn-sm">Thêm</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card text-sm">
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped table-sm">
+                <thead>
+                <tr>
+                  <th scope="col" class="col-sm-1">Thời gian</th>
+                  <th scope="col" class="col-sm-2">Mạng giám sát</th>
+                  <th scope="col" class="col-sm-1">Địa chỉ nguồn</th>
+                  <th scope="col" class="col-sm-1">Địa chỉ đích</th>
+                  <th scope="col" class="col-sm-1">Loại cảnh báo</th>
+                  <th scope="col" class="col-sm-4">Nội dung</th>
+                  <th scope="col" class="col-sm-1">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let row of dataSendReport">
+                  <td>{{ row.date }}</td>
+                  <td>{{ row.domainName }}</td>
+                  <td>{{ row.sourceIP }}</td>
+                  <td>{{ row.destinationIP }}</td>
+                  <td>{{ row.typeOffense }}</td>
+                  <td>{{ row.content }}</td>
+                  <td>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <mat-icon (click)="onEdit(row)"
+                                  data-toggle="modal"
+                                  data-target="#exampleModal">details
+                        </mat-icon>
+                      </div>
+                      <div class="col-sm-4">
+
+                        <mat-icon (click)="onEdit(row)"
+                                  data-toggle="modal"
+                                  data-target="#exampleModal">edit
+                        </mat-icon>
+                      </div>
+                      <div class="col-sm-4">
+                        <mat-icon (click)="deleteDataSendReport(row)"
+                                  >delete
+                        </mat-icon>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Thời gian</th>
+                  <th>Mạng giám sát</th>
+                  <th>Địa chỉ nguồn</th>
+                  <th>Địa chỉ đích</th>
+                  <th>Loại cảnh báo</th>
+                  <th>Nội dung</th>
+                  <th>Action</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade text-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cập nhật cảnh báo gửi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formSendReport">
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- text input -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Thời gian</label>
+                  <input formControlName="date" type="date" class="form-control form-control-sm form-control-border"
+                         placeholder="Enter ...">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <!-- text input -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Mạng giám sát</label>
+                  <select formControlName="domainName" class="form-control form-control-sm form-control-border ">
+                    <option *ngFor="let domain of listDomain"
+                            [value]="domain.nameDomain">{{ domain.nameDomain }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Địa chỉ nguồn</label>
+                  <input formControlName="sourceIP" type="text" id="sourceIpUpdateInput"
+                         class="form-control form-control-sm" placeholder="Enter ...">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Địa chỉ đích</label>
+                  <input formControlName="destinationIP" type="text" id="destinationIpUpdateInput"
+                         class="form-control form-control-sm" placeholder="Enter ...">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Loại cảnh báo</label>
+                  <select formControlName="typeOffense" class="form-control form-control-sm form-control-border ">
+                    <option *ngFor="let typeoffense of listNameOffenses"
+                            [value]="typeoffense.nameOffense">{{ typeoffense.nameOffense }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- textarea -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Nội dung cảnh báo</label>
+                  <textarea formControlName="content" class="form-control form-control-sm" rows="3"
+                            placeholder="Enter ..."></textarea>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm"><i class="fas fa-check"></i>Ghi chú</label>
+                  <textarea formControlName="note" class="form-control form-control-sm" rows="3"
+                            placeholder="Enter ..."></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <!-- checkbox -->
+                <div class="form-group">
+                  <label class="col-form-label form-control-sm">Trạng thái cảnh báo </label>
+                  <div class="form-check">
+                    <input formControlName="oldReport" class="form-check-input" type="checkbox">
+                    <label class="form-check-label">Cảnh báo lại</label>
+                  </div>
+                  <div class="form-check">
+                    <input formControlName="newReport" class="form-check-input" type="checkbox">
+                    <label class="form-check-label">Cảnh báo mới</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="updateDataSendReport()" class="btn btn-primary">Cập nhật</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+

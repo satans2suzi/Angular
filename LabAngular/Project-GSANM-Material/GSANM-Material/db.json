@@ -1,6 +1,7 @@
 {
   "posts": [
     {
+      "id": 21,
       "date": "2021-07-13",
       "domainName": "Bắc Ninh",
       "sourceIP": "192.168.10.10",
@@ -8,7 +9,8 @@
       "typeOffense": "Exploit",
       "content": "ABC",
       "note": "ABC",
-      "id": 21
+      "oldReport": true,
+      "newReport": true
     },
     {
       "date": "2021-07-29",
@@ -41,24 +43,16 @@
       "id": 24
     },
     {
-      "date": "2021-08-08",
-      "domainName": "Hà Nội",
-      "sourceIP": "000000",
-      "destinationIP": "0000",
-      "typeOffense": "Policy",
-      "content": "dđ",
-      "note": "ddấd",
-      "id": 25
-    },
-    {
-      "date": "2021-07-29",
-      "domainName": "Chứng thực số và Bảo mật thông tin",
-      "sourceIP": "333",
-      "destinationIP": "3333",
-      "typeOffense": "PotentialExploit",
-      "content": "1",
-      "note": "1",
-      "id": 26
+      "id": 25,
+      "date": "2021-07-31",
+      "domainName": "Cơ Yếu Bộ Ngoại giao",
+      "sourceIP": "192.168.10.10",
+      "destinationIP": "192.168.10.2",
+      "typeOffense": "Dos",
+      "content": "CVE-2021",
+      "note": "",
+      "oldReport": false,
+      "newReport": true
     }
   ],
   "comments": [],

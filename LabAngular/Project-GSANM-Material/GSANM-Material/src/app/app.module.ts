@@ -10,15 +10,19 @@ import {DayReportComponent} from './main/day-report/day-report.component';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {DemoMaterialModule} from './material-module';
 import {CdkAccordionModule} from "@angular/cdk/accordion";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { SidenavComponent } from './main/sidenav/sidenav.component';
+import { NavbarComponent } from './main/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SlidenavComponent,
     SendReportComponent,
-    DayReportComponent
+    DayReportComponent,
+    SidenavComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     DemoMaterialModule,
     CdkAccordionModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
