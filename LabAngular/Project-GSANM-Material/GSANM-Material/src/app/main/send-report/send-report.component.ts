@@ -4,7 +4,7 @@ import {ApiJsonService} from '../../services/api-json.service'
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Form, FormBuilder, FormGroup} from "@angular/forms";
 import {sendReportModel} from "../../model/sendReportForm.model";
 
 @Component({
@@ -47,12 +47,26 @@ export class SendReportComponent implements OnInit {
     {id: 16, nameDomain: "Văn phòng Quốc hội", status: false}
   ];
   dataSendReportObj: sendReportModel = new sendReportModel();
+  dataEditSendReportObj: sendReportModel = new sendReportModel();
   formSendReport !: FormGroup;
+  formEditSendReport !: FormGroup;
   dataSendReport !: any;
+  dataEditSendReport !: any;
 
   constructor(private api: ApiJsonService,
               private fb: FormBuilder) {
     this.formSendReport = this.fb.group({
+      date: [''],
+      domainName: [''],
+      sourceIP: [''],
+      destinationIP: [''],
+      typeOffense: [''],
+      content: [''],
+      note: [''],
+      oldReport: [false],
+      newReport: [true]
+    })
+    this.formEditSendReport = this.fb.group({
       date: [''],
       domainName: [''],
       sourceIP: [''],

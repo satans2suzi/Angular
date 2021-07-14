@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SidenavComponent } from './main/sidenav/sidenav.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
+import { ModalSendReportComponent } from './main/modal-send-report/modal-send-report.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './main/navbar/navbar.component';
     SendReportComponent,
     DayReportComponent,
     SidenavComponent,
-    NavbarComponent
+    NavbarComponent,
+    ModalSendReportComponent
   ],
   imports: [
     BrowserModule,
