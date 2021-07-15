@@ -10,7 +10,7 @@ import {DeleteProductComponent} from "./delete-product/delete-product.component"
 import {UpdateProductComponent} from "./update-product/update-product.component";
 
 const routes: Routes = [
-  { path: '', component: ProductsComponent },
+  { path: '', component: ViewAllProductComponent },
   { path: 'create-product', component: CreateProductComponent },
   { path: 'list-product', component: ViewAllProductComponent },
   { path: 'search', component: ViewAllProductByCategoryComponent },

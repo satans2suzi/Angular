@@ -10,5 +10,19 @@
       "color": "red",
       "categoory": 1
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Tablet"
+    },
+    {
+      "id": 2,
+      "name": "Mobiles"
+    },
+    {
+      "id": 3,
+      "name": "TiVi"
+    }
   ]
 }

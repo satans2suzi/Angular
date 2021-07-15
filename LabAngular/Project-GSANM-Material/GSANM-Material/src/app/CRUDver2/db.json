@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "productId": 1,
+      "categoryId": 1,
+      "productName": "Áo Trung Quốc",
+      "description": "Hàng Tàu đừng mua",
+      "rating": 1,
+      "price": 20,
+      "productImg": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftngfashion.vn%2F&psig=AOvVaw3LFNChEEvwuqkI6uzroet7&ust=1626438977129000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLCl-76L5fECFQAAAAAdAAAAABAD",
+      "isAvailable": true,
+      "color": "white",
+      "reviews": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Quần Áo"
+    },
+    {
+      "id": 2,
+      "name": "Đồ gia dụng"
+    },
+    {
+      "id": 3,
+      "name": "Giầy dép"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "name": "Quần áo chán quá"
+    },
+    {
+      "id": 2,
+      "name": "Quần áo dùng được đấy"
+    },
+    {
+      "id": 3,
+      "name": "Ship đồ nhanh"
+    }
+  ]
+}

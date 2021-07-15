@@ -14,6 +14,7 @@ import { FooderComponent } from './fooder/fooder.component';
   ],
   imports: [
     CommonModule
+
   ],
   exports: [
     HeaderComponent,
