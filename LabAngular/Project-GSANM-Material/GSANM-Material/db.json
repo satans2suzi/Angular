@@ -1,42 +1,14 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 25,
-      "date": "2021-07-24",
-      "domainName": "",
-      "sourceIP": "",
-      "destinationIP": "",
-      "typeOffense": "",
-      "content": "",
-      "note": ""
-    },
-    {
-      "id": 26,
-      "date": "2021-07-08",
-      "domainName": "Chứng thực số và Bảo mật thông tin",
-      "sourceIP": "ádasd",
-      "destinationIP": "ádasd",
-      "typeOffense": "Exploit",
-      "content": "adasdas",
-      "note": "ádasd",
-      "oldReport": null,
-      "newReport": true
-    },
-    {
-      "id": 27,
-      "date": "2021-07-04",
-      "domainName": "Bắc Ninh",
-      "sourceIP": "567",
-      "destinationIP": "654",
-      "typeOffense": "Recon",
-      "content": "999",
-      "note": "999",
-      "oldReport": null,
-      "newReport": null
+      "id": 1,
+      "product_name": "Samsung",
+      "is_available": false,
+      "product_img": "http://google.com",
+      "price": 12345,
+      "rating": 4,
+      "color": "red",
+      "categoory": 1
     }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import { OrdersModule } from "./CRUDver2/orders/orders.module";
+
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -15,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { SidenavComponent } from './main/sidenav/sidenav.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
 import { ModalSendReportComponent } from './main/modal-send-report/modal-send-report.component';
+import { SiteFrameworkModule } from "./CRUDver2/site-framework/site-framework.module";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { ModalSendReportComponent } from './main/modal-send-report/modal-send-re
     CdkAccordionModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OrdersModule,
+    SiteFrameworkModule
   ],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]

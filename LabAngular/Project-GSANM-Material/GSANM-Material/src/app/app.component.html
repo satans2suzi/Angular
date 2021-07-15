@@ -1,6 +1,23 @@
-<div class="wrapper">
-  <app-navbar></app-navbar>
-  <app-sidenav></app-sidenav>
-  <router-outlet></router-outlet>
-</div>
-
+<app-sidebar></app-sidebar>
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Shop in style</h1>
+      <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+    </div>
+  </div>
+</header>
+<!-- Section-->
+<section class="py-5">
+  <div class="px-4 px-lg-5 mt-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-3 ">
+        <app-header></app-header>
+      </div>
+      <div class="col-sm-9">
+       <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+<app-fooder></app-fooder>
