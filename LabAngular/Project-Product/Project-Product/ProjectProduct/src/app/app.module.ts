@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './projectTA/products/products.component';
 import { ListOrdersComponent } from './projectTA/orders/list-orders/list-orders.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     SiteFrameworkModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

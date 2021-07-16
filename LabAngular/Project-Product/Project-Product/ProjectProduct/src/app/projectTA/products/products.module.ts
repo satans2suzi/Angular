@@ -8,6 +8,8 @@ import { ViewAllProductComponent } from './view-all-product/view-all-product.com
 import { ViewAllProductByCategoryComponent } from './view-all-product-by-category/view-all-product-by-category.component';
 import { ViewAllProductByDateComponent } from './view-all-product-by-date/view-all-product-by-date.component';
 import { ViewProductComponent } from './view-product/view-product.component';
+import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -23,7 +25,9 @@ import { ViewProductComponent } from './view-product/view-product.component';
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    RouterModule,
+    FormsModule
   ]
 })
 export class ProductsModule { }

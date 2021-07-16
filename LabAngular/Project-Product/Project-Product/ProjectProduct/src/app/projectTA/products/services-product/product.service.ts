@@ -9,8 +9,8 @@ import {Category} from '../../interface/category';
 })
 export class ProductService {
 
-  private BASEURL_PRODUCTS = 'http://localhost:3000/products/';
-  private BASEURL_CATEGORIES = 'http://localhost:3000/categories/';
+  private BASEURL_PRODUCTS = 'http://localhost:3000/products';
+  private BASEURL_CATEGORIES = 'http://localhost:3000/categories';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -26,7 +26,7 @@ export class ProductService {
 
 
   viewProduct(productId: number): Observable<Product> {
-    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + productId);
+    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + '?productId=' + productId);
   }
 
   updateProduct(productId: number, productBody: any): Observable<Product> {
@@ -37,12 +37,12 @@ export class ProductService {
     return this.httpClient.delete<Product>(this.BASEURL_PRODUCTS + productId);
   }
 
-  searchCategoryProducts(categoryId: number): Observable<Product> {
-    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + 'category=' + categoryId);
+  searchCategoryProducts(categoryId: any): Observable<Product> {
+    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + '?categoryId=' + categoryId);
   }
 
-  searchDateProducts(dateParam: string): Observable<Product> {
-    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + 'date=' + dateParam);
+  searchDateProducts(dateParam: any): Observable<Product> {
+    return this.httpClient.get<Product>(this.BASEURL_PRODUCTS + '?date=' + dateParam);
   }
 
 

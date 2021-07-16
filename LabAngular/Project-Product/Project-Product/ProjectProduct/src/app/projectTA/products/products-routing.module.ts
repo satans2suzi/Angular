@@ -13,13 +13,11 @@ const routes: Routes = [
   { path: '', component: ViewAllProductComponent },
   { path: 'create-product', component: CreateProductComponent },
   { path: 'list-product', component: ViewAllProductComponent },
-  { path: 'search-category', component: ViewAllProductByCategoryComponent },
+  { path: 'category/:id', component: ViewAllProductByCategoryComponent },
   { path: 'search-date', component: ViewAllProductByDateComponent },
   { path: 'delete-product/:id', component: DeleteProductComponent },
-  { path: 'view-product/:id', component: ViewProductComponent },
+  { path: 'product/:id', component: ViewProductComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },
-  //
-  // // { path: 'create-product', component: CreateProductComponent }
 ];
 
 @NgModule({

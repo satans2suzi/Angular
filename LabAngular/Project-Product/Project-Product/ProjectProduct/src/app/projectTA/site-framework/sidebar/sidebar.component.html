@@ -1,6 +1,11 @@
 <div class="row mb-5 ml-1">
   <div class="list-group">
-    <a href="#" class="list-group-item" *ngFor="let cate of categoryList">
+    <a routerLink="" class="list-group-item" style="background-color: #bfd1ec" >
+      Tất cả sản phẩm
+    </a>
+  </div>
+  <div class="list-group" *ngFor="let cate of categoryList">
+    <a routerLink="category/{{cate.id}}" class="list-group-item" >
       {{cate.name}}
     </a>
   </div>
