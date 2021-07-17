@@ -18,10 +18,18 @@ import {HttpClientModule} from "@angular/common/http";
 // import { NavbarComponent } from './main/navbar/navbar.component';
 // import { ModalSendReportComponent } from './main/modal-send-report/modal-send-report.component';
 import { SiteFrameworkModule } from "./CRUDver2/site-framework/site-framework.module";
+import {ProductsComponent} from "./CRUDver2/products/products.component";
+import {SidebarComponent} from "./CRUDver2/site-framework/sidebar/sidebar.component";
+import {FooderComponent} from "./CRUDver2/site-framework/fooder/fooder.component";
+import {HeaderComponent} from "./CRUDver2/site-framework/header/header.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsComponent,
+    SidebarComponent,
+    FooderComponent,
+    HeaderComponent,
     // SlidenavComponent,
     // SendReportComponent,
     // DayReportComponent,

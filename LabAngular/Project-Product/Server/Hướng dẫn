@@ -1,0 +1,11 @@
+Tải các ứng dụng npm:
+        - express
+        - ejs
+        - mongoose
+        - body-parse
+        - multer
+
+Vào bài:
+Tạo thêm sản phẩm:
+        -Cần tạo 1 route để hiện form
+        - route để khách hàng gửi lên
