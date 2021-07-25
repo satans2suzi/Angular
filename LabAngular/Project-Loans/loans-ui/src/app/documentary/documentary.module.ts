@@ -10,6 +10,10 @@ import { SearchDocumentaryComponent } from './search-documentary/search-document
 import { ListDocumentaryComponent } from './list-documentary/list-documentary.component';
 import { DetailsDocumentaryComponent } from './details-documentary/details-documentary.component';
 
+import {PdfViewerModule} from "ng2-pdf-viewer";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+// import { MaterialFileInputModule } from 'ngx-material-file-input';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,16 @@ import { DetailsDocumentaryComponent } from './details-documentary/details-docum
   ],
   imports: [
     CommonModule,
-    DocumentaryRoutingModule
+    DocumentaryRoutingModule,
+    PdfViewerModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports:[
+    DocumentaryRoutingModule,
+    PdfViewerModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DocumentaryModule { }

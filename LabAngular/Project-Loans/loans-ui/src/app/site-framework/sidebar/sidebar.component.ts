@@ -73,9 +73,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for(let i in this.menuList2){
-      console.log(i)
-    }
+
   }
 
 }

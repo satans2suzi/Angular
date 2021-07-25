@@ -2,177 +2,460 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c33cdc-acf7-4931-92f0-a45023518f77" name="Default Changelist" comment="17/7/2021">
-      <change afterPath="$PROJECT_DIR$/loans-api/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/audit.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/customers.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/invoices.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/loans.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/payment.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/settings.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/user.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/customers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/invoices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/loans.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/payments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/setting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/views/error.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/views/index.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/views/layout.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/auth.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/forgot/forgot.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/forgot/forgot.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/forgot/forgot.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/forgot/forgot.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/logout/logout.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/logout/logout.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/logout/logout.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/logout/logout.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/new-user/new-user.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/new-user/new-user.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/new-user/new-user.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/auth/new-user/new-user.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/dashboard/dashboard.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/dashboard/dashboard.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/dashboard/dashboard.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/dashboard/dashboard.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/delete-documentary/delete-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/delete-documentary/delete-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/delete-documentary/delete-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/delete-documentary/delete-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/search-documentary/search-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/search-documentary/search-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/search-documentary/search-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/search-documentary/search-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/update-documentary/update-documentary.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/update-documentary/update-documentary.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/update-documentary/update-documentary.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/update-documentary/update-documentary.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/offenses/offenses.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/page-not-found/page-not-found.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/page-not-found/page-not-found.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/page-not-found/page-not-found.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/page-not-found/page-not-found.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/footer/footer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/site-framework.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/suricata-manager/suricata-manager.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/users/users.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/public/upload/documentary/documentary-1627207703130.angular-10-crud-bootstrap-tutorial.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/component-api/component-api.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/component-api/component-api.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/component-api/component-api.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/component-api/component-api.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/contact-form/contact-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/contact-form/contact-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/contact-form/contact-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/contact-form/contact-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/custom-drictive/custom-drictive.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/custom-drictive/custom-drictive.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/custom-drictive/custom-drictive.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/custom-drictive/custom-drictive.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-followers/github-followers.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-followers/github-followers.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-followers/github-followers.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-followers/github-followers.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-profile/github-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-profile/github-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-profile/github-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/github-profile/github-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/input-format.directive.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/input-format.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/navbar/navbar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/new-course-form/new-course-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/new-course-form/new-course-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/new-course-form/new-course-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/new-course-form/new-course-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-for/ng-for.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-for/ng-for.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-for/ng-for.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-for/ng-for.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-if-component/ng-if-component.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-if-component/ng-if-component.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-if-component/ng-if-component.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/ng-if-component/ng-if-component.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/not-found/not-found.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/not-found/not-found.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/not-found/not-found.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/not-found/not-found.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/pipes/pipes.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/pipes/pipes.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/pipes/pipes.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/pipes/pipes.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/post/post.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/post/post.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/post/post.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/post/post.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/services/data.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/services/github-followers.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/services/post.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/services/post.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/singup-form/singup-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/singup-form/singup-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/singup-form/singup-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/singup-form/singup-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/singup-form/username.validators.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/summary.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/switch-case/switch-case.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/switch-case/switch-case.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/switch-case/switch-case.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/app/switch-case/switch-case.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabAngular/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/AdminLTELogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/boxed-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/boxed-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/american-express.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/cirrus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/mastercard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/paypal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/paypal2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/credit/visa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/default-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/photo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/photo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/photo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/photo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/prod-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/prod-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/prod-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/prod-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/prod-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user1-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user2-160x160.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user3-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user4-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user5-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user6-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user7-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/asset/img/user8-128x128.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/bao-cao/bao-cao.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/bao-cao/bao-cao.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/bao-cao/bao-cao.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/bao-cao/bao-cao.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/cong-viec/cong-viec.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/cong-viec/cong-viec.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/cong-viec/cong-viec.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/cong-viec/cong-viec.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/contact-form/contact-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/contact-form/contact-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/contact-form/contact-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/contact-form/contact-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/du-lieu/du-lieu.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/du-lieu/du-lieu.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/du-lieu/du-lieu.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/du-lieu/du-lieu.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/home-component/home-component.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/home-component/home-component.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/home-component/home-component.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/home-component/home-component.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/navbar/navbar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/nhan-vien/nhan-vien.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/nhan-vien/nhan-vien.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/nhan-vien/nhan-vien.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/nhan-vien/nhan-vien.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/signup/signup.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/signup/signup.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/signup/signup.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/signup/signup.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/slidebar/slidebar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/slidebar/slidebar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/slidebar/slidebar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/slidebar/slidebar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/tai-san/tai-san.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/tai-san/tai-san.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/tai-san/tai-san.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/app/tai-san/tai-san.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/admin/admin.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/admin/admin.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/admin/admin.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/admin/admin.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/baocao/baocao.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/baocao/baocao.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/baocao/baocao.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/baocao/baocao.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/common/errors/app-error.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/common/errors/input-error.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/common/errors/not-found-error.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/demo-client-http/demo-client-http.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/demo-client-http/demo-client-http.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/demo-client-http/demo-client-http.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/demo-client-http/demo-client-http.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/helpers/fake-backend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/admin-demo/admin-demo.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/admin-demo/admin-demo.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/admin-demo/admin-demo.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/admin-demo/admin-demo.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/home-demo/home-demo.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/home-demo/home-demo.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/home-demo/home-demo.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/home-demo/home-demo.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/login-demo/login-demo.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/login-demo/login-demo.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/login-demo/login-demo.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/login-demo/login-demo.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/no-access-demo/no-access-demo.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/no-access-demo/no-access-demo.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/no-access-demo/no-access-demo.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login-demo/no-access-demo/no-access-demo.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/models/post.models.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/models/users.models.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/no-access/no-access.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/no-access/no-access.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/no-access/no-access.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/no-access/no-access.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/post/post.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/post/post.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/post/post.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/post/post.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/password.validators.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/register/username.validators.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/auth.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/demo-client-http/demo-http.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/demo-client-http/demo-http.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/order.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/order.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/post.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/app/services/post.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LabGSANM/webGSANM2/managerJob-project/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project-GSANM-Material/GSANM-Material/src/app/main/send-report/send-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Project-GSANM-Material/GSANM-Material/src/app/main/send-report/send-report.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/controllers/documentary.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/controllers/documentary.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/assets.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/models/assets.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/audit.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/customers.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/documentary.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/models/documentary.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/settings.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/.bin/mime.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/.bin/mime.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/express.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/response.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-codec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/build/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mime/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/types.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mime/types.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mongoose/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/dist/qs.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/dist/qs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/raw-body/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/raw-body/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/public/images/20170625_210214.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/routes/documentary.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/routes/documentary.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/routes/setting.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/models/documentary.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/models/documentary.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/environments/environment.dev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/environments/environment.dev.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +465,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -203,8 +487,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="E:\O D\Git\Angular\LabAngular\Project-Loans\loans-ui\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-ui\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\public\images" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\public" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -218,6 +508,15 @@
       <workItem from="1626522476064" duration="4017000" />
       <workItem from="1626588632369" duration="564000" />
       <workItem from="1626589280955" duration="26662000" />
+      <workItem from="1626663209474" duration="5384000" />
+      <workItem from="1626701645020" duration="6015000" />
+      <workItem from="1626740695726" duration="3935000" />
+      <workItem from="1626767394254" duration="6188000" />
+      <workItem from="1626791366335" duration="2173000" />
+      <workItem from="1626830884458" duration="32459000" />
+      <workItem from="1626922038578" duration="37169000" />
+      <workItem from="1627005497420" duration="32042000" />
+      <workItem from="1627206507768" duration="2274000" />
     </task>
     <task id="LOCAL-00001" summary="17/7/2021">
       <created>1626533284241</created>

@@ -1,1 +1,105 @@
-<p>details-documentary works! {{ documentID }}</p>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">{{ title }}</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a routerLink="dashboard">Home</a></li>
+          <li class="breadcrumb-item active">{{ title }}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="card card-warning">
+          <!--          <div class="card-header">-->
+          <!--            <h3 class="card-title">Chi tiết công văn</h3>-->
+          <!--          </div>-->
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>Tên văn bản: </label><a> {{documentDetails?.documentName}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Số văn bản:</label><a> {{documentDetails?.documentNumber}}</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Loại văn bản:</label><a> {{documentDetails?.documentType}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Địa chỉ gửi:</label><a> {{documentDetails?.documentAddress}}</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Ngày phát hành:</label><a> {{documentDetails?.documentDate}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Loại mật:</label><a> {{documentDetails?.documentSecret}}</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Số hộp:</label><a> {{documentDetails?.documentBox}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Đến hoặc đi: </label><a> {{documentDetails?.documentStatus}}</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Người ký:</label><a> {{documentDetails?.documentWhoSign}}</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card card-comments">
+          <div class="card-header">
+            <h3 class="card-title">PDF</h3>
+          </div>
+          <div class="card-body">
+            <!--            <pdf-viewer [src]="pdfSrc"-->
+            <!--                        [render-text]="true"-->
+            <!--                        style="display: flex;"-->
+            <!--            ></pdf-viewer>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

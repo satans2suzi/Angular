@@ -1,1 +1,135 @@
-<p>add-documentary works!</p>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">{{ title }}</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a routerLink="dashboard">Home</a></li>
+          <li class="breadcrumb-item active">{{ title }}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<section class="content text-sm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="card card-warning">
+          <!--          <div class="card-header">-->
+          <!--            <h3 class="card-title">Thêm công văn</h3>-->
+          <!--          </div>-->
+          <div class="card-body">
+            <form [formGroup]="formCreateDocumentary">
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Tên văn bản:</label>
+                    <input type="text" formControlName="documentName" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Số văn bản</label>
+                    <input type="text" formControlName="documentNumber" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Loại văn bản</label>
+                    <input type="text" formControlName="documentType" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Địa chỉ gửi:</label>
+                    <input type="text" formControlName="documentAddress" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Ngày phát hành:</label>
+                    <input type="text" formControlName="documentDate" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Loại mật:</label>
+                    <input type="text" formControlName="documentSecret" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Số hộp:</label>
+                    <input type="text" formControlName="documentBox" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Đến hoặc đi</label>
+                    <input type="text" formControlName="documentStatus" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Người ký</label>
+                    <input type="text" formControlName="documentWhoSign" class="form-control" placeholder="Enter ...">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input formControlName="documentImg"
+                           class="form-control-file"
+                           name="pdfFile"
+                           (change)="onFileSelect($event)"
+                           type="file"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-froup">
+                    <button (click)="createDocument()" type="submit" class="btn btn-outline-info form-control">Thêm</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <pre>value form: {{ formCreateDocumentary.value | json }}</pre>
+          <pre>status form: {{ formCreateDocumentary.status | json }}</pre>
+        </div>
+      </div>
+<!--      <div class="col-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="container-fluid">-->
+<!--            <pdf-viewer [src]="pdfSource"-->
+<!--                        [original-size]="false"-->
+<!--                        [show-all]="true"-->
+<!--                        [fit-to-page]="false"-->
+<!--                        [autoresize]="true"-->
+<!--                        [zoom]=0.9-->
+<!--                        style="display: flex;"-->
+<!--            ></pdf-viewer>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </div>
+</section>
