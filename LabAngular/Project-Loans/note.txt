@@ -1,0 +1,48 @@
+Lesson 3:
+    - Front end Repo (UI)
+        - Install Angular CLI
+        - Creat new app
+        - Install Bootstrap, Jquery
+
+    - API Repo ( Back End)
+        - Install Express Generator Repo
+
+Lesson 4:
+    - Build Site Framework
+    - Build common reusable component
+    - The site framework consist of the following component design:
+        - Header
+        - Footer
+        - Sidebar
+        - Main Content Area
+
+lesson 5: loans-api
+    - Create MongoDB
+    - Create Collections
+    - Create Schemas
+    - Create Models
+        -> User
+        -> loans
+        -> Payments
+        -> Invoices
+        -> Custormers
+        -> Settings
+        -> Auditlogs
+
+lesson 6: Lazy Loading Module
+        ng g module customers --route customer --module app.module
+angular.json
+css:
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
+              "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/admin-lte/dist/css/adminlte.min.css",
+              "src/styles.css"
+
+script:
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js",
+              "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+              "node_modules/admin-lte/dist/js/adminlte.js",
+              "node_modules/admin-lte/dist/js/demo.js",
+              "node_modules/admin-lte/dist/js/pages/dashboard.js"
