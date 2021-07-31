@@ -16,7 +16,7 @@
 <section class="content text-sm">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6">
+      <div class="col-sm-12 col-lg-6">
         <div class="card card-warning">
           <!--          <div class="card-header">-->
           <!--            <h3 class="card-title">Thêm công văn</h3>-->
@@ -24,89 +24,97 @@
           <div class="card-body">
             <form [formGroup]="formCreateDocumentary">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-12 col-lg-6">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Tên văn bản:</label>
-                    <input type="text" formControlName="documentName" class="form-control" placeholder="Enter ...">
+                    <input type="text" formControlName="documentName" class="form-control form-control-sm"
+                           placeholder="Enter ...">
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-12 col-lg-3">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Số văn bản</label>
-                    <input type="text" formControlName="documentNumber" class="form-control" placeholder="Enter ...">
+                    <input type="text" formControlName="documentNumber" class="form-control form-control-sm"
+                           placeholder="Enter ...">
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-12 col-lg-3">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Loại văn bản</label>
-                    <input type="text" formControlName="documentType" class="form-control" placeholder="Enter ...">
+                    <!--                    <input type="text" formControlName="documentType" class="form-control form-control-sm" placeholder="Enter ...">-->
+                    <select formControlName="documentType" class="form-control form-control-sm">
+                      <option>Báo cáo</option>
+                      <option>Tờ trình</option>
+                      <option>Công văn</option>
+                    </select>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-12 col-lg-6">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Địa chỉ gửi:</label>
-                    <input type="text" formControlName="documentAddress" class="form-control" placeholder="Enter ...">
+                    <input type="text" formControlName="documentAddress" class="form-control form-control-sm"
+                           placeholder="Enter ...">
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-12 col-lg-3">
                   <!-- text input -->
-                  <div class="form-group">
-                    <label>Ngày phát hành:</label>
-                    <input type="text" formControlName="documentDate" class="form-control" placeholder="Enter ...">
+                  <div class="form-group ">
+                    <label>Thời gian:</label>
+                    <input type="date" formControlName="documentDate" class="form-control form-control-sm"
+                           placeholder="Enter ...">
                   </div>
                 </div>
-                <div class="col-sm-3">
-                  <!-- text input -->
-                  <div class="form-group">
-                    <label>Loại mật:</label>
-                    <input type="text" formControlName="documentSecret" class="form-control" placeholder="Enter ...">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <!-- text input -->
-                  <div class="form-group">
-                    <label>Số hộp:</label>
-                    <input type="text" formControlName="documentBox" class="form-control" placeholder="Enter ...">
-                  </div>
-                </div>
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-md-12 col-lg-3">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Đến hoặc đi</label>
-                    <input type="text" formControlName="documentStatus" class="form-control" placeholder="Enter ...">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <!-- text input -->
-                  <div class="form-group">
-                    <label>Người ký</label>
-                    <input type="text" formControlName="documentWhoSign" class="form-control" placeholder="Enter ...">
+                    <select formControlName="documentStatus" class="form-control form-control-sm">
+                      <option>Văn bản đến</option>
+                      <option>Văn bản đi</option>
+                    </select>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                  <!-- text input -->
                   <div class="form-group">
-                    <input formControlName="documentImg"
+                    <label>Số hộp:</label>
+                    <input type="text" formControlName="documentBox" class="form-control form-control-sm"
+                           placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Người ký:</label>
+                    <input type="text" formControlName="documentWhoSign" class="form-control form-control-sm"
+                           placeholder="Enter ...">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                  <div class="form-group">
+                    <label>Upload File:</label>
+                    <input formControlName="documentFile"
                            class="form-control-file"
                            name="pdfFile"
+                           id="pdfFile"
                            (change)="onFileSelect($event)"
                            type="file"/>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-4">
+                <div class="col-sm-12 col-md-12 col-lg-4">
                   <div class="form-froup">
-                    <button (click)="createDocument()" type="submit" class="btn btn-outline-info form-control">Thêm</button>
+                    <button (click)="createDocument()" type="submit" class="btn btn-outline-info form-control">Thêm
+                    </button>
                   </div>
                 </div>
               </div>
@@ -116,20 +124,17 @@
           <pre>status form: {{ formCreateDocumentary.status | json }}</pre>
         </div>
       </div>
-<!--      <div class="col-6">-->
-<!--        <div class="form-group">-->
-<!--          <div class="container-fluid">-->
-<!--            <pdf-viewer [src]="pdfSource"-->
-<!--                        [original-size]="false"-->
-<!--                        [show-all]="true"-->
-<!--                        [fit-to-page]="false"-->
-<!--                        [autoresize]="true"-->
-<!--                        [zoom]=0.9-->
-<!--                        style="display: flex;"-->
-<!--            ></pdf-viewer>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="col-lg-6">
+        <div class="form-group">
+          <div class="container-fluid">
+            <div #viewer class="webviewer"></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div>
+    <label>ảnh</label>
+    <img [src]="url">
   </div>
 </section>

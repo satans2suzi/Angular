@@ -2,110 +2,366 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c33cdc-acf7-4931-92f0-a45023518f77" name="Default Changelist" comment="17/7/2021">
-      <change afterPath="$PROJECT_DIR$/loans-api/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/models/documentary.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/public/images/20170625_210214.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/assets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/routes/documentary.route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-api/views/add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/models/documentary.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans-ui/src/environments/environment.dev.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project-GSANM-Material/GSANM-Material/src/app/main/send-report/send-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Project-GSANM-Material/GSANM-Material/src/app/main/send-report/send-report.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/controllers/assets/assets.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/controllers/assets/assets_placed.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/api200OK.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/api400Error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/api404Error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/api500Error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/baseError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/errors/httpStatusCodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/models/assets/asset.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/models/assets/asset_placed.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/public/upload/documentary/documentary-1627364610620-angular-10-crud-bootstrap-tutorial.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/public/upload/documentary/documentary-1627364659969-b_dsm_guide.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/public/upload/documentary/documentary-1627364833127-b_dsm_guide.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/public/upload/documentary/documentary-1627477491468-angular-10-crud-bootstrap-tutorial.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/routes/assets/assets.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-api/routes/assets/assets_placed.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/21.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/AndroidContentPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/ArrayBufferPdfPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/AzurePartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/CORSWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/DecryptWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/ExternalAnnotationMerger.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/ExternalPdfPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/HttpPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/IOSPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/LocalPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/LocalPdfPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/PDFInfoVersion1.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/SelectionInfoOld.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/StreamingPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/WebDBPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/WebViewerServerPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/WinRTPartRetriever.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/Worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/1px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/dragginghand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/dragginghand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/hand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/hand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/zoom-in.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/zoom-out.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/Promise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/decode.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/model-viewer-1.3.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/model-viewer-legacy-1.3.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/pako_inflate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/pikaday.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/external/quill.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/LegacyOfficeWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorker.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorker.br.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorker.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorker.gz.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorkerWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorkerWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorkerWasm.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/legacyOffice/WebB2XOfficeWorkerWasm.gz.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/OfficeWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorker.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorker.br.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorker.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorker.gz.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorkerSubzero.nmf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorkerWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorkerWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorkerWasm.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/office/WebOfficeWorkerWasm.gz.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/PDFNet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/PDFNet.prod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/PDFworker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/ResizableWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/WasmThread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetC.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetC.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetC.gz.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetCWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetCWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetCWasm.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetThreadedWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetThreadedWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/full/PDFNetThreadedWasm.worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/iframe.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/iframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetC.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetC.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetC.gz.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetCWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetCWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetCWasm.gz.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetThreadedWasm.br.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetThreadedWasm.br.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/lean/PDFNetThreadedWasm.worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/pdfnet.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/simple_wasm/MemGrow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/simple_wasm/MemGrow.js.mem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/simple_wasm/MemGrow.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pdf/simple_wasm/MemGrow.worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/pikaday.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/vendors.ascii85.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/vendors.ascii85.quill.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/vendors.pako.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/vendors.quill.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/webviewer-core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/GreatVibes-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/GreatVibes-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/Lato-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/Lato-BoldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/Lato-Italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/fonts/Lato-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/assets/pdftron.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/10.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/100.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/101.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/102.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/103.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/104.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/105.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/106.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/107.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/108.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/109.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/11.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/110.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/111.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/112.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/113.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/114.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/115.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/116.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/117.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/118.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/119.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/12.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/120.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/121.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/122.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/123.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/124.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/125.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/126.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/127.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/128.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/129.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/13.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/130.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/131.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/132.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/133.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/134.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/135.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/136.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/137.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/138.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/139.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/14.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/140.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/141.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/142.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/15.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/16.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/17.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/18.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/19.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/20.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/21.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/22.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/23.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/24.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/25.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/26.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/27.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/28.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/29.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/30.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/31.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/32.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/33.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/34.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/35.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/36.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/37.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/38.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/39.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/4.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/40.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/41.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/42.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/43.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/44.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/45.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/46.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/47.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/48.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/49.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/5.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/50.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/51.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/52.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/53.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/54.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/55.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/56.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/57.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/58.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/59.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/6.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/60.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/61.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/62.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/63.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/64.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/65.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/66.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/67.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/68.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/69.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/7.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/70.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/71.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/72.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/73.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/74.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/75.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/76.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/77.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/78.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/79.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/8.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/80.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/81.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/82.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/83.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/84.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/85.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/86.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/87.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/88.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/89.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/9.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/90.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/91.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/92.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/93.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/94.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/95.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/96.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/97.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/98.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/99.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/mention.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/mention.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/vendors.html2canvas.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/chunks/vendors.mention.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/configorigin.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-de.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-es.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-fr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-it.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-ja.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-ko.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-nl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-pt_br.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-ru.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-zh_cn.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/i18n/translation-zh_tw.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/index.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/ui/webviewer-ui.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/models/invoices.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/controllers/documentary.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/models/loans.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/models/payment.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/models/assets.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/.bin/mime.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/.bin/mime.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/body-parser/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/History.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/bytes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/bytes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/content-disposition/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/History.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/express.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/lib/response.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/lib/response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/HISTORY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/node_modules/cookie/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/express/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/finalhandler/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/Changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-codec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/iconv-lite/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/build/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/build/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mime/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mime/types.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mime/types.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/mongoose/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/optional-require/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/optional-require/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/dist/qs.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/dist/qs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/parse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/stringify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/parse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/stringify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/qs/test/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/qs/test/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/raw-body/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/raw-body/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/send/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/send/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/node_modules/serve-static/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/node_modules/serve-static/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/routes/customers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/routes/invoices.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/routes/loans.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-api/routes/payments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/controllers/documentary.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/controllers/documentary/documentary.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/assets.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/audit.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/mime-types/test.mem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/customers.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/documentary.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/models/documentary/documentary.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/models/settings.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/mime-types/test.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/routes/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/mime-types/test.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/routes/documentary.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/loans-api/routes/documentary/documentary.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-api/routes/setting.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/assets/lib/core/assets/mime-types/test.xod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/activity-audit/activity-audit.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/assets-manager/assets-manager.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/audit/audit.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/custormers/custormers.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/add-documentary/add-documentary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/details-documentary/details-documentary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/documentary.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/documentary/list-documentary/list-documentary.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/site-framework/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-ui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/invoices/invoices.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loan-types/loan-types.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/loans/loans.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/models/documentary.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/models/documentary.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/payments/payments.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/reports/reports.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/app/services/documentary.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/app/settings/settings.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/environments/environment.dev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/environments/environment.dev.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-ui/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/loans-ui/src/polyfills.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +379,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="IlluminatedCloudWorkspaceSettings">
+    <option name="projectWorkspaceSettings">
+      <ProjectWorkspaceSettings>
+        <option name="anonymousApexSettings">
+          <AnonymousApexSettings>
+            <option name="savedDocuments">
+              <list>
+                <AnonymousApexSavedDocument>
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+              </list>
+            </option>
+          </AnonymousApexSettings>
+        </option>
+      </ProjectWorkspaceSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1vRQGIb8PwXg9F0D9bSCYZ2WgeY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -133,17 +414,31 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/loans-ui/src/assets/lib/core" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-ui\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-ui\src\assets\lib\core" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\public\upload" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-ui\src\assets\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\public\images" />
-      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\public" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\routes\documentary" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\routes\assets" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\models\documentary" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\controllers\documentary" />
+      <recent name="G:\Project\Git\Angular\LabAngular\Project-Loans\loans-api\models\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -166,6 +461,11 @@
       <workItem from="1626830884458" duration="32459000" />
       <workItem from="1626922038578" duration="37169000" />
       <workItem from="1627005497420" duration="32042000" />
+      <workItem from="1627212331402" duration="71575000" />
+      <workItem from="1627368266557" duration="10630000" />
+      <workItem from="1627461383354" duration="13041000" />
+      <workItem from="1627523978837" duration="41086000" />
+      <workItem from="1627698801073" duration="585000" />
     </task>
     <task id="LOCAL-00001" summary="17/7/2021">
       <created>1626533284241</created>

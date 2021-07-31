@@ -1,8 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  AfterContentChecked,
+  AfterContentInit, AfterViewChecked,
+  AfterViewInit,
+  DoCheck,
+  NgModule,
+  OnChanges, OnDestroy,
+  OnInit
+} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AssetsManagerRoutingModule } from './assets-manager-routing.module';
-import { AssetsManagerComponent } from './assets-manager.component';
+import {AssetsManagerRoutingModule} from './assets-manager-routing.module';
+import {AssetsManagerComponent} from './assets-manager.component';
 
 
 @NgModule({
@@ -14,4 +22,5 @@ import { AssetsManagerComponent } from './assets-manager.component';
     AssetsManagerRoutingModule
   ]
 })
-export class AssetsManagerModule { }
+export class AssetsManagerModule  {
+}

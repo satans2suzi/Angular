@@ -6,7 +6,7 @@
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="">Dashboard</a></li>
           <li class="breadcrumb-item active">{{ title }}</li>
         </ol>
       </div><!-- /.col -->
@@ -15,68 +15,101 @@
 </div>
 <section class="content">
   <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-12">
-        <button routerLink="add-documentary" class="btn btn-primary">Thêm Công Văn</button>
-      </div>
-    </div>
     <div class="row">
       <div class="col-12">
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
-          </div>
-          <!-- /.card-header -->
           <div class="card-body">
-            <div class="table-responsive">
-              <table  class="table table-bordered table-striped">
+            <div class="row align-items-center justify-content-around">
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <button routerLink="add-documentary"
+                          class="btn btn-sm form-control form-control-sm btn-outline-info"
+                          type="button">
+                    <i class="far fa-plus-square"></i> Thêm văn bản
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="dropright">
+                    <button class="btn btn-sm btn-outline-info form-control form-control-sm dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                      <i class="fas fa-list"></i> Phân loại văn bản
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" >Action</a>
+                      <a class="dropdown-item" >Another action</a>
+                      <a class="dropdown-item" >Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 ">
+                <div class="form-group">
+                  <button routerLink="add-documentary"
+                          class="btn btn-sm form-control form-control-sm btn-outline-info"
+                          type="button">
+                    <i class="fas fa-search"></i> Tìm kiếm văn bản
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row table-responsive">
+              <table class="table table-hover">
                 <thead>
                 <tr>
-                  <th class="col-2">Ngày tháng</th>
-                  <th class="col-3">Tên văn bản</th>
-                  <th class="col-2">Số văn bản</th>
-                  <th class="col-1">Loại văn bản</th>
-                  <th>Địa chỉ gửi </th>
-                  <th class="col-2">Hành động</th>
+                  <th class="col-1 text-sm text-sm-center">Thời gian</th>
+                  <th class="col-3 text-sm text-sm-center">Tên văn bản</th>
+                  <th class="col-2 text-sm text-sm-center">Số văn bản</th>
+                  <th class="col-2 text-sm text-sm-center">Loại văn bản</th>
+                  <th class="text-sm text-sm-center">Địa chỉ gửi</th>
+                  <th class="col-2 text-sm text-sm-center">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let row of documentaryList" >
+                <tr *ngFor="let row of documentaryList  | slice: (page-1) * pageSize : page * pageSize"
+                    class="text-md text-md-center">
                   <td>{{ row.documentDate }}</td>
-                  <td><a routerLink="details-documentary/{{row._id}}">{{ row.documentName }}</a></td>
+                  <td><a class="text-info" routerLink="details-documentary/{{row._id}}">{{ row.documentName }}</a></td>
                   <td>{{ row.documentNumber }}</td>
                   <td>{{ row.documentType }}</td>
                   <td>{{ row.documentAddress }}</td>
                   <td>
-                    <div class="row">
-                      <div class="col-6">
-                        <a ><i class="fas fa-edit"></i> Sửa</a>
+                    <div class="row text-sm align-items-center justify-content-around">
+                      <div class="col-lg-6">
+                        <button class="btn btn-outline-secondary form-control form-control-sm"><i
+                          class="fas fa-edit"></i>
+                          Sửa
+                        </button>
                       </div>
-                      <div class="col-6">
-                        <a (click)="deleteDocumentary(row)" ><i class="fas fa-trash-alt"></i> Xoá</a>
+                      <div class="col-lg-6">
+                        <button class="btn btn-outline-danger form-control form-control-sm"
+                                (click)="deleteDocumentary(row)"><i
+                          class="fas fa-trash-alt"></i>
+                          Xoá
+                        </button>
                       </div>
                     </div>
-
                   </td>
                 </tr>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Ngày phát hành</th>
-                  <th>Tên văn bản</th>
-                  <th>Số văn bản</th>
-                  <th>Loại văn bản</th>
-                  <th>Địa chỉ gửi văn bản</th>
-                  <th>Hành động</th>
-                </tr>
-                </tfoot>
               </table>
+              <ngb-pagination
+                class="d-flex justify-content-center "
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [maxSize]="7"
+                [rotate]="true"
+                [collectionSize]="documentaryList.length">
+              </ngb-pagination>
             </div>
           </div>
-          <!-- /.card-body -->
         </div>
       </div>
     </div>
   </div>
 </section>
-

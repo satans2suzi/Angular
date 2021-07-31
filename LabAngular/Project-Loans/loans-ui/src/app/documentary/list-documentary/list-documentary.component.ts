@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {DocumentaryService} from "../../services/documentary.service";
-import {HttpHeaders} from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
+import {DocumentaryService} from '../../services/documentary.service';
 
 @Component({
   selector: 'app-list-documentary',
@@ -8,28 +7,34 @@ import {HttpHeaders} from "@angular/common/http";
   styleUrls: ['./list-documentary.component.css']
 })
 export class ListDocumentaryComponent implements OnInit {
-  title = "Documentary";
-  documentaryResult: any;
-  documentaryList: any;
-  constructor(private documentaryService: DocumentaryService) { }
+  title = 'Danh sách văn bản';
+  documentaryList: any[] = [];
+  page = 1;
+  pageSize = 10;
+  lengthDocumentList = 0;
+
+  constructor(private documentaryService: DocumentaryService) {
+  }
 
   ngOnInit(): void {
     this.getDocumentaryList();
   }
 
-  getDocumentaryList(){
+  getDocumentaryList(): any {
     this.documentaryService.getDocumentary()
-      .subscribe((data: any) =>{
-        this.documentaryResult = data;
-        this.documentaryList = this.documentaryResult.data;
-        console.log(this.documentaryList)
-      })
+      .subscribe((data: any) => {
+        this.documentaryList = data.data as any;
+        this.lengthDocumentList = this.documentaryList.length;
+        console.log(this.documentaryList);
+        console.log(this.lengthDocumentList);
+      });
   }
-  deleteDocumentary(row: any){
+
+  deleteDocumentary(row: any): any {
     this.documentaryService.deleteDocumentary(row._id)
-      .subscribe(res =>{
-        alert("deleted");
+      .subscribe(res => {
         this.getDocumentaryList();
-      })
+      });
   }
+
 }
