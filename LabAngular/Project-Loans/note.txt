@@ -30,7 +30,7 @@ lesson 5: loans-api
         -> Auditlogs
 
 lesson 6: Lazy Loading Module
-        ng g module customers --route customer --module app.module
+        ng g module customers --route customers --module app.module
 angular.json
 css:
               "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",

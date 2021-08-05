@@ -4,177 +4,246 @@ const api200OK = require('../../errors/api200OK')
 const api400Error = require('../../errors/api400Error')
 const api404Error = require('../../errors/api404Error')
 const api500Error = require('../../errors/api500Error')
-// Get all assets
-exports.listAsset = async (req, res) => {
-    try {
-        var data = await assetModel.aggregate([
-            {
-                $match: {}
-            },
-            {
-                $lookup: {
-                    from: 'assetplaceds',
-                    localField: 'asset_placed',
-                    foreignField: '_id',
-                    as: 'child_placed'
-                }
-            }]).exec();
-        return res.send({
-            message: new api200OK(`Lấy dữ liệu thành công`),
-            record: data.length,
-            data: data
-        });
-    } catch (err) {
-        return res.send({
-            message: new api500Error(`Lấy dữ liệu không thành công`)
-        })
-    }
+
+
+const errorFormatter = e => {
+    let errors = {};
+    const allErrors = e.substring(e.indexOf(':') + 1).trim();
+    const allErrorsInArrayFormat = allErrors.split(',').map(err => err.trim());
+    allErrorsInArrayFormat.forEach(error => {
+        const [key, value] = error.split(':').map(err => err.trim());
+        errors[key] = value;
+    })
+    return errors
 }
 
-// Get details asset
-exports.detailsAsset = async (req, res) => {
-    try {
-        var data = await assetModel.aggregate([
-            {
-                $match: {_id: mongoose.Types.ObjectId(req.query._id)}
-            },
-            {
-                $lookup: {
-                    from: 'assetplaceds',
-                    localField: 'asset_placed',
-                    foreignField: '_id',
-                    as: 'child_placed'
-                }
+class AssetController {
+    // [GET] all list http://localhost:3000/api/assets/list
+    async listAsset(req, res) {
+        try {
+            if (req.query.page) {
+                const data = await assetModel.aggregate([
+                    {
+                        $match: {}
+                    },
+                    {
+                        $lookup: {
+                            from: 'assetplaceds',
+                            localField: 'asset_placed',
+                            foreignField: '_id',
+                            as: 'asset_placed'
+                        }
+                    }])
+                    .skip((parseInt(req.query.page) - 1) * 5)
+                    .limit(5)
+                return res.status(200).send({
+                    message: new api200OK(`Lấy dữ liệu thành công`),
+                    record: data.length,
+                    data: data
+                });
+            } else {
+                const data = await assetModel.aggregate([
+                    {
+                        $match: {}
+                    },
+                    {
+                        $lookup: {
+                            from: 'assetplaceds',
+                            localField: 'asset_placed',
+                            foreignField: '_id',
+                            as: 'asset_placed'
+                        }
+                    }]);
+                return res.status(200).send({
+                    message: new api200OK(`Lấy dữ liệu thành công`),
+                    record: data.length,
+                    data: data
+                });
             }
-        ]).exec((err, result) => {
-            if (result.length === 0) {
-                return res.send({
-                    message: new api404Error(`Không tồn tại tài sản có ID: ${req.query._id}`)
+
+        } catch (e) {
+            return res.status(500).send({
+                message: new api500Error(`Lấy dữ liệu không thành công`),
+                debugInfo: errorFormatter(e.message)
+            })
+        }
+    }
+
+    // [GET] detailsAsset http://localhost:3000/api/assets/view?_id=
+    async detailsAsset(req, res) {
+        try {
+            // const [aw_id, aw_data] = await Promise.all([
+            const awId = await assetModel.findById(req.query._id)
+            const awData = await assetModel.aggregate([
+                {
+                    $match: { _id: mongoose.Types.ObjectId(req.query._id) }
+                },
+                {
+                    $lookup: {
+                        from: 'assetplaceds',
+                        localField: 'asset_placed',
+                        foreignField: '_id',
+                        as: 'asset_placed'
+                    }
+                }
+            ])
+            if (!awId) {
+                return res.status(404).send({
+                    message: new api404Error(`Không tồn tại ID: ${req.query._id}`)
                 })
             }
-            return res.send({
+            return res.status(200).send({
                 message: new api200OK(`Tìm thấy tài sản có ID: ${req.query._id} thành công`),
-                data: result
+                data: awData
             });
-        });
-    } catch (e) {
-        if (!data) {
-            res.send({
-                message: new api400Error(e.toString())
+        } catch (e) {
+            if (e.kind === 'ObjectId') {
+                return res.status(400).send({
+                    message: new api400Error('ID không hợp lệ')
+                });
+            }
+            return res.status(500).send({
+                message: new api500Error(e.toString())
             });
         }
-        return new api500Error(`Lỗi server.`);
     }
-}
 
-// POST Create asset
-exports.createAsset = async (req, res) => {
-    try {
-        var data = await assetModel.create(req.body)
-        if (!data) {
-            return res.send({
-                message: new api404Error(`Không có dữ liệu gửi lên`)
+    // [Get] details asset placed http://localhost:3000/api/assets/view_details_placed?_id=
+    async detailsAssetPlaced(req, res) {
+        try {
+            // const [aw_id, aw_data] = await Promise.all([
+            const awId = await assetModel.findById(req.query._id)
+            const awData = await assetModel.aggregate([
+                {
+                    $match: { _id: mongoose.Types.ObjectId(req.query._id) }
+                },
+                {
+                    $project: { asset_placed: 1 }
+                },
+                {
+                    $lookup: {
+                        from: 'assetplaceds',
+                        localField: 'asset_placed',
+                        foreignField: '_id',
+                        as: 'asset_placed'
+                    }
+                }
+            ])
+            if (!awId) {
+                return res.status(404).send({
+                    message: new api404Error(`Không tồn tại ID: ${req.query._id}`)
+                })
+            }
+            return res.status(200).send({
+                message: new api200OK(`Tìm thấy tài sản có ID: ${req.query._id} thành công`),
+                data: awData
+            });
+        } catch (e) {
+            if (e.kind === 'ObjectId') {
+                return res.status(400).send({
+                    message: new api400Error('ID không hợp lệ')
+                });
+            }
+            return res.status(500).send({
+                message: new api500Error(e.toString())
+            });
+        }
+    }
+
+    // POST Create asset http://localhost:3000/api/assets/create
+    async createAsset(req, res) {
+        try {
+            const data = await assetModel.create(req.body)
+            return res.status(200).send({
+                message: new api200OK(`Dữ liệu được gửi lên thành công`),
+                data: data
+            })
+        } catch (e) {
+            console.log(e + '')
+            return res.status(400).send({
+                message: new api400Error('Something went wrong'),
+                debugInfo: errorFormatter(e.message)
             })
         }
-        return res.status(200).send({
-            message: new api200OK(`Dữ liệu được gửi lên thành công`),
-            data: data
-        })
-    } catch (e) {
-        return new api500Error(e.toString())
     }
-}
 
-// DELETE Delete asset
-exports.deleteAsset = async (req, res) => {
-    try {
-        var data = await assetModel.findByIdAndDelete(req.query._id)
-        if (!data) {
-            return res.send({
-                message: new api404Error(`Không tìm thấy tài sản có ID: ${req.query._id}`)
+    // DELETE Delete asset http://localhost:3000/api/assets/delete?_id=
+    async deleteAsset(req, res) {
+        try {
+            var data = await assetModel.findByIdAndDelete(req.query._id)
+            if (!data) {
+                return res.status(404).send({
+                    message: new api404Error(`Không tồn tại ID: ${req.query._id}`)
+                })
+            }
+            return res.status(200).send({
+                message: new api200OK(`Dữ liệu có ID: ${req.query._id} được xoá thành công`),
+                data: data
             })
+        } catch (e) {
+            if (e.kind === 'ObjectId') {
+                return res.status(400).send({
+                    message: new api400Error('ID không hợp lệ')
+                });
+            }
+            return res.status(500).send({
+                message: new api500Error(e.toString())
+            });
         }
-        return res.send({
-            message: new api200OK(`Xoá tài sản ID: ${req.query._id} thành công`),
-            data: data
-        });
-    } catch (e) {
-        if (e.kind === 'ObjectId' || e.name === 'NotFound') {
-            return res.send({
-                message: new api404Error(`Không tìm thấy tài sản có ID: ${req.query._id}`)
+    }
+
+    // UPDATE asset http://localhost:3000/api/assets/update?_id=
+    async updateAsset(req, res) {
+        try {
+            const data = await assetModel.findOneAndUpdate({ _id: req.query._id }, req.body, {
+                useFindAndModify: false,
+                runValidators: true
             })
+            if (!data) {
+                return res.status(404).send({
+                    message: new api404Error(`Không tìm thấy tài sản có ID: ${req.query._id}`)
+                })
+            }
+            return res.status(200).send({
+                message: new api200OK(`Cập nhật tài sản ID: ${req.query._id} thành công`),
+                data: data,
+            });
+        } catch (e) {
+            if (e.kind === 'ObjectId') {
+                return res.status(400).send({
+                    message: new api400Error(`Không tìm thấy tài sản có ID: ${req.query._id}`)
+                })
+            }
+            console.log(e)
+            return res.status(500).send({
+                message: new api500Error(e.toString())
+            });
         }
-        return new api500Error(`Lỗi server.`)
+    }
+
+    // GET search assets
+    async searchAsset(req, res) {
+        try {
+            // const data = await assetModel.find({$text: {$search: "\req.params.query\}})
+            // const response = await assetModel.find({
+            //     $and: [
+            //         {asset_name: {$regex: req.query.asset_name || ' '}},
+            //         {asset_type: {$regex: req.query.asset_type || ' '}},
+            //         {asset_brand: {$regex: req.query.asset_brand || ' '}},
+            //         {asset_serial_number: {$regex: req.query.asset_serial_number || ' '}},
+            //         {asset_date_of_issue: {$regex: req.query.asset_date_of_issue || ' '}}
+            //         // {name_placed: {$in :{$regex: req.query.asset_placed || ''}}}
+            //     ]
+            // })
+            return res.send({
+                message: new api200OK(`Tìm thành công`),
+                record: data.length,
+                data: data
+            })
+        } catch (e) {
+            return new api500Error(e.toString())
+        }
     }
 }
 
-// UPDATE asset
-exports.updateAsset = async (req, res) => {
-    try {
-        let dataObj = req.body
-        const response = await Promise.all([
-            dataObj,
-            assetModel.findOneAndUpdate({_id: req.query._id}, dataObj, {useFindAndModify: false})
-        ])
-        // if (!response[0]){
-        //     res.send({
-        //         message: 'khong duoc de trong'
-        //     })
-        // }
-        return res.send({
-            message: new api200OK(`cập nhật tài sản ID: ${req.query._id} thành công`),
-            data: response
-        });
-        // return res.send(response)
-    } catch (e) {
-        res.send(response)
-    }
-
-
-    // if (req.body === false) {
-    //     return res.status(400).send({
-    //         message: 'Các trường không nên để trống!',
-    //         data: req.body
-    //     })
-    // }
-    // console.log(!req.body)
-    // let assetObj = {
-    //     _id: req.query._id,
-    //     asset_name: req.body.asset_name,
-    //     asset_type: req.body.asset_type,
-    //     asset_brand: req.body.asset_brand,
-    //     asset_serial_number: req.body.asset_serial_number,
-    //     asset_date_of_issue: req.body.asset_date_of_issue,
-    //     asset_price: req.body.asset_price,
-    //     asset_status_in_stock: req.body.asset_status_in_stock
-    // };
-    // assetModel.findByIdAndUpdate(req.query._id, assetObj)
-    //     .then(data => {
-    //         if (!data) {
-    //             return res.status(404).send({
-    //                 message: `Không tìm tài sản có ID: ${req.query._id}`
-    //             })
-    //         } else {
-    //             return res.status(200).send({
-    //                 message: `Update ID ${req.query._id} Thành công`,
-    //                 data: data
-    //             })
-    //         }
-    //     }).catch(err => {
-    //     if (err.kind === 'ObjectId') {
-    //         return res.status(404).send({
-    //             message: `Không tìm thấy ID: ${req.query._id}`
-    //         });
-    //     } else {
-    //         return res.status(500).send({
-    //             data: data,
-    //             message: `Có lỗi trong quá trình cập nhật ID: ${req.query._id}`
-    //         });
-    //     }
-    // })
-}
-
-// GET search assets
-exports.searchAsset = (req, res) => {
-
-}
+module.exports = new AssetController;

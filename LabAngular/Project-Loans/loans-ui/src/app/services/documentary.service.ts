@@ -14,17 +14,6 @@ export class DocumentaryService {
   ) {
   }
 
-  // private handleError(error: HttpErrorResponse): any {
-  //   if (error.error instanceof ErrorEvent) {
-  //     console.error('An error occurred:', error.error.message);
-  //   } else {
-  //     console.error(
-  //       `Backend returned code ${error.status}, ` +
-  //       `body was: ${error.error}`);
-  //   }
-  //   return throwError(
-  //     'Something bad happened; please try again later.');
-  // }
   getDocumentary(): any {
     const url = environment.DOCUMENT_BASE_URL + environment.DOCUMENTARY.GET_ALL_DOCUMENT;
     return this.httpClient.get<any>(url);

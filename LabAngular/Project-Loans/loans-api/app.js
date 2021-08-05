@@ -6,10 +6,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
 var cors = require('cors')
-//#########____connect Mongoose_____#########
+var routeAPI = require('./routes/index.router')
 var mongoose = require("mongoose")
+
+//#########____connect Mongoose_____#########
+
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, function (err) {
+mongoose.connect(`${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+}, function (err) {
     if (err) {
         console.log("Mongo connect error:" + err)
     } else {
@@ -18,13 +25,7 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 });
 //#########____End connect Mongoose_____#########
 
-//#########____Setting Route_____#########
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var documentRouter = require('./routes/documentary/documentary.router');
-var assetRouter = require('./routes/assets/assets.router')
-var assetPlaceRouter = require('./routes/assets/assets_placed.router')
-//#########____Setting Route_____#########
+
 
 
 var app = express();
@@ -32,11 +33,11 @@ var app = express();
 
 //#########____Body Parser_____##########
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 //#########____End Body Parser_____##########
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,PATCH');
     res.setHeader('Access-Control-Allow-Hearders', 'Origin, X-Custom-Header,Content-type,Request-Header, Response-Header');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -45,26 +46,28 @@ app.use((req, res, next) => {
 })
 var corsOptions = {
     origin: 'http://localhost:4200',
-    credentials: true };
-
-
+    credentials: true
+};
 
 app.use(cors(corsOptions));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+app.use(logger(':method :url :status :res[content-length] - :response-time ms'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/documentary', documentRouter)
-app.use('/api/assets', assetRouter)
-app.use('/api/asset_placed', assetPlaceRouter)
+//#########____Setting Route_____#########
+routeAPI(app);
+//#########____Setting Route_____#########
+
+app.get('/', function (req, res, next) {
+    return res.send('thai')
+});
+
 
 
 // catch 404 and forward to error handler

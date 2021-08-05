@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {DocumentaryService} from '../../services/documentary.service';
-import {DocumentaryModel} from '../../models/documentary.model';
 import {Router} from '@angular/router';
 import {File} from '@angular/compiler-cli/src/ngtsc/file_system/testing/src/mock_file_system';
 import {HttpEventType, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
@@ -30,7 +29,6 @@ export class AddDocumentaryComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   formCreateDocumentary: any;
-  pdfSource = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
 
   ngOnInit(): void {
     this.formCreateDocumentary = this.formBuilder.group({
@@ -46,7 +44,6 @@ export class AddDocumentaryComponent implements OnInit, AfterViewInit, DoCheck {
       documentStatus: []
     });
 
-    console.log('OnInit: ' + this.url);
   }
 
   ngDoCheck(): void {

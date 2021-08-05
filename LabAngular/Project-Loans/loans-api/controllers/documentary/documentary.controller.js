@@ -160,18 +160,18 @@ exports.updateDocumentary = (req, res) => {
 
 //SEARCH documentary
 exports.searchDocumentary = (req, res) => {
-    let querySearch = [
-        {documentName: req.params.documentName},
-        {documentNumber: req.params.documentNumber},
-        {documentType: req.params.documentType},
-        {documentAddress: req.params.documentAddress},
-        {documentDate: req.params.documentDate},
-        {documentSecret: req.params.documentSecret},
-        {documentWhoSign: req.params.documentWhoSign},
-        {documentImg: req.params.documentImg},
-        {documentBox: req.params.documentBox},
-        {documentStatus: req.params.documentStatus}
-    ]
+    // let querySearch = [
+    //     {documentName: req.params.documentName},
+    //     {documentNumber: req.params.documentNumber},
+    //     {documentType: req.params.documentType},
+    //     {documentAddress: req.params.documentAddress},
+    //     {documentDate: req.params.documentDate},
+    //     {documentSecret: req.params.documentSecret},
+    //     {documentWhoSign: req.params.documentWhoSign},
+    //     {documentImg: req.params.documentImg},
+    //     {documentBox: req.params.documentBox},
+    //     {documentStatus: req.params.documentStatus}
+    // ]
     documentModel.find({
         // $and: querySearch
         $and: [

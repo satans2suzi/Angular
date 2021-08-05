@@ -10,8 +10,6 @@ import {DeleteDocumentaryComponent} from './delete-documentary/delete-documentar
 import {SearchDocumentaryComponent} from './search-documentary/search-documentary.component';
 import {ListDocumentaryComponent} from './list-documentary/list-documentary.component';
 import {DetailsDocumentaryComponent} from './details-documentary/details-documentary.component';
-
-import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -32,7 +30,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     DocumentaryRoutingModule,
-    PdfViewerModule,
     FormsModule,
     ReactiveFormsModule,
     NgbPaginationModule,
@@ -40,7 +37,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   exports: [
     DocumentaryRoutingModule,
-    PdfViewerModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule

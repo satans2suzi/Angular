@@ -1,9 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginComponent} from './auth/login/login.component';
-import {LogoutComponent} from './auth/logout/logout.component';
-import {ForgotComponent} from './auth/forgot/forgot.component';
-import {NewUserComponent} from './auth/new-user/new-user.component';
+
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
@@ -11,22 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent
-  },
-  {
-    path: 'forgot',
-    component: ForgotComponent
-  },
-  {
-    path: 'new-user',
-    component: NewUserComponent
   },
   {
     path: 'users',
@@ -52,7 +33,14 @@ const routes: Routes = [
     path: 'suricata-mananger',
     loadChildren: () => import('./suricata-manager/suricata-manager.module').then(m => m.SuricataManagerModule)
   },
-  {path: '**', component: PageNotFoundComponent}
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 
