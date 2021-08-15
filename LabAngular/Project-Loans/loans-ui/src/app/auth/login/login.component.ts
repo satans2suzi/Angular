@@ -14,8 +14,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
-    private formBuilder: FormBuilder,
-    private authService: AuthService) {
+              private formBuilder: FormBuilder,
+              private authService: AuthService) {
 
   }
 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         }
       }, (error: any) => {
         this.errorMessage = error.error.error;
-        console.log('Lỗi', error.error.error)
+        console.log('Lỗi', error.error.error);
       });
   }
 

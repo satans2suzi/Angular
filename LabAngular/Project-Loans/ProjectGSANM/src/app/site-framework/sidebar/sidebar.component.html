@@ -1,1 +1,55 @@
-<p>sidebar works!</p>
+<aside class="main-sidebar sidebar-light-navy elevation-4">
+  <!-- Brand Logo -->
+  <a class="brand-link">
+    <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
+      alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">AdminLTE 3</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
+          class="img-circle elevation-2"
+          alt="User Image">
+      </div>
+      <div class="info">
+        <a class="d-block">ABC </a>
+      </div>
+    </div>
+
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column nav-compact nav-child-indent"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false">
+        <li *ngFor="let menu of menuList2 "
+          class="nav-item">
+          <a routerLinkActive="activate"
+            class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              {{ menu.name }}
+              <i *ngIf="menu.childMenu"
+                class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul *ngIf="menu.childMenu"
+            class="nav nav-treeview">
+            <li *ngFor=" let child of menu.childMenu "
+              class="nav-item">
+              <a class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p> {{ child.childMenuName }}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

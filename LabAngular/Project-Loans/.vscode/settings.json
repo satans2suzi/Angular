@@ -1,3 +1,9 @@
 {
-    "git.ignoreLimitWarning": true
+    "eslint.format.enable": true,
+    "git.ignoreLimitWarning": true,
+    "editor.codeActionsOnSave": null,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.codeLensFontFamily": "Fira Code",
+    "editor.fontSize": 13,
 }
