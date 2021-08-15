@@ -11,6 +11,6 @@ const assetsPlacedSchema = mongoose.Schema({
         required: [true, 'Date of invoice is required'],
         trim: true
     }
-},{timestamps: true});
+}, { timestamps: true });
 assetsPlacedSchema.plugin(timeZone, { paths: ['date_of_invoice'] });
 module.exports = mongoose.model("AssetPlaced", assetsPlacedSchema);

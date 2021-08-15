@@ -20,6 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs"
+            ],
             "outputPath": "dist/loans-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -40,7 +43,6 @@
             "scripts": [
               "node_modules/admin-lte/plugins/jquery/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "node_modules/admin-lte/dist/js/adminlte.js",
               "node_modules/admin-lte/plugins/chart.js/Chart.min.js",

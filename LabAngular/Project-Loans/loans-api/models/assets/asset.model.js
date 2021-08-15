@@ -27,7 +27,7 @@ const assetsSchema = mongoose.Schema({
         trim: true
     },
     asset_placed: {
-        type: [{type: mongoose.Schema.Types.ObjectId}]
+        type: [{ type: mongoose.Schema.Types.ObjectId }]
     },
     asset_price: {
         type: Number,
@@ -36,10 +36,10 @@ const assetsSchema = mongoose.Schema({
     },
     asset_status_in_stock: {
         type: Boolean,
-        required:  [true, 'Asset status is required'],
+        required: [true, 'Asset status is required'],
         default: true
     }
-},{timestamps: true});
+}, { timestamps: true });
 assetsSchema.plugin(timeZone, { paths: ['asset_date_of_issue'] });
 module.exports = mongoose.model("assets", assetsSchema);
- 
+

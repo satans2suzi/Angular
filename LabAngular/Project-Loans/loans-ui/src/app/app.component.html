@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <app-header></app-header>
-  <app-sidebar></app-sidebar>
-  <div class="content-wrapper">
+  <app-header *ngIf="isAuth"></app-header>
+  <app-sidebar *ngIf='isAuth'></app-sidebar>
+  <div [class]="checkStyle">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <app-footer *ngIf='isAuth'></app-footer>
 </div>

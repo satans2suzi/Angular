@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 
 const userSchema = mongoose.Schema({
     firstname: {
@@ -21,10 +20,9 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Email is required'],
         unique: true,
-        lowercase: true,
         validate: value => {
             if (!validator.isEmail(value)) {
-                throw new Error({error: 'Invalid Email address'})
+                throw new Error({ error: 'Invalid Email address' })
             }
         }
     },
@@ -43,12 +41,12 @@ const userSchema = mongoose.Schema({
         enum: ['Admin', 'User'],
         default: 'User',
     },
-    tokens: [{
-        token: {
-            type: String,
-            required: true
-        }
-    }]
+    accesstoken: {
+        type: String,
+    },
+    refreshtoken: {
+        type: String,
+    }
 })
 userSchema.pre('save', async function (next) {
     // Hash the password before saving the user model
@@ -59,26 +57,26 @@ userSchema.pre('save', async function (next) {
     next()
 })
 
-userSchema.methods.generateAuthToken = async function () {
-    // Generate an auth token for the user
-    const user = this
-    const token = jwt.sign({_id: user._id, role: user.role, username: user.username}, process.env.JWT_KEY)
-    user.tokens = user.tokens.concat({token})
-    await user.save()
-    return token
-}
+// userSchema.methods.generateAuthToken = async function () {
+//     // Generate an auth token for the user
+//     const user = this
+//     const token = jwt.sign({ _id: user._id, role: user.role, username: user.username }, process.env.JWT_KEY)
+//     user.tokens = user.tokens.concat({ token })
+//     await user.save()
+//     return token
+// }
 
-userSchema.statics.findByCredentials = async (username, password) => {
-    // Search for a user by email and password.
-    const user = await userModel.findOne({username})
-    if (!user) {
-        throw new Error({error: 'Invalid login credentials'})
-    }
-    const isPasswordMatch = await bcrypt.compare(password, user.password)
-    if (!isPasswordMatch) {
-        throw new Error({error: 'Invalid login credentials'})
-    }
-    return user
-}
+// userSchema.statics.findByCredentials = async (username, password) => {
+//     // Search for a user by email and password.
+//     const user = await userModel.findOne({ username })
+//     if (!user) {
+//         throw new Error({ error: 'Invalid login credentials' })
+//     }
+//     const isPasswordMatch = await bcrypt.compare(password, user.password)
+// if (!isPasswordMatch) {
+//     throw new Error({ error: 'Invalid login credentials' })
+// }
+//     return user
+// }
 const userModel = mongoose.model('User', userSchema)
 module.exports = userModel

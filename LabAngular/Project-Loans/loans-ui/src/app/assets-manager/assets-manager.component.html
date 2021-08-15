@@ -6,11 +6,201 @@
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard v1</li>
+          <li class="breadcrumb-item"><a routerLink=' dashboard'>Dashboard</a></li>
+          <li class="breadcrumb-item active">Tài sản</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>
-<p>assets-manager works!</p>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center justify-content-around">
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <button class="btn btn-sm form-control form-control-sm btn-outline-info"
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#modal-lg">
+                    <i class="fas fa-plus-square text-md"> Thêm tài sản</i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="dropright">
+                    <button class="btn btn-sm btn-outline-info form-control form-control-sm dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                      <i class="fas fa-list text-md"> Phân loại tài sản</i>
+                    </button>
+                    <div class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item">Action</a>
+                      <a class="dropdown-item">Another action</a>
+                      <a class="dropdown-item">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 ">
+                <div class="form-group">
+                  <button routerLink="add-documentary"
+                    class="btn btn-sm form-control form-control-sm btn-outline-info"
+                    type="button">
+                    <i class="fas fa-search text-md"> Tìm kiếm tài sản</i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th class="col-1 text-sm text-sm-center">Tên sản sản</th>
+                    <th class="col-3 text-sm text-sm-center">Thương hiệu</th>
+                    <th class="col-2 text-sm text-sm-center">Số Serial</th>
+                    <th class="col-2 text-sm text-sm-center">Loại tài sản</th>
+                    <th class="text-sm text-sm-center">Ngày nhập kho</th>
+                    <th class="col-2 text-sm text-sm-center"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let row of listAsset  | slice: (page-1) * pageSize : page * pageSize"
+                    class="text-sm text-sm-center">
+                    <td>{{ row.asset_name }}</td>
+                    <td>{{ row.asset_brand }}</td>
+                    <td>{{ row.asset_serial_number }}</td>
+                    <td>{{ row.asset_type }}</td>
+                    <td>{{ row.asset_date_of_issue }}</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button"
+                          class="btn btn-sm btn-info">Hành động</button>
+                        <button type="button"
+                          class="btn btn-sm btn-info dropdown-toggle dropdown-icon"
+                          data-toggle="dropdown">
+                          <span class="sr-only">Toggle Dropdown</span>
+                          <div class="dropdown-menu"
+                            role="menu">
+                            <button routerLink="details-asset/{{row._id}}"
+                              class="dropdown-item btn btn-sm text-md-center">Chi tiết</button>
+                            <a class="dropdown-divider"></a>
+                            <button (click)="deleteAsset(row._id)"
+                              class="dropdown-item btn btn-sm text-md-center">Xoá</button>
+                          </div>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ngb-pagination class="d-flex justify-content-center "
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [maxSize]="7"
+                [rotate]="true"
+                [collectionSize]="listAsset.length">
+              </ngb-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="modal fade"
+  id="modal-lg">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Thêm tài sản</h4>
+        <button type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]='assetForm'>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Tên tài sản</label>
+                <input type="text"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_name'>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Tên hãng</label>
+                <input type="text"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_brand'>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Loại tài sản</label>
+                <input type="text"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_type'>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Số Serial Number</label>
+                <input type="text"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_serial_number'>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group ">
+                <label>Thời gian nhập kho</label>
+                <input type="date"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_date_of_issue'>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Giá tài sản</label>
+                <input type="text"
+                  class="form-control form-control-sm disabled text-dark"
+                  formControlName='asset_price'>
+              </div>
+            </div>
+          </div>
+        </form>
+        <pre> {{assetForm.value | json }}</pre>
+        <pre> {{assetPlacedForm.value | json }}</pre>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button"
+          class="btn btn-default"
+          id='cancel'
+          data-dismiss="modal">Thoát</button>
+        <button type="button"
+          class="btn btn-primary"
+          (click)='createAsset()'>Lưu</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

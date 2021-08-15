@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,16 +7,19 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  username = '';
+  lastname = '';
+  firstname = '';
   menuList = ["Dashboard", "Giữ liệu cảnh báo", "Công văn giấy tờ", "Tài sản", "Suricata"];
   data: any;
   menuList2 = [
     {
       name: "Dashboard",
-      routeName: ""
+      routeName: "dashboard"
     },
     {
       name: "Giữ liệu cảnh báo",
-      routeName:"offenses",
+      routeName: "offenses",
       childMenu: [
         {
           childMenuName: "Báo cáo ngày",
@@ -32,7 +36,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       name: "Công văn giấy tờ",
-      routeName:"documentary"
+      routeName: "documentary"
       // childMenu: [
       //   {
       //     childMenuName: "Công văn, giấy tờ",
@@ -45,7 +49,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       name: "Tài sản",
-      routeName:"assets-mananger",
+      routeName: "assets-mananger",
       // childMenu: [
       //   {
       //     childMenuName: "Nhập tài sản",
@@ -58,7 +62,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       name: "Suricata",
-      routeName:"suricata-mananger",
+      routeName: "suricata-mananger",
       // childMenu: [
       //   {
       //     childMenuName: "Cảnh báo suricata",
@@ -69,11 +73,13 @@ export class SidebarComponent implements OnInit {
       //     routeName: ""
       //   }]
     }]
-  constructor() {
+  constructor(private authService: AuthService) {
+
   }
 
   ngOnInit(): void {
 
+    console.log('sidebar username', this.username)
   }
 
 }

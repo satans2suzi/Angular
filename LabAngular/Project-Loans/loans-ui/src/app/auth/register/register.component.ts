@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
-import {AuthModel} from '../../models/auth.model';
-import {Router} from '@angular/router';
-import {AuthService} from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { } from '../../models/auth.model';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +13,13 @@ import {AuthService} from '../../services/auth.service';
 export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router,
-              private authService: AuthService
+    private router: Router,
+    private authService: AuthService
   ) {
   }
-
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
   formRegister: any;
 
   ngOnInit(): void {
@@ -32,12 +35,14 @@ export class RegisterComponent implements OnInit {
 
   register(): any {
     this.authService.register(this.formRegister.value)
-      .subscribe(response => {
-          console.log(response);
-          this.router.navigate(['/auth/login']);
-        },
-        error => {
-          console.log(error);
-        });
+      .subscribe(res => {
+        console.log(res.message.name);
+        this.isSuccessful = true;
+        this.router.navigate(['/auth/login']);
+      }, (error: any) => {
+        console.log(error.error.error)
+        // this.errorMesage = errorr
+        this.router.navigate(['/auth/register']);
+      })
   }
 }

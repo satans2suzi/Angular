@@ -11,7 +11,7 @@ router.get('/list', assetController.listAsset)
 router.get('/view', assetController.detailsAsset);
 
 /* GET details placed sort documents */
-router.get('/view_details_placed', assetController.detailsAssetPlaced);
+// router.get('/view_details_placed', assetController.detailsAssetPlaced);
 
 /* Create new documents */
 router.post('/create', assetController.createAsset);

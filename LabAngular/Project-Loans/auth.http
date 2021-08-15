@@ -1,0 +1,45 @@
+POST  http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"administrator",
+    "password":"12345678",
+    "email":"administrator@gmail.com",
+    "firstname": "Administrator",
+    "lastname": "Administrator",
+    "role": "Admin"
+}
+
+###
+POST  http://localhost:3000/api/auth/login
+Content-Type: application/json 
+
+{
+    "username":"administrator",
+    "password":"12345678"
+}
+
+###
+POST http://localhost:3000/api/auth/refreshtoken
+Content-Type: application/json
+
+{
+    "refreshtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGJmZWNkYzA0NGVhMjI1NDY5OTdiZiIsInJvbGUiOiJBZG1pbiIsInVzZXJuYW1lIjoiYWRtaW5pc3RyYXRvciIsImlhdCI6MTYyODIyMDg2NCwiZXhwIjoxNjI4MjI0NDY0fQ.sr3BqEc3gFbIiamy1C4SqJ4L0nw_QrB0w92TmZFDgLk"
+}
+
+###
+GET http://localhost:3000/api/asset/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGJmZWNkYzA0NGVhMjI1NDY5OTdiZiIsInJvbGUiOiJBZG1pbiIsInVzZXJuYW1lIjoiYWRtaW5pc3RyYXRvciIsImlhdCI6MTYyODE3NjA4NiwiZXhwIjoxNjI4MTc2Mzg2fQ.w_c4TmzjnOmE7cD0iVDILfyUAN6BB5hMDwFYLVIht60
+
+
+###
+GET http://localhost:3000/api/asset_placed/list
+
+###
+POST http://localhost:3000/api/asset_placed/6114cb5ac626690fe83f84f9/create
+Content-Type: application/json
+
+{
+    "name_placed": "SSSSs",
+    "date_of_invoice": "2021-03-02"
+}
