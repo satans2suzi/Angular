@@ -14,6 +14,11 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    NavbarComponent,
+    SidebarComponent,
+    FooterComponent
   ]
 })
 export class SiteFrameworkModule { }

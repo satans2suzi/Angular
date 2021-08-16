@@ -5,5 +5,8 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Fira Code",
-    "editor.fontSize": 13,
+    "cSpell.words": [
+        "ngrx"
+    ],
+    "editor.fontSize": 13.5,
 }
