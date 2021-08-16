@@ -10,33 +10,33 @@ export class SidebarComponent implements OnInit {
   username = '';
   lastname = '';
   firstname = '';
-  menuList = ["Dashboard", "Giữ liệu cảnh báo", "Công văn giấy tờ", "Tài sản", "Suricata"];
+  menuList = ['Dashboard', 'Giữ liệu cảnh báo', 'Công văn giấy tờ', 'Tài sản', 'Suricata'];
   data: any;
   menuList2 = [
     {
-      name: "Dashboard",
-      routeName: "dashboard"
+      name: 'Dashboard',
+      routeName: 'dashboard'
     },
     {
-      name: "Giữ liệu cảnh báo",
-      routeName: "offenses",
+      name: 'Giữ liệu cảnh báo',
+      routeName: 'offenses',
       childMenu: [
         {
-          childMenuName: "Báo cáo ngày",
-          routeName: "day-offenses"
+          childMenuName: 'Báo cáo ngày',
+          routeName: 'day-offenses'
         },
         {
-          childMenuName: "Báo cáo gửi mail",
-          routeName: "send-offenses"
+          childMenuName: 'Báo cáo gửi mail',
+          routeName: 'send-offenses'
         },
         {
-          childMenuName: "Tìm kiếm",
-          routeName: "search-offenses"
+          childMenuName: 'Tìm kiếm',
+          routeName: 'search-offenses'
         }]
     },
     {
-      name: "Công văn giấy tờ",
-      routeName: "documentary"
+      name: 'Công văn giấy tờ',
+      routeName: 'documentary'
       // childMenu: [
       //   {
       //     childMenuName: "Công văn, giấy tờ",
@@ -48,8 +48,8 @@ export class SidebarComponent implements OnInit {
       //   }]
     },
     {
-      name: "Tài sản",
-      routeName: "assets-mananger",
+      name: 'Tài sản',
+      routeName: 'assets-mananger',
       // childMenu: [
       //   {
       //     childMenuName: "Nhập tài sản",
@@ -61,8 +61,8 @@ export class SidebarComponent implements OnInit {
       //   }]
     },
     {
-      name: "Suricata",
-      routeName: "suricata-mananger",
+      name: 'Suricata',
+      routeName: 'suricata-mananger',
       // childMenu: [
       //   {
       //     childMenuName: "Cảnh báo suricata",
@@ -72,14 +72,14 @@ export class SidebarComponent implements OnInit {
       //     childMenuName: "Tìm kiếm cảnh báo",
       //     routeName: ""
       //   }]
-    }]
+    }];
   constructor(private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
 
-    console.log('sidebar username', this.username)
+    console.log('sidebar username', this.username);
   }
 
 }
