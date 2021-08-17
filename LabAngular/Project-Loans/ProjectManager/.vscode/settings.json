@@ -7,7 +7,7 @@
   },
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.automationShell.windows": "zsh",
-  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.fontFamily": "Fira Code",
   "eslint.format.enable": true,
   "eslint.validate": [
     "javascript",
