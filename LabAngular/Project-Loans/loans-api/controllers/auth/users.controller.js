@@ -59,7 +59,7 @@ class UsersController {
             })
         }
     }
-
+    //[POST] http://localhost:3000/auth/register 
     async createUser(req, res) {
         try {
             const user = new usersModel(req.body);
@@ -83,7 +83,7 @@ class UsersController {
             })
         }
     }
-
+    //[POST] http://localhost:3000/auth/login 
     async loginUser(req, res) {
         try {
             const { username, password } = req.body

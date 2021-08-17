@@ -1,7 +1,8 @@
 {
-    "eslint.format.enable": true,
     "git.ignoreLimitWarning": true,
-    "editor.codeActionsOnSave": null,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Fira Code",
@@ -9,4 +10,9 @@
         "ngrx"
     ],
     "editor.fontSize": 13.5,
+    "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ]
 }

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SiteFrameworkModule } from './site-framework/site-framework.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';

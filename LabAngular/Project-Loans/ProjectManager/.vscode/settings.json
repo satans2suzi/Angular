@@ -1,0 +1,16 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.automationShell.windows": "zsh",
+  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ]
+}

@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "cbf5ea15-b21c-4ef3-aaa8-2fd7cd6415f3"
+    "analytics": "cbf5ea15-b21c-4ef3-aaa8-2fd7cd6415f3",
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -20,6 +21,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs"
+            ],
             "outputPath": "dist/ProjectManager",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -111,6 +115,15 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
