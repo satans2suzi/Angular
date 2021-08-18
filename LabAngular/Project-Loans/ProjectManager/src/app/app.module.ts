@@ -11,12 +11,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { environment } from '../environments/environment';
-
+import { PostsComponent } from './posts/posts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,10 @@ import { environment } from '../environments/environment';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     AuthModule,
     DashboardModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

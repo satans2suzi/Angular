@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.dev';
-import { SignIn, ResSignIn } from './model/signin.model';
 import { map } from 'rxjs/internal/operators/map';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ResSignIn, SignIn } from '../../models/auth/signin.model';
 
 @Injectable({
   providedIn: 'root'
