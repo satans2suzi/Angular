@@ -62,9 +62,10 @@ class UsersController {
     //[POST] http://localhost:3000/auth/register 
     async createUser(req, res) {
         try {
+            console.log(req.body)
             const user = new usersModel(req.body);
             await user.save();
-            // const token = await user.generateAuthToken();
+            
             return res.status(201).send({
                 message: apiStatusCode.status201('Tạo tài khoản thành công!.'),
                 data: {
