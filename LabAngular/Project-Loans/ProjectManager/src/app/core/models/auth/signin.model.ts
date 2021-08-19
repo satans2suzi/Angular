@@ -1,23 +1,23 @@
-export interface SignIn {
+export interface SignInModel {
   username: string;
   password: string;
 }
 
-export interface ResSignIn {
-  accessToken: string;
-  refreshToken: string;
+export interface ResSignInModel {
   data: {
-    email: string;
-    firstname: string;
-    lastname: string;
-    phonenumber: string;
-    role: string;
-    username: string;
-    message: {
-      name: string;
-      description: string;
-      statusCode: string;
-    };    
+    email: string,
+    firstname: string,
+    lastname: string,
+    phonenumber: string,
+    role: string,
+    username: string,
+    accessToken: string,
+    refreshToken: string,
   };
-  error: string;
+  message: {
+    name: string,
+    description: string,
+    statusCode: string,
+
+  };
 }

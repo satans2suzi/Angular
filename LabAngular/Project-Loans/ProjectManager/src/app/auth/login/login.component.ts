@@ -1,9 +1,12 @@
-import { ResSignIn } from './../../core/models/auth/signin.model';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
-import { AuthService } from '../../core/services/auth/auth.service';
+import {ResSignInModel} from './../../core/models/auth/signin.model';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {Observable, Observer, of} from 'rxjs';
+import {AuthService} from '../../core/services/auth/auth.service';
+import {ErrorModel} from '../../core/models/error/errors.models';
+import {catchError, map} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-login',
@@ -15,23 +18,32 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private authService: AuthService
-  ) {}
+  ) {
+  }
+
   formLogin = this.formBuilder.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
   });
 
-  observer = {
-    next: (val1: any) => console.log(val1),
-    error: (err1: any) => console.error(err1),
-    complete: () => console.log('complete'),
-  };
   ngOnInit(): void {
     console.log(this.formLogin.value);
   }
 
   signIn(): void {
     this.authService.signIn$(this.formLogin.value)
-    .subscribe(this.observer);
+
+      .subscribe(
+        // this.observer
+        result => {
+          console.log(result);
+          // if (result.)
+          return this.router.navigate(['dashboard']);
+        },
+        (error: ErrorModel) => {
+          alert(error.error.message.name);
+          this.formLogin.reset();
+        }
+      );
   }
 }

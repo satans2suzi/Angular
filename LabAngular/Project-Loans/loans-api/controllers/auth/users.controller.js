@@ -91,15 +91,13 @@ class UsersController {
             const user = await usersModel.findOne({ username: username })
             if (!user) {
                 return res.status(401).send({
-                    message: apiStatusCode.status401('Đăng nhập không thành công!.'),
-                    error: 'Tài khoản không tồn tại'
+                    message: apiStatusCode.status401('Tài khoản không tồn tại!.'),
                 })
             }
             const isPasswordMatch = await bcrypt.compare(password, user.password)
             if (!isPasswordMatch) {
                 return res.status(401).send({
-                    message: apiStatusCode.status401('Đăng nhập không thành công!.'),
-                    error: 'Mật khẩu không chính xác'
+                    message: apiStatusCode.status401('Mật khẩu không chính xác!.'),
                 })
             }
             const payload = {
@@ -128,10 +126,11 @@ class UsersController {
                     lastname: user.lastname,
                     email: user.email,
                     phonenumber: user.phonenumber,
-                    role: user.role
+                    role: user.role,
+                    accessToken: encode_accToken,
+                    refreshToken: encode_rfToken
                 },
-                accessToken: encode_accToken,
-                refreshToken: encode_rfToken
+
             })
         } catch (error) {
             console.log(error)

@@ -18,10 +18,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]    
+    ]
   },
   "exclude": [
     "mode_modules"
+  ],
+  "include": [
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.html"
   ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

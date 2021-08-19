@@ -1,3 +1,9 @@
+POST http://localhost:80/api/item
+Content-Type: application/json
+
+{}
+
+###
 POST  http://localhost:3000/api/auth/register
 Content-Type: "application/json"
 
@@ -7,4 +13,13 @@ Content-Type: "application/json"
     "email": "admin@localhost.com",
     "lastname": "admin",
     "firstname": "admin"
+}
+###
+
+POST  http://localhost:3000/api/auth/login
+Content-Type: "application/json"
+
+{
+   "username" : "admin",
+    "password": "12345678",
 }
