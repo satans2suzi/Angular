@@ -1,9 +1,9 @@
-<div class="wrapper">
+<div class="content">
   <!-- Navbar -->
-  <app-navbar [hidden]="!isLogin" ></app-navbar>
+  <app-navbar *ngIf="isLoggedIn" ></app-navbar>
   <!-- /.Navbar -->
   <!-- Sidebar -->
-  <app-sidebar [hidden]="!isLogin"></app-sidebar>
+  <app-sidebar *ngIf="isLoggedIn"></app-sidebar>
   <!-- /.Sidebar -->
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,5 +12,5 @@
     <!-- /.content -->
   </div>
   <!-- Main Footer -->
-  <app-footer [hidden]="!isLogin"></app-footer>
+  <app-footer *ngIf="isLoggedIn"></app-footer>
 </div>

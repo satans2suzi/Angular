@@ -14,35 +14,32 @@ import {catchError, map} from 'rxjs/operators';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  @Output() isLogin = new EventEmitter<boolean>();
+  formLogin!: FormGroup;
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
   ) {
+
   }
 
-  formLogin = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required],
-  });
-
   ngOnInit(): void {
-    console.log(this.formLogin.value);
+    this.formLogin = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
   signIn(): void {
     this.authService.signIn$(this.formLogin.value)
-
       .subscribe(
         // this.observer
         result => {
           console.log(result);
-          this.isLogin.emit(true);
           return this.router.navigate(['dashboard']);
         },
         (error: ErrorModel) => {
-          this.isLogin.emit(false);
           alert(error.error.message.name);
           return this.formLogin.reset();
         }
