@@ -1,9 +1,9 @@
 <div class="wrapper">
   <!-- Navbar -->
-  <app-navbar></app-navbar>
+  <app-navbar [hidden]="!isLogin" ></app-navbar>
   <!-- /.Navbar -->
   <!-- Sidebar -->
-  <app-sidebar></app-sidebar>
+  <app-sidebar [hidden]="!isLogin"></app-sidebar>
   <!-- /.Sidebar -->
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,5 +12,5 @@
     <!-- /.content -->
   </div>
   <!-- Main Footer -->
-  <app-footer></app-footer>
+  <app-footer [hidden]="!isLogin"></app-footer>
 </div>
