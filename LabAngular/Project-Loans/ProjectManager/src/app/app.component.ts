@@ -1,26 +1,33 @@
-import {Component, Input, OnInit, EventEmitter} from '@angular/core';
-import {LoginComponent} from './auth/login/login.component';
-import {AuthService} from './core/services/auth/auth.service';
-import {Observable} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AuthService} from './shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
   isLoggedIn!: boolean;
-  constructor( private authService: AuthService) {
+
+  constructor(private authService: AuthService) {
 
   }
+
   title = 'ProjectManager';
+
   ngOnInit(): void {
-    this.authService.isLoggedIn
-    .subscribe(
-      value => {
-        this.isLoggedIn = value;
-        console.log('app-component',this.isLoggedIn);
-      }
-    );
+    this.checkIsLoggedIn();
+  }
+
+  checkIsLoggedIn() {
+    this.authService.isLoggedIn()
+      .subscribe(
+        value => {
+          return this.isLoggedIn = value;
+        }
+      );
+  }
+
+  ngOnDestroy(): void {
   }
 }

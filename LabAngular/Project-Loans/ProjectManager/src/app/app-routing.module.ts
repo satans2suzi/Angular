@@ -1,10 +1,11 @@
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './auth/register/register.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { PostsComponent } from './posts/posts.component';
-import {DashboardComponent} from './dashboard/dashboard/dashboard.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PostsComponent } from './components/posts/posts.component';
+import {DashboardComponent} from './components/dashboard/dashboard/dashboard.component';
+import {AuthGuard} from './shared/guard/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,20 +17,24 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: '',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'posts',
-    component: PostsComponent
+    component: PostsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'assets',
-    loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule)
+    loadChildren: () => import('./components/assets/assets.module').then(m => m.AssetsModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'documentary',
-    loadChildren: () => import('./documentary/documentary.module').then(m => m.DocumentaryModule)
+    loadChildren: () => import('./components/documentary/documentary.module').then(m => m.DocumentaryModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

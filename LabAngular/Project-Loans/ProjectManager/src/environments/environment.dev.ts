@@ -20,5 +20,7 @@ export const environment = {
     GET_ALL_USER: 'list',
     DELETE_USER: 'delete',
     UPDATE_USER: 'update',
+    CHECK_USER: 'check-user',
+    CHECK_EMAIL: 'check-email'
   }
 };

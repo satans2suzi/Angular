@@ -1,0 +1,168 @@
+<section class="register-page">
+  <div class="customs-register-box">
+    <div class="card">
+      <div class="card-body register-card-body">
+        <div class="login-logo mb-4">
+          <a><b>Register</b>Project</a>
+        </div>
+        <hr/>
+        <form [formGroup]="formRegister">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+              <div class="input-group mb-3">
+                <input formControlName="fullname"
+                       placeholder=".Fullname"
+                       type="text"
+                       [ngClass]="{'is-invalid': f.fullname.errors && (f.fullname.touched || f.fullname.dirty), 'is-valid':f.fullname.valid}"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.fullname.touched && f.fullname.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.fullname.errors?.required"> Fullname is required!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-7 col-lg-7">
+              <div class="input-group mb-3">
+                <input formControlName="email"
+                       type="email"
+                       placeholder=".Email"
+                       [ngClass]="{'is-invalid': f.email?.errors && (f.email.touched || f.email.dirty), 'is-valid':f.email.valid}"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.email.touched && f.email.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.email.errors?.required"> Email is required!</div>
+                  <div *ngIf="f.email.errors?.email"> Please enter a valid email!</div>
+                  <div *ngIf="f.email.errors?.emailAlreadyExists">
+                    Email đã sử dụng
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-5 col-lg-5">
+              <div class="input-group mb-3">
+                <input formControlName="phonenumber"
+                       type="text"
+                       placeholder=".Mobile"
+                       [ngClass]="{'is-invalid': f.phonenumber.errors && (f.phonenumber.touched || f.phonenumber.dirty), 'is-valid':f.phonenumber.valid}"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-mobile-alt"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.phonenumber.touched && f.phonenumber.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.phonenumber.errors?.required"> Số điện thoại không để trống!</div>
+                  <div *ngIf="f.phonenumber.errors?.pattern"> Số điên thoại không chính xác!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="input-group mb-3">
+                <input formControlName="username"
+                       type="text"
+                       placeholder=".Username"
+                       [ngClass]="{'is-invalid': f.username.errors && (f.username.touched || f.username.dirty), 'is-valid':f.username.valid}"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.username.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.username.errors?.required">Username is required!</div>
+                  <div *ngIf="f.username.errors?.minlength">Username should be
+                    minimum {{ f.username.errors?.minlength.requiredLength}} charactor
+                  </div>
+                  <div *ngIf="f.username.errors?.maxlength">Username should be
+                    maximum {{ f.username.errors?.maxlength.requiredLength}} charactor
+                  </div>
+                  <div *ngIf="f.username.errors?.pattern"> Username không có ký tự đặc biệt hoặc dấu cách</div>
+                  <div *ngIf="f.username.errors?.usernameAlreadyExists">
+                    Username already exists!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+              <div class="input-group mb-3">
+                <input formControlName="password"
+                       placeholder=".Password"
+                       [ngClass]="{'is-invalid': f.password.errors && (f.password.touched || f.password.dirty), 'is-valid':f.password.valid}"
+                       type="password"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.password.touched && f.password.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.password.errors?.required">Password is required!</div>
+                  <div *ngIf="f.password.errors?.minlength">Password should be
+                    minimum {{ f.password.errors?.minlength.requiredLength}} charactor!
+                  </div>
+                  <div *ngIf="f.password.errors?.whitespace">Password no white space!</div>
+                  <div *ngIf="f.password.errors?.pattern">Password phải có ít nhất:
+                    <div> - 1 chữ số!</div>
+                    <div> - 1 chữ viết hoa!</div>
+                    <div> - 1 kí tự đặc biệt!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+              <div class="input-group mb-3">
+                <input type="password"
+                       formControlName="confirmPassword"
+                       placeholder="Retype Password"
+                       [ngClass]="{'is-invalid': f.confirmPassword.errors && (f.confirmPassword.touched || f.confirmPassword.dirty), 'is-valid':f.confirmPassword.valid}"
+                       class="form-control"/>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+                <div *ngIf="f.confirmPassword.touched && f.confirmPassword.invalid"
+                     class="invalid-feedback ml-3 text-sm">
+                  <div *ngIf="f.confirmPassword.errors?.required">Password is required!.</div>
+                  <div *ngIf="!formRegister.hasError('confirmPasswordMatch')">Password not match!.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="row align-self-center">
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6 mt-2 text-center align-self-center">
+            <a [routerLink]="['/','login']">I already have a membership</a>
+          </div>
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6 mt-2">
+            <button [disabled]="!formRegister.valid"
+                    (click)="formSubmit$.next()"
+                    type="submit"
+                    class="btn btn-primary form-control rounded-pill border-0 shadow-sm px-4">Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

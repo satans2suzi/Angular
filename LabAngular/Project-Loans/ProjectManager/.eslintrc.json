@@ -27,6 +27,10 @@
     ],
     "semi": [
       "error"
-    ]
+    ],
+    "prefer-const": ["off", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": true
+    }]
   }
 }

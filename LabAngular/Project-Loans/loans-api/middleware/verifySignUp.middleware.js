@@ -13,14 +13,12 @@ const verifycheckDuplicateUserNameSignUp = async (req, res, next) => {
         ])
         if (awUsername) {
             return res.status(400).send({
-                message: apiStatusCode.status400('Tạo tài khoản không thành công!.'),
-                error: 'Tên tài khoản đã được sử dụng'
+                message: apiStatusCode.status400('Tên tài khoản đã được sử dụng!.')
             })
         }
         if (awEmail) {
             return res.status(400).send({
-                message: apiStatusCode.status400('Tạo tài khoản không thành công!.'),
-                error: 'Email đã được sử dụng'
+                message: apiStatusCode.status400('Email đã được sử dụng!.')
             })
         }
         next()

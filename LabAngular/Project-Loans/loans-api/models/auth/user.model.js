@@ -3,18 +3,23 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 
 const userSchema = mongoose.Schema({
-    firstname: {
+    // firstname: {
+    //     type: String,
+    //     required: [true, 'Firstname is required']
+    // },
+    // lastname: {
+    //     type: String,
+    //     required: [true, 'Lastname is required']
+    // },
+    fullname: {
         type: String,
-        required: [true, 'Firstname is required']
-    },
-    lastname: {
-        type: String,
-        required: [true, 'Lastname is required']
+        required: [true, 'Fullname is required']
     },
     username: {
         type: String,
         required: [true, 'Username is required'],
-        unique: true
+        unique: true,
+        lowercase: true
     },
     email: {
         type: String,
