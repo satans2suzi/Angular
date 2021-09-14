@@ -1,4 +1,4 @@
-export interface FormRegisterModel {
+export interface IFormRegisterModel {
   fullname: string;
   username: string;
   phonenumber: string;
@@ -6,7 +6,7 @@ export interface FormRegisterModel {
   password: string,
 }
 
-export interface ResRegisterModel {
+export interface IResRegisterModel {
   data:{
     email: string;
     firstname: string;

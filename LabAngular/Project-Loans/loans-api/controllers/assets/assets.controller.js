@@ -1,8 +1,7 @@
-const assetModel = require('../../models/assets/asset.model')
-const assetPlacedModel = require('../../models/assets/asset_placed.model')
+const assetModel = require('../../models/assets/asset.model');
+const assetPlacedModel = require('../../models/assets/asset_placed.model');
 const mongoose = require('mongoose');
-const apiStatusCode = require('../../errors/apiStatusCode')
-
+const apiStatusCode = require('../../errors/apiStatusCode');
 
 
 const errorFormatter = e => {
@@ -12,143 +11,113 @@ const errorFormatter = e => {
     allErrorsInArrayFormat.forEach(error => {
         const [key, value] = error.split(':').map(err => err.trim());
         errors[key] = value;
-    })
-    return errors
-}
-
+    });
+    return errors;
+};
+// {
+//     $lookup: {
+//         from: 'assetplaceds',
+//         localField: 'asset_placed',
+//         foreignField: '_id',
+//         as: 'asset_placed'
+//     }
+// },
 class AssetController {
-    // [GET] all list http://localhost:3000/api/assets/list
+    // [GET] all list http://localhost:3000/api/asset/list
     async listAsset(req, res) {
         try {
-            if (req.query.page) {
-                const data = await assetModel.aggregate([
-                    {
-                        $match: {}
-                    },
-                    {
-                        $lookup: {
-                            from: 'assetplaceds',
-                            localField: 'asset_placed',
-                            foreignField: '_id',
-                            as: 'asset_placed'
-                        }
-                    },
-                    {
-                        $project: {
-                            asset_name: 1,
-                            asset_status_in_stock: 1,
-                            asset_type: 1,
-                            asset_brand: 1,
-                            asset_serial_number: 1,
-                            asset_price: 1,
-                            asset_date_of_issue: {
-                                $dateToString: {
-                                    format: "%d-%m-%Y", date: "$asset_date_of_issue"
-                                }
-                            },
-                            asset_placed: {
-                                $map: {
-                                    input: "$asset_placed",
-                                    as: "item",
-                                    in: {
-                                        name_placed: "$$item.name_placed",
-                                        date_of_invoice: {
-                                            $dateToString: {
-                                                format: "%d-%m-%Y", date: "$$item.date_of_invoice"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ])
-                    .skip((parseInt(req.query.page) - 1) * 5)
-                    .limit(5)
-                return res.status(200).send({
-                    message: apiStatusCode.status200(`Lấy dữ liệu thành công`),
-                    record: data.length,
-                    data: data
-                });
-            } else {
-                const data = await assetModel.aggregate([
-                    {
-                        $match: {}
-                    },
-                    {
-                        $lookup: {
-                            from: 'assetplaceds',
-                            localField: 'asset_placed',
-                            foreignField: '_id',
-                            as: 'asset_placed'
-                        }
-                    },
-                    {
-                        $project: {
-                            _id: 1,
-                            asset_name: 1,
-                            asset_status_in_stock: 1,
-                            asset_type: 1,
-                            asset_brand: 1,
-                            asset_serial_number: 1,
-                            asset_price: 1,
-                            asset_date_of_issue: {
-                                $dateToString: {
-                                    format: "%d-%m-%Y", date: "$asset_date_of_issue"
-                                }
-                            },
-                            asset_placed: {
-                                $map: {
-                                    input: "$asset_placed",
-                                    as: "item",
-                                    in: {
-                                        _id: "$$item._id",
-                                        name_placed: "$$item.name_placed",
-                                        date_of_invoice: {
-                                            $dateToString: {
-                                                format: "%d-%m-%Y", date: "$$item.date_of_invoice"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]);
-                return res.status(200).send({
-                    message: apiStatusCode.status200(`Lấy dữ liệu thành công`),
-                    record: data.length,
-                    data: data
-                });
-            }
+            const record = await assetModel.countDocuments();
+            // if (req.query.page) {
+            const data = await assetModel.find({})
+                .skip((parseInt(req.query.page) - 1) * 10) //skip page 1
+                .limit(10); // 5 row in table
+            return res.status(200).send({
+                message: apiStatusCode.status200(`Lấy dữ liệu thành công`),
+                recordData: record,
+                recordPerPage: 10,
+                totalPage: Math.ceil(record / 10),
+                page: req.query.page,
+                data: data
+            });
+            // } else {
+            //     const data = await assetModel.aggregate([
+            //         {
+            //             $match: {}
+            //         },
+            //         {
+            //             $lookup: {
+            //                 from: 'assetplaceds',
+            //                 localField: 'asset_placed',
+            //                 foreignField: '_id',
+            //                 as: 'asset_placed'
+            //             }
+            //         },
+            //         {
+            //             $project: {
+            //                 _id: 1,
+            //                 asset_name: 1,
+            //                 asset_status_in_stock: 1,
+            //                 asset_type: 1,
+            //                 asset_brand: 1,
+            //                 asset_serial_number: 1,
+            //                 asset_price: 1,
+            //                 asset_date_of_issue: {
+            //                     $dateToString: {
+            //                         format: "%d-%m-%Y", date: "$asset_date_of_issue"
+            //                     }
+            //                 },
+            //                 asset_placed: {
+            //                     $map: {
+            //                         input: "$asset_placed",
+            //                         as: "item",
+            //                         in: {
+            //                             _id: "$$item._id",
+            //                             name_placed: "$$item.name_placed",
+            //                             date_of_invoice: {
+            //                                 $dateToString: {
+            //                                     format: "%d-%m-%Y", date: "$$item.date_of_invoice"
+            //                                 }
+            //                             }
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     ]);
+            //     return res.status(200).send({
+            //         message: apiStatusCode.status200(`Lấy dữ liệu thành công`),
+            //         record: data.length,
+            //         data: data
+            //     });
+            // }
 
         } catch (e) {
-            console.log(e)
+            console.log(e);
             return res.status(500).send({
                 message: apiStatusCode.status500(`Lấy dữ liệu không thành công`),
                 debugInfo: errorFormatter(e.message)
 
-            })
+            });
         }
     }
 
-    // [GET] detailsAsset http://localhost:3000/api/assets/view?_id=
+    // [GET] detailsAsset http://localhost:3000/api/asset/view?_id=
     async detailsAsset(req, res) {
         try {
             // const [aw_id, aw_data] = await Promise.all([
-            const awId = await assetModel.findById(req.query._id)
+            const awId = await assetModel.findById(req.query._id);
             const awData = await assetModel.aggregate([
                 {
-                    $match: { _id: mongoose.Types.ObjectId(req.query._id) }
+                    $match: {_id: mongoose.Types.ObjectId(req.query._id)}
                 },
-                {
-                    $lookup: {
-                        from: 'assetplaceds',
-                        localField: 'asset_placed',
-                        foreignField: '_id',
-                        as: 'asset_placed'
-                    }
-                },
+                // {
+                //     $lookup: {
+                //         from: 'assetplaceds',
+                //         localField: 'asset_placed',
+                //         foreignField: '_id',
+                //         as: 'asset_placed'
+                //     }
+                // },
                 {
                     $project: {
                         _id: 1,
@@ -158,37 +127,38 @@ class AssetController {
                         asset_brand: 1,
                         asset_serial_number: 1,
                         asset_price: 1,
+                        asset_placed: 1,
                         asset_date_of_issue: {
                             $dateToString: {
-                                format: "%d-%m-%Y", date: "$asset_date_of_issue"
+                                format: '%d-%m-%Y', date: '$asset_date_of_issue'
                             }
                         },
-                        asset_placed: {
-                            $map: {
-                                input: "$asset_placed",
-                                as: "item",
-                                in: {
-                                    _id: "$$item._id",
-                                    name_placed: "$$item.name_placed",
-                                    date_of_invoice: {
-                                        $dateToString: {
-                                            format: "%d-%m-%Y", date: "$$item.date_of_invoice"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        // asset_placed: {
+                        //     $map: {
+                        //         input: '$asset_placed',
+                        //         as: 'item',
+                        //         in: {
+                        //             _id: '$$item._id',
+                        //             name_placed: '$$item.name_placed',
+                        //             date_of_invoice: {
+                        //                 $dateToString: {
+                        //                     format: '%d-%m-%Y', date: '$$item.date_of_invoice'
+                        //                 }
+                        //             }
+                        //         }
+                        //     }
+                        // }
                     }
                 }
-            ])
+            ]);
             if (!awId) {
                 return res.status(404).send({
                     message: apiStatusCode.status404(`Không tồn tại ID: ${req.query._id}`)
-                })
+                });
             }
             return res.status(200).send({
                 message: apiStatusCode.status200(`Tìm thấy tài sản có ID: ${req.query._id} thành công`),
-                data: awData[0]
+                data: awData
             });
         } catch (e) {
             if (e.kind === 'ObjectId') {
@@ -202,7 +172,7 @@ class AssetController {
         }
     }
 
-    // [Get] details asset placed http://localhost:3000/api/assets/view_details_placed?_id=
+    // [Get] details asset placed http://localhost:3000/api/asset/view_details_placed?_id=
     // async detailsAssetPlaced(req, res) {
     //     try {
     //         // const [aw_id, aw_data] = await Promise.all([
@@ -244,37 +214,37 @@ class AssetController {
     //     }
     // }
 
-    // POST Create asset http://localhost:3000/api/assets/create
+    // POST Create asset http://localhost:3000/api/asset/create
     async createAsset(req, res) {
         try {
-            const data = await assetModel.create(req.body)
+            const data = await assetModel.create(req.body);
             return res.status(201).send({
                 message: apiStatusCode.status201(`Dữ liệu được gửi lên thành công`),
                 data: data
-            })
+            });
         } catch (e) {
-            console.log(e + '')
+            console.log(e + '');
             return res.status(400).send({
                 message: apiStatusCode.status400('Something went wrong'),
                 debugInfo: errorFormatter(e.message)
-            })
+            });
         }
     }
 
-    // DELETE Delete asset http://localhost:3000/api/assets/delete?_id=
+    // DELETE Delete asset http://localhost:3000/api/asset/delete?_id=
     async deleteAsset(req, res) {
         try {
-            var data = await assetModel.findByIdAndDelete(req.query._id)
+            var data = await assetModel.findByIdAndDelete(req.query._id);
             if (!data) {
                 return res.status(404).send({
                     message: apiStatusCode.status404(`Không tồn tại ID: ${req.query._id}`)
-                })
+                });
             }
-            await assetPlacedModel.deleteMany({ _id: { $in: data.asset_placed } })
+            await assetPlacedModel.deleteMany({_id: {$in: data.asset_placed}});
             return res.status(200).send({
                 message: apiStatusCode.status200(`Dữ liệu có ID: ${req.query._id} được xoá thành công`),
                 data: data
-            })
+            });
         } catch (e) {
             if (e.kind === 'ObjectId') {
                 return res.status(400).send({
@@ -290,14 +260,14 @@ class AssetController {
     // UPDATE asset http://localhost:3000/api/assets/update?_id=
     async updateAsset(req, res) {
         try {
-            const data = await assetModel.findOneAndUpdate({ _id: req.query._id }, req.body, {
+            const data = await assetModel.findOneAndUpdate({_id: req.query._id}, req.body, {
                 useFindAndModify: false,
                 runValidators: true
-            })
+            });
             if (!data) {
                 return res.status(404).send({
                     message: napiStatusCode.status404(`Không tìm thấy tài sản có ID: ${req.query._id}`)
-                })
+                });
             }
             return res.status(200).send({
                 message: apiStatusCode.status200(`Cập nhật tài sản ID: ${req.query._id} thành công`),
@@ -307,9 +277,9 @@ class AssetController {
             if (e.kind === 'ObjectId') {
                 return res.status(400).send({
                     message: apiStatusCode.status400(`Không tìm thấy tài sản có ID: ${req.query._id}`)
-                })
+                });
             }
-            console.log(e)
+            console.log(e);
             return res.status(500).send({
                 message: apiStatusCode.status500(e.toString())
             });
@@ -334,9 +304,9 @@ class AssetController {
                 message: apiStatusCode.status200(`Tìm thành công`),
                 record: data.length,
                 data: data
-            })
+            });
         } catch (e) {
-            return apiStatusCode.status500(e.toString())
+            return apiStatusCode.status500(e.toString());
         }
     }
 }

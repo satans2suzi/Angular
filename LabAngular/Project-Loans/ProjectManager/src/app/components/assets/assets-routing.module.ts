@@ -4,8 +4,12 @@ import {ListAssetsComponent} from './list-assets/list-assets.component';
 import {DetailsAssetsComponent} from './details-assets/details-assets.component';
 
 const routes: Routes = [
-  { path: '', component: ListAssetsComponent },
-  { path: ':id', component: DetailsAssetsComponent}
+  { path: '',
+    redirectTo: 'list/1',
+    pathMatch: 'full'
+  },
+  { path: 'list/:page', component: ListAssetsComponent },
+  { path: 'details/:id', component: DetailsAssetsComponent}
 ];
 
 @NgModule({

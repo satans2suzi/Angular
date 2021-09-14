@@ -15,23 +15,50 @@ import {PostsComponent} from './components/posts/posts.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import {MaterialModule} from './material.module';
 import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
+import {SpinnerComponent} from './components/spinner/spinner.component';
+import {EffectsModule} from '@ngrx/effects';
+import {SharedModule} from './shared/shared.module';
+import {AppEffect} from './app-store/app.effects';
+import {forRootReducer, metaReducers} from './app-store/app.stories';
+import {AppStoreModule} from './app-store/app-store.module';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
-    PostsComponent
+    PostsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SiteFrameworkModule,
-    StoreModule.forRoot({}, {}),
+    AppStoreModule,
+    SharedModule,
+    StoreModule.forRoot(forRootReducer, {
+      metaReducers,
+      runtimeChecks : {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictActionSerializability: true,
+        strictStateSerializability:true
+      }
+    }),
+    EffectsModule.forRoot(AppEffect),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      routerState: RouterState.Minimal
+    }),
     AuthModule,
     DashboardModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [JwtHelperService,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS}],

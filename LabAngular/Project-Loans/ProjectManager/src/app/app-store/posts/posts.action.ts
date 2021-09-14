@@ -1,5 +1,5 @@
 import { createAction, props, ActionType } from '@ngrx/store';
-import { Post } from '../../models/posts/post.model';
+import { Post } from '../../shared/models/posts/post.model';
 
 export const GET_POSTS = '@Post/GetAll';
 export const GET_POSTS_SUCCESS = '@Post/GetAllSuccess';
@@ -15,11 +15,11 @@ export const SORTING_POSTS = '@Post/Sorting';
 
 export const getPosts = createAction(GET_POSTS);
 export const getPostsSuccess = createAction(
-    GET_POSTS_SUCCESS, 
+    GET_POSTS_SUCCESS,
     props<{posts: Post[]}>()
     );
 export const getPostsFailed = createAction(
-    GET_POSTS_FAILED, 
+    GET_POSTS_FAILED,
     props<{error: string}>()
     );
 export const getPost = createAction(GET_POST, props<{id: string}>());

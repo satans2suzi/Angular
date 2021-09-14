@@ -1,9 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Form, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../shared/services/auth/auth.service';
 import {ErrorModel} from '../../../shared/models/error/errors.models';
-import {Observable} from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
+import {delay, filter, startWith, switchMap, take, tap} from 'rxjs/operators';
+import {Store} from '@ngrx/store';
+import {IAuthState} from '../../../app-store/auth/auth.state';
+import {IFormLoginModel, IResLoginModel} from '../../../shared/models/auth/login.model';
+import * as AuthActions from '../../../app-store/auth/auth.action';
+import {isAuthenticatedSelector} from '../../../app-store/auth/auth.selector';
 
 
 @Component({
@@ -11,40 +17,51 @@ import {Observable} from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
+
   formLogin!: FormGroup;
-  formLogin$!: Observable<FormGroup>;
-  private initialFormValue: unknown;
-
-  constructor(
-    private router: Router,
-    private formBuilder: FormBuilder,
-    private authService: AuthService,
+  destroy$: Subject<void> = new Subject();
+  errors!: Observable<string>;
+  formSubmit$ = new Subject<any>();
+  constructor(private readonly _formBuilder: FormBuilder,
+              private readonly _router: Router,
+              private readonly _store: Store<IAuthState>
   ) {
-
   }
 
   ngOnInit(): void {
     this.initForm();
+
+    this.formSubmit$
+      .pipe(
+        tap(() => this.formLogin.markAsDirty()),
+        tap(this.destroy$),
+        switchMap(() =>
+          this.formLogin.statusChanges.pipe(
+            startWith(this.formLogin.status),
+            filter((status) => status !== 'PENDING'),
+            take(1)
+          )
+        ),
+        filter((status) => status === 'VALID')
+      )
+      .subscribe((validationSuccessful) => this.submitForm());
   }
-  initForm(): void{
-    this.formLogin = this.formBuilder.group({
+
+  initForm(): void {
+    this.formLogin = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
-  signIn(): void {
-    this.authService.login(this.formLogin.value)
-      .subscribe(
-        // this.observer
-        result => {
-          console.log(result);
-          return this.router.navigate(['/']);
-        },
-        (error: ErrorModel) => {
-          alert(error.error.message.name);
-        }
-      );
+  submitForm (): void {
+    this._store.dispatch(AuthActions.actionAuthLogin({payload: this.formLogin.value}));
+  }
+
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

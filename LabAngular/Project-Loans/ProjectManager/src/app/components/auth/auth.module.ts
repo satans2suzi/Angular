@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MaterialModule} from '../../material.module';
 import {CustomValidators} from '../../shared/vadidator/validate.vadidator';
 import {MatDividerModule} from '@angular/material/divider';
+import {SiteFrameworkModule} from '../site-framework/site-framework.module';
 
 
 
@@ -23,7 +24,8 @@ import {MatDividerModule} from '@angular/material/divider';
         ReactiveFormsModule,
         RouterModule,
         HttpClientModule,
-        MatDividerModule
+        MatDividerModule,
+        SiteFrameworkModule
     ],
   exports:[
     LoginComponent,

@@ -1,26 +1,31 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../shared/services/auth/auth.service';
 import {ErrorModel} from '../../../shared/models/error/errors.models';
-import {Observable, of, Subject} from 'rxjs';
+import {Observable, of, Subject, Subscription} from 'rxjs';
 import {CustomValidators} from '../../../shared/vadidator/validate.vadidator';
 import {delay, filter, map, startWith, switchMap, take, tap} from 'rxjs/operators';
+import {Store} from '@ngrx/store';
+import {IAppState} from '../../../app-store/app.stories';
+import * as AuthActions from '../../../app-store/auth/auth.action';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
   formRegister!: FormGroup;
   formSubmit$ = new Subject<any>();
+  subcription$!: Subscription
 
 
-  constructor(private readonly formBuilder: FormBuilder,
-              private readonly router: Router,
-              private readonly authService: AuthService,
-              private readonly customValidators: CustomValidators) {
+  constructor(private readonly _formBuilder: FormBuilder,
+              private readonly _router: Router,
+              private readonly _authService: AuthService,
+              private readonly _customValidators: CustomValidators,
+              private readonly _store: Store<IAppState>) {
   }
 
   ngOnInit(): void {
@@ -41,7 +46,7 @@ export class RegisterComponent implements OnInit {
   }
 
   initForm(): void {
-    this.formRegister = this.formBuilder.group({
+    this.formRegister = this._formBuilder.group({
         fullname: ['',
           Validators.compose(
             [Validators.required]
@@ -55,21 +60,21 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(30),
             Validators.pattern(/^[a-z\d]+$/i)
           ]),
-          this.customValidators.validateUserNameExists.bind(this)
+          this._customValidators.validateUserNameExists.bind(this)
         ],
         phonenumber: ['',
           Validators.compose([
             Validators.required,
             Validators.pattern(/(84|0[3|5|7|8|9])+([0-9]{8})$/i),
-            this.customValidators.NoWhitespaceValidator()
+            this._customValidators.NoWhitespaceValidator()
           ])],
         email: ['',
           Validators.compose([
             Validators.required,
             Validators.email,
-            this.customValidators.NoWhitespaceValidator(),
+            this._customValidators.NoWhitespaceValidator(),
           ]),
-          this.customValidators.validateEmailExists.bind(this)
+          this._customValidators.validateEmailExists.bind(this)
         ],
         password: ['',
           Validators.compose([
@@ -86,7 +91,7 @@ export class RegisterComponent implements OnInit {
         ]
       },
       {
-        validators: this.customValidators.confirmPasswordMatch('password', 'confirmPassword')
+        validators: this._customValidators.confirmPasswordMatch('password', 'confirmPassword')
       });
   }
 
@@ -95,19 +100,25 @@ export class RegisterComponent implements OnInit {
   }
 
   submitForm(): void {
-    this.authService.register(this.formRegister.value)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          return this.router.navigate(['login']);
-        },
-        error: (error: ErrorModel) => {
-          console.log(error.error.message.name);
-          alert(error.error.message.name);
-        },
-        complete: () => {
-          console.log('complete');
-        }
-      });
+    this._store.dispatch(AuthActions.actionAuthRegister({payload: this.formRegister.value}));
+    // this.subcription$ = this._authService.register(this.formRegister.value)
+    //   .subscribe({
+    //     next: (res) => {
+    //       console.log(res);
+    //       alert('Đăng ký thành công');
+    //       return this._router.navigate(['login']);
+    //     },
+    //     error: (error: ErrorModel) => {
+    //       console.log(error.error.message.name);
+    //       alert(error.error.message.name);
+    //     },
+    //     complete: () => {
+    //       console.log('complete');
+    //     }
+    //   });
+  }
+
+  ngOnDestroy(): void {
+    // this.subcription$.unsubscribe();
   }
 }

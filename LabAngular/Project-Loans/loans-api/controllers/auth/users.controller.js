@@ -136,7 +136,9 @@ class UsersController {
 
     //[POST] http://localhost:3000/auth/login
     async loginUser(req, res) {
+
         try {
+            console.log(req.body)
             const {username, password} = req.body;
             const user = await usersModel.findOne({username: username});
             if (!user) {

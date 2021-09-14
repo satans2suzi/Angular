@@ -3,6 +3,9 @@ import {AuthService} from '../../../shared/services/auth/auth.service';
 import {Observable, of} from 'rxjs';
 import {MenuModel} from '../../../shared/models/menu/menu.models';
 import {shareReplay} from 'rxjs/operators';
+import {IAuthState} from '../../../app-store/auth/auth.state';
+import {Store} from '@ngrx/store';
+import {fullnameSelector, isAuthenticatedSelector} from '../../../app-store/auth/auth.selector';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,9 +14,9 @@ import {shareReplay} from 'rxjs/operators';
 })
 export class SidebarComponent implements OnInit {
   menuList$!: Observable<MenuModel[]>;
-  fullName!: string;
-
-  constructor(private authService: AuthService) {
+  fullName$ = this._store.select(fullnameSelector);
+  constructor(private readonly authService: AuthService,
+              private readonly _store: Store<IAuthState>) {
   }
 
 
@@ -21,7 +24,7 @@ export class SidebarComponent implements OnInit {
     this.menuList$ = of<MenuModel[]>([
       {
         name: 'Dashboard',
-        router_name: 'dashboard',
+        router_name: '',
       },
       {
         name: 'Giữ liệu cảnh báo',
@@ -53,14 +56,6 @@ export class SidebarComponent implements OnInit {
         router_name: 'suricata',
       }
     ]).pipe(shareReplay(1));
-    this.checkFullname();
   }
-
-  checkFullname(){
-    this.authService.currentFullname()
-      .subscribe(value => this.fullName= value);
-  }
-
-
 
 }

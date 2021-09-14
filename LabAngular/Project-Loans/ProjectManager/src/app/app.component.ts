@@ -1,33 +1,30 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from './shared/services/auth/auth.service';
+import {Observable, Subject, Subscription} from 'rxjs';
+import {takeUntil, tap} from 'rxjs/operators';
+import {Store} from '@ngrx/store';
+import {IAuthState} from './app-store/auth/auth.state';
+import {isAuthenticatedSelector} from './app-store/auth/auth.selector';
+import * as AuthActions from './app-store/auth/auth.action';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  isLoggedIn!: boolean;
+export class AppComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  isAuthenticated$ = this._store.select(isAuthenticatedSelector);
+
+  constructor(private readonly _store: Store<IAuthState>,
+              private readonly _authService: AuthService) {
 
   }
 
   title = 'ProjectManager';
 
   ngOnInit(): void {
-    this.checkIsLoggedIn();
+    this._store.dispatch(AuthActions.actionCheckToken());
   }
 
-  checkIsLoggedIn() {
-    this.authService.isLoggedIn()
-      .subscribe(
-        value => {
-          return this.isLoggedIn = value;
-        }
-      );
-  }
-
-  ngOnDestroy(): void {
-  }
 }

@@ -9,7 +9,7 @@ import {AuthService} from '../services/auth/auth.service';
 })
 export class CustomValidators {
 
-  constructor(private authService: AuthService) {
+  constructor(private _authService: AuthService) {
   }
 
   NoWhitespaceValidator(): ValidatorFn {
@@ -27,8 +27,9 @@ export class CustomValidators {
 
 
   validateUserNameExists(control: AbstractControl): Observable<ValidationErrors | null> {
+    console.log(control.value);
     return (timer(300)).pipe(
-      switchMap(() => this.authService.checkIfUsernameExists(control.value)
+      switchMap(() => this._authService.checkIfUsernameExists(control.value)
         .pipe(
           map(isValid => {
             return isValid ? null : {'usernameAlreadyExists': true};
@@ -38,8 +39,9 @@ export class CustomValidators {
   }
 
   validateEmailExists(control: AbstractControl): Observable<ValidationErrors | null> {
+    console.log(control.value);
     return (timer(300)).pipe(
-      switchMap(() => this.authService.checkIfEmailExists(control.value)
+      switchMap(() => this._authService.checkIfEmailExists(control.value)
         .pipe(
           map(isValid => {
             return isValid ? null : {'emailAlreadyExists': true};
@@ -59,11 +61,10 @@ export class CustomValidators {
       if (control.value !== matchingControl.value) {
         return matchingControl.setErrors({confirmPasswordMatch: true});
       } else {
-        return  matchingControl.setErrors(null);
+        return matchingControl.setErrors(null);
       }
     };
   }
-
 
 
 }

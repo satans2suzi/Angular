@@ -1,1 +1,93 @@
-<p>details-assets works!</p>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">{{ title }}</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a [routerLink]="['/assets/list/1']">Danh sách tài sản</a></li>
+          <li class="breadcrumb-item active">{{ title }}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<section class="content text-sm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12" >
+            <div class="card card-text">
+              <div class="card-body" *ngIf="(asset$ | async) as item">
+                <div class="row" >
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group">
+                      <label>Tên tài sản</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{ item[0].asset_name}}"
+                             disabled>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group">
+                      <label>Tên hãng</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{item[0].asset_brand}}"
+                             disabled>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group">
+                      <label>Loại tài sản</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{item[0].asset_type}}"
+                             disabled>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group">
+                      <label>Số Serial Number</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{item[0].asset_serial_number}}"
+                             disabled>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group ">
+                      <label>Thời gian nhập kho</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{item[0].asset_date_of_issue}}"
+                             disabled>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                      <label>Giá tài sản</label>
+                      <input type="text"
+                             class="form-control form-control-sm disabled text-dark"
+                             value="{{item[0].asset_price}}"
+                             disabled>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+        <app-asset-placement></app-asset-placement>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,16 +1,18 @@
-<div class="content">
+<div [ngClass]="{'': (isAuthenticated$ | async) == false, 'wrapper': (isAuthenticated$ | async) == true }">
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
   <!-- Navbar -->
-  <app-navbar *ngIf="isLoggedIn" ></app-navbar>
+  <app-navbar *ngIf="isAuthenticated$ | async" ></app-navbar>
   <!-- /.Navbar -->
   <!-- Sidebar -->
-  <app-sidebar *ngIf="isLoggedIn"></app-sidebar>
+  <app-sidebar *ngIf="isAuthenticated$ | async"></app-sidebar>
   <!-- /.Sidebar -->
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div [ngClass]="{'': (isAuthenticated$ | async) == false, 'content-wrapper': (isAuthenticated$ | async) == true }">
     <!-- Main content -->
     <router-outlet></router-outlet>
     <!-- /.content -->
   </div>
   <!-- Main Footer -->
-  <app-footer *ngIf="isLoggedIn"></app-footer>
+  <app-footer *ngIf="isAuthenticated$ | async"></app-footer>
+<!--  <app-spinner *ngIf="isLoading"></app-spinner>-->
 </div>

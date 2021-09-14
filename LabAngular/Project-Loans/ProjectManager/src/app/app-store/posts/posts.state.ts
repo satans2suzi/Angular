@@ -1,4 +1,4 @@
-import { Post } from '../../models/posts/post.model';
+import { Post } from '../../shared/models/posts/post.model';
 
 export interface PostState {
     items: Post[];

@@ -4,7 +4,7 @@ var assetPlacedController = require('../../controllers/assets/assets_placed.cont
 // var cors = require('cors')
 
 /* GET all documents */
-router.get('/list', assetPlacedController.listAssetPlace)
+router.post('/list', assetPlacedController.listAssetPlace)
 
 /* GET details documents */
 router.get('/view', assetPlacedController.detailsAssetPlace);

@@ -6,10 +6,388 @@
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a routerLink=' dashboard'>Dashboard</a></li>
+          <li class="breadcrumb-item"><a [routerLink]="['/dashboard']">Dashboard</a></li>
           <li class="breadcrumb-item active">Tài sản</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center justify-content-around">
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <button class="btn btn-sm form-control form-control-sm btn-outline-info"
+                          type="button"
+                          data-toggle="modal"
+                          data-target="#modal-lg-create">
+                    <i class="fas fa-plus-square text-md"> Thêm tài sản</i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="dropright">
+                    <button class="btn btn-sm btn-outline-info form-control form-control-sm dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                      <i class="fas fa-list text-md"> Phân loại tài sản</i>
+                    </button>
+                    <div class="dropdown-menu"
+                         aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item">Action</a>
+                      <a class="dropdown-item">Another action</a>
+                      <a class="dropdown-item">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 ">
+                <div class="form-group">
+                  <button routerLink="add-documentary"
+                          class="btn btn-sm form-control form-control-sm btn-outline-info"
+                          type="button">
+                    <i class="fas fa-search text-md"> Tìm kiếm tài sản</i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row table-responsive">
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                  <th class="col-1 text-sm ">#</th>
+                  <th class="col-1 text-sm ">Tên sản sản</th>
+                  <th class="col-3 text-sm ">Thương hiệu</th>
+                  <th class="col-2 text-sm ">Số Serial</th>
+                  <th class="col-2 text-sm ">Loại tài sản</th>
+                  <th class="text-sm ">Ngày nhập kho</th>
+                  <th class="col-1 text-sm text-sm-center">Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                  class="text-sm" *ngFor="let row of assets$ | async ; index as i">
+                  <td>{{ i + 1}}</td>
+                  <td>{{ row.asset_name}}</td>
+                  <td>{{ row.asset_brand}}</td>
+                  <td>{{row.asset_serial_number}}</td>
+                  <td>{{row.asset_type}}</td>
+                  <td>{{ row.asset_date_of_issue | date: 'dd/MM/yyyy'}}</td>
+                  <td class="text-sm-center">
+                    <div class="btn-group dropright"
+                         data-toggle="dropdown">
+                      <i class="fa fa-ellipsis-v"></i>
+                      <ul class="dropdown-menu"
+                          role="menu">
+                        <li [routerLink]="['/assets/details',row._id]"
+                            class="btn dropdown-item"><i class="fas fa-pencil-alt pr-3"></i> Chi tiết
+                        </li>
+<!--                        <li (click)="detailAsset(row._id)"-->
+<!--                            class="btn dropdown-item"><i class="fas fa-pencil-alt pr-3"></i> Chi tiết-->
+<!--                        </li>-->
+                        <li class="btn dropdown-item">
+                          <i class="fas fa-edit pr-3" data-toggle="modal"
+                             data-target="#modal-lg-edit"></i> Sửa
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li (click)="deleteAsset(row._id)"
+                            class="btn dropdown-item">
+                          <i class="fas fa-trash-alt pr-3"></i> Xoá
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row d-flex justify-content-between">
+              <div class="col-sm-1">
+                <button (click)="previewPage()"
+                        [disabled]="(currentPage - 1) == 0"
+                        class="btn btn-outline-info form-control form-control-sm">Preview
+                </button>
+              </div>
+              <div class="col-sm-1">
+                <span>Trang {{currentPage}}/{{ totalPages$ | async}}</span>
+              </div>
+              <div class="col-sm-1">
+                <button (click)="nextPage()"
+                        [disabled]="currentPage >= (totalPages$ | async)"
+                        class="btn btn-outline-info form-control form-control-sm">Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade"
+       id="modal-lg-create">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Thêm tài sản</h4>
+          <button type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formAsset">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Tên tài sản</label>
+                  <input type="text"
+                         formControlName='asset_name'
+                         placeholder=".Tên tài sản"
+                         [ngClass]="{'is-invalid': f.asset_name.errors && (f.asset_name.touched || f.asset_name.dirty), 'is-valid':f.asset_name.valid}"
+                         class="form-control form-control-sm">
+                  <div *ngIf="f.asset_name.touched && f.asset_name.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_name.errors?.required">Tên tài sản không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Tên hãng</label>
+                  <input type="text"
+                         formControlName='asset_brand'
+                         placeholder=".Tên hãng"
+                         [ngClass]="{'is-invalid': f.asset_brand.errors && (f.asset_brand.touched || f.asset_brand.dirty), 'is-valid':f.asset_brand.valid}"
+                         class="form-control form-control-sm">
+                  <div *ngIf="f.asset_brand.touched && f.asset_brand.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_brand.errors?.required">Tên hãng không để trống!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Loại tài sản</label>
+                  <input type="text"
+                         formControlName='asset_type'
+                         placeholder=".Loại tài sản"
+                         [ngClass]="{'is-invalid': f.asset_type.errors && (f.asset_type.touched || f.asset_type.dirty), 'is-valid':f.asset_type.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_type.touched && f.asset_type.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_type.errors?.required">Loại tài sản không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Số S/N</label>
+                  <input type="text"
+                         placeholder=".Số Serial Number"
+                         formControlName='asset_serial_number'
+                         [ngClass]="{'is-invalid': f.asset_serial_number.errors && (f.asset_serial_number.touched || f.asset_serial_number.dirty), 'is-valid':f.asset_serial_number.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_serial_number.touched && f.asset_serial_number.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_serial_number.errors?.required">Số S\N không để trống!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group ">
+                  <label>Thời gian nhập kho</label>
+                  <input type="date"
+                         placeholder=".Thời gian nhập kho"
+                         formControlName='asset_date_of_issue'
+                         [ngClass]="{'is-invalid': f.asset_date_of_issue.errors && (f.asset_date_of_issue.touched || f.asset_date_of_issue.dirty), 'is-valid':f.asset_date_of_issue.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_date_of_issue.touched && f.asset_date_of_issue.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_date_of_issue.errors?.required">Thời gian nhập kho không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Giá tài sản</label>
+                  <input type="text"
+                         placeholder=".Giá tài sản"
+                         formControlName='asset_price'
+                         [ngClass]="{'is-invalid': f.asset_price.errors && (f.asset_price.touched || f.asset_price.dirty), 'is-valid':f.asset_price.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_price.touched && f.asset_price.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_price.errors?.required">Giá tài sản không để trống!</div>
+                    <div *ngIf="f.asset_price.errors?.pattern">Giá tài sản không đúng định dạng!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="col-sm-2">
+            <button type="button"
+                    class="btn btn-default form-control form-control-sm"
+                    id="cancel-create"
+                    data-dismiss="modal">Thoát
+            </button>
+          </div>
+          <div class="col-sm-2">
+            <button type="button"
+                    (click)="submitForm()"
+                    [disabled]="!formAsset.valid"
+                    class="btn btn-primary form-control form-control-sm"> Tạo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade"
+       id="modal-lg-edit">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sửa nội dung tài sản</h4>
+          <button type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formAsset">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Tên tài sản</label>
+                  <input type="text"
+                         formControlName='asset_name'
+                         placeholder=".Tên tài sản"
+                         [ngClass]="{'is-invalid': f.asset_name.errors && (f.asset_name.touched || f.asset_name.dirty), 'is-valid':f.asset_name.valid}"
+                         class="form-control form-control-sm">
+                  <div *ngIf="f.asset_name.touched && f.asset_name.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_name.errors?.required">Tên tài sản không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Tên hãng</label>
+                  <input type="text"
+                         formControlName='asset_brand'
+                         placeholder=".Tên hãng"
+                         [ngClass]="{'is-invalid': f.asset_brand.errors && (f.asset_brand.touched || f.asset_brand.dirty), 'is-valid':f.asset_brand.valid}"
+                         class="form-control form-control-sm">
+                  <div *ngIf="f.asset_brand.touched && f.asset_brand.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_brand.errors?.required">Tên hãng không để trống!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Loại tài sản</label>
+                  <input type="text"
+                         formControlName='asset_type'
+                         placeholder=".Loại tài sản"
+                         [ngClass]="{'is-invalid': f.asset_type.errors && (f.asset_type.touched || f.asset_type.dirty), 'is-valid':f.asset_type.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_type.touched && f.asset_type.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_type.errors?.required">Loại tài sản không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Số S/N</label>
+                  <input type="text"
+                         placeholder=".Số Serial Number"
+                         formControlName='asset_serial_number'
+                         [ngClass]="{'is-invalid': f.asset_serial_number.errors && (f.asset_serial_number.touched || f.asset_serial_number.dirty), 'is-valid':f.asset_serial_number.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_serial_number.touched && f.asset_serial_number.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_serial_number.errors?.required">Số S\N không để trống!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group ">
+                  <label>Thời gian nhập kho</label>
+                  <input type="date"
+                         placeholder=".Thời gian nhập kho"
+                         formControlName='asset_date_of_issue'
+                         [ngClass]="{'is-invalid': f.asset_date_of_issue.errors && (f.asset_date_of_issue.touched || f.asset_date_of_issue.dirty), 'is-valid':f.asset_date_of_issue.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_date_of_issue.touched && f.asset_date_of_issue.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_date_of_issue.errors?.required">Thời gian nhập kho không để trống!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Giá tài sản</label>
+                  <input type="text"
+                         placeholder=".Giá tài sản"
+                         formControlName='asset_price'
+                         [ngClass]="{'is-invalid': f.asset_price.errors && (f.asset_price.touched || f.asset_price.dirty), 'is-valid':f.asset_price.valid}"
+                         class="form-control form-control-sm disabled text-dark">
+                  <div *ngIf="f.asset_price.touched && f.asset_price.invalid"
+                       class="invalid-feedback ml-3 text-sm">
+                    <div *ngIf="f.asset_price.errors?.required">Giá tài sản không để trống!</div>
+                    <div *ngIf="f.asset_price.errors?.pattern">Giá tài sản không đúng định dạng!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="col-sm-2">
+            <button type="button"
+                    class="btn btn-default form-control form-control-sm"
+                    id="cancel-edit"
+                    data-dismiss="modal">Thoát
+            </button>
+          </div>
+          <div class="col-sm-2">
+            <button type="button"
+                    (click)="submitForm()"
+                    [disabled]="!formAsset.valid"
+                    class="btn btn-primary form-control form-control-sm"> Tạo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
