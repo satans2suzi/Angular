@@ -7,7 +7,7 @@ import {Observable, of, Subject, Subscription} from 'rxjs';
 import {CustomValidators} from '../../../shared/vadidator/validate.vadidator';
 import {delay, filter, map, startWith, switchMap, take, tap} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../app-store/app.stories';
+import {IAppState} from '../../../app-store/reducer.index';
 import * as AuthActions from '../../../app-store/auth/auth.action';
 
 @Component({

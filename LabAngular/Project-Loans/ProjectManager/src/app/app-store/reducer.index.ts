@@ -2,17 +2,21 @@ import {IAuthState} from './auth/auth.state';
 import {ActionReducerMap, MetaReducer} from '@ngrx/store';
 import {authReducer} from './auth/auth.reducer';
 import {hydrationMetaReducer} from './hydration/hydration.reducer';
-import {routerReducer} from '@ngrx/router-store';
+import {routerReducer, RouterReducerState} from '@ngrx/router-store';
 import {environment} from '../../environments/environment';
-
+import {featureKeyAuth} from './auth/auth.reducer';
 
 
 export interface IAppState {
-  // feature_auth: IAuthState
+  featureKeyAuth: IAuthState;
+  router: RouterReducerState<any>;
 }
 
+
 export const forRootReducer: ActionReducerMap<IAppState> = {
-  feature_auth: authReducer,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+  [featureKeyAuth]: authReducer,
   router: routerReducer,
 };
 

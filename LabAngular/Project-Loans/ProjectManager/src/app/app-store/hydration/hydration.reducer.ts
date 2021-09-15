@@ -1,5 +1,5 @@
 import {ActionReducer, INIT, UPDATE} from '@ngrx/store';
-import {IAppState} from '../app.stories';
+import {IAppState} from '../reducer.index';
 import {IAssetsState} from '../assets/assets.state';
 
 

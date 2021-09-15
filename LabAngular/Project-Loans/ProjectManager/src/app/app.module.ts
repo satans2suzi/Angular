@@ -18,11 +18,12 @@ import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {EffectsModule} from '@ngrx/effects';
 import {SharedModule} from './shared/shared.module';
-import {AppEffect} from './app-store/app.effects';
-import {forRootReducer, metaReducers} from './app-store/app.stories';
+import {AppEffect} from './app-store/effects.index';
+import {forRootReducer, metaReducers} from './app-store/reducer.index';
 import {AppStoreModule} from './app-store/app-store.module';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
+import {CustomSerializer} from './app-store/router/custom-serializer';
 
 
 @NgModule({
@@ -50,8 +51,7 @@ import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
     EffectsModule.forRoot(AppEffect),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot({
-      stateKey: 'router',
-      routerState: RouterState.Minimal
+      serializer: CustomSerializer
     }),
     AuthModule,
     DashboardModule,

@@ -1,9 +1,10 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import {IAuthState} from './auth.state';
+import {featureKeyAuth} from './auth.reducer';
 
 
 
-const featureAuth = createFeatureSelector<IAuthState>('feature_auth');
+const featureAuth = createFeatureSelector<IAuthState>(featureKeyAuth);
 
 
 export const fullnameSelector = createSelector(featureAuth, state => state.items?.fullname);

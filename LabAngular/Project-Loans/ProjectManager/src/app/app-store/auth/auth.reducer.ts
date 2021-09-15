@@ -112,7 +112,8 @@ const reducer = createReducer(
   }),
 );
 
+export const featureKeyAuth = 'auth';
 
-export function authReducer(state: IAuthState | undefined, action: Action) {
+export function authReducer(state: IAuthState | undefined, action: Action): any {
   return reducer(state, action);
 }

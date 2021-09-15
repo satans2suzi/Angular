@@ -2,9 +2,9 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {environment} from 'src/environments/environment.dev';
-import { delay, map} from 'rxjs/operators';
+import {delay, map} from 'rxjs/operators';
 import {HttpHeaders} from '@angular/common/http';
-import { Observable, of,} from 'rxjs';
+import {Observable, of,} from 'rxjs';
 import {IFormRegisterModel, IResRegisterModel} from '../../models/auth/register.model';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {IFormLoginModel, IResLoginModel} from '../../models/auth/login.model';
@@ -43,10 +43,10 @@ export class AuthService {
 
   checkToken(): Observable<boolean> {
     const state = localStorage.getItem('state');
-    if (state != null) {
+    if (state !== null) {
       let obj = JSON.parse(state);
       // const expirationDate = this.jwtHelperService.getTokenExpirationDate(token?.toString());
-      const isExpired = this._jwtHelperService.isTokenExpired(obj.feature_auth.accessToken);
+      const isExpired = this._jwtHelperService.isTokenExpired(obj.auth.accessToken);
       if (isExpired) {
         return of(false);
       }
