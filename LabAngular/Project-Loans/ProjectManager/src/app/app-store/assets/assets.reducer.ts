@@ -8,25 +8,29 @@ import {IResAssetModel} from '../../shared/models/assets/asset.model';
 const initialState: IAssetsState = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  items: undefined,
+  items: null,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  position: null,
   error: '',
   status: 'idle',
   message: '',
   paginator: {
     page: 0,
-    recordPerPage: 0,
     recordData: 0,
     totalPage: 0
   }
 };
 
 
+// @ts-ignore
+// @ts-ignore
 const reducer = createReducer(
   initialState,
   on(AssetsActions.actionGetAsset,
     AssetsActions.actionCreateAsset,
     AssetsActions.actionUpdateAsset,
-    AssetsActions.actionDeleteAsset, (state) => {
+    AssetsActions.actionDeleteAsset, (state, action) => {
       return {
         ...state,
         status: 'loading'
@@ -36,7 +40,7 @@ const reducer = createReducer(
     AssetsActions.actionGetAsset,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-     (state) => {
+     (state, action) => {
       return {
         ...state,
         status: 'loading',
@@ -63,6 +67,7 @@ const reducer = createReducer(
       return {
         ...state,
         items: asset,
+        position: asset[0].asset_placed,
         status: 'idle',
         message: message
       };

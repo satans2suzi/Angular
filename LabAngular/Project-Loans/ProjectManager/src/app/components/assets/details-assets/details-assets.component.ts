@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, AfterViewInit} from '@angular/core';
 import {Observable, Subject, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {map, pluck, take, takeLast, takeUntil, tap} from 'rxjs/operators';
@@ -12,11 +12,11 @@ import {IResAssetModel} from '../../../shared/models/assets/asset.model';
   templateUrl: './details-assets.component.html',
   styleUrls: ['./details-assets.component.css']
 })
-export class DetailsAssetsComponent implements OnInit, OnDestroy {
+export class DetailsAssetsComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'Chi tiết tài sản';
   idAsset!: string;
   asset$ = this._store.select(AssetsSelector.itemsSelector);
-
+  notifier = new Subject();
   private subcsription!: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -36,8 +36,19 @@ export class DetailsAssetsComponent implements OnInit, OnDestroy {
     this._store.dispatch(AssetsActions.actionGetAsset({id: this.idAsset}));
   }
 
-  ngOnDestroy(): void {
+  ngAfterViewInit(): void {
+    this._store.select(AssetsSelector.positionSelector)
+      .pipe(tap(val => {
+          this.notifier;
+          console.log(val);
+        }),
+        takeLast(1))
+      .subscribe();
+  }
 
+  ngOnDestroy(): void {
+    this.notifier.next();
+    this.notifier.complete();
   }
 
 }

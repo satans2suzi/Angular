@@ -28,11 +28,6 @@ export class AssetPlacementComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._storeAsset.select(AssetsSelector.idAssetPlacementSelector)
-      .pipe(map(val => val[0],
-        take(1)),
-        tap(val => console.log(val)))
-      .subscribe(val => this.idsAssetPlacement = val);
     this._storeAssetPlacement.dispatch(AssetPlacementActions.actionGet({ids: this.idsAssetPlacement, page: this.currentPage}));
   }
 

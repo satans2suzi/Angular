@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AssetsActions, AssetsSelector} from '../../../app-store/assets/index-assets.store';
 import {IAssetsState} from '../../../app-store/assets/assets.state';
@@ -14,7 +14,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
   templateUrl: './list-assets.component.html',
   styleUrls: ['./list-assets.component.css']
 })
-export class ListAssetsComponent implements OnInit, OnDestroy {
+export class ListAssetsComponent implements OnInit ,OnDestroy {
   title = 'Danh sách tài sản';
   assets$ = this._store.select(AssetsSelector.itemsSelector);
   currentPage!: number;

@@ -4,10 +4,11 @@ import {AssetService} from '../../shared/services/assets/assets.service';
 import {IAssetsState} from './assets.state';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {AssetsActions} from './index-assets.store';
-import {catchError, delay, map, tap, mergeMap, switchMap} from 'rxjs/operators';
+import { catchError, delay, map, tap, mergeMap, switchMap, filter } from 'rxjs/operators';
 import {of} from 'rxjs';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {Router} from '@angular/router';
+import { RouterNavigatedAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
 
 
 @Injectable()
@@ -81,11 +82,20 @@ export class AssetsEffects {
       ofType(AssetsActions.actionGetAsset),
       tap(() => this._spinner.show()),
       delay(300),
-      switchMap((payload) => this._assetService.getAsset(payload.id).pipe(
-        map((result) => AssetsActions.actionGetAssetSuccess({asset: result.data, message: result.mesasge?.name})),
+      switchMap(payload => this._assetService.getAsset(payload.id).pipe(
+        map(result => AssetsActions.actionGetAssetSuccess({asset: result.data, message: result.mesasge?.name})),
         catchError(err => of(AssetsActions.actionGetAssetFailure({error: err}))),
         tap(() => this._spinner.hide())
       ))
     )
   );
+
+  // getAsset2$ = createEffect(
+  //   () => this._action$.pipe(
+  //     ofType(ROUTER_NAVIGATION),
+  //     filter((r: RouterNavigatedAction) => r.payload.routerState.url.startsWith('/assets/details')),
+  //     map((r: RouterNavigatedAction) => r.payload.routerState['params']['id']),
+  //     switchMap((id)=> this._assetService.getAsset(id))
+  //   )
+  // );
 }

@@ -8,14 +8,13 @@ const AUTH_LOGIN_SUCCESS = '[AUTH] Login Success';
 const AUTH_LOGIN_FAILURE = '[AUTH] Login Failure';
 
 const AUTH_LOGOUT = '[AUTH] Logout';
-const AUTH_LOGOUT_SUCCESS = '[AUTH] Logout Success';
+export const AUTH_LOGOUT_SUCCESS = '[AUTH] Logout Success';
 const AUTH_LOGOUT_FAILURE = '[AUTH] Logout Failure';
 
 
 const AUTH_REGISTER = '[AUTH] Register';
 const AUTH_REGISTER_SUCCESS = '[AUTH] Registern Success';
 const AUTH_REGISTER_FAILURE = '[AUTH] Register Failure';
-
 
 
 const CHECK_TOKEN = '[AUTH] Check Token';

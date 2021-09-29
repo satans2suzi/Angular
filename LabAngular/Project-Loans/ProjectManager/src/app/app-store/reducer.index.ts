@@ -8,14 +8,12 @@ import {featureKeyAuth} from './auth/auth.reducer';
 
 
 export interface IAppState {
-  featureKeyAuth: IAuthState;
-  router: RouterReducerState<any>;
+  [featureKeyAuth]: IAuthState;
+  router: RouterReducerState;
 }
 
 
 export const forRootReducer: ActionReducerMap<IAppState> = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
   [featureKeyAuth]: authReducer,
   router: routerReducer,
 };

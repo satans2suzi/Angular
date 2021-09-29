@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {IFormAssetModel, IResAssetModel, IResAssetsModel} from '../../shared/models/assets/asset.model';
+import {IFormAssetModel, IResAssetModel} from '../../shared/models/assets/asset.model';
 
 const GET_ASSETS = '[ASSET] Get Assets';
 const GET_ASSETS_SUCCESS = '[ASSET] Get Assets Success';

@@ -51,14 +51,13 @@ import {CustomSerializer} from './app-store/router/custom-serializer';
     EffectsModule.forRoot(AppEffect),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot({
-      serializer: CustomSerializer
+      serializer: CustomSerializer,
     }),
     AuthModule,
     DashboardModule,
     RouterModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    StoreRouterConnectingModule.forRoot()
   ],
   providers: [JwtHelperService,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS}],

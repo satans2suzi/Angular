@@ -1,3 +1,4 @@
+
 export interface IResAssetsModel {
   data: IResAssetModel[];
   recordData: number;
@@ -14,14 +15,8 @@ export interface IResAssetModel {
   asset_type: string,
   asset_serial_number: string,
   asset_date_of_issue: string,
-  asset_placed: IAssetPlacementModel[],
+  asset_placed: [],
   asset_price: number
-}
-
-interface IAssetPlacementModel {
-  _id: string;
-  name_placed: string;
-  date_of_invoice: string;
 }
 
 interface IMessageModel {
